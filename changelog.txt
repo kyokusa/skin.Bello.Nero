@@ -1,0 +1,14 @@
+v7.0.0a - for Kodi Leia 18.xx Beta.4 (21/10/2018)
+
+- Update changes and corrections to Kodi-Leia 18.xx features
+- Implementation of all previous changes in this latest version
+- Modify the new NeroPulse Home + Themes + Modifications Themes 
+- Added and modify for Grab-Fanart
+- Added title artist playing fanart and Grab-Fanart home (no Weather-Multi)
+- Adjustment of the weather section and modify background images of the weather icons
+- Added background of weather conditions for weather icons with the possibility of disabling them
+- Modify setting music now playing
+- Home adequate to my liking
+- Fixed some bugs
+_________________________________________________
+***The my old versions are considered obsolete***

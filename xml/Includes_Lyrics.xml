@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>
+    
+	<include name="LyricsDefault">	
+      <control type="group">
+	    <top>40</top>
+		<left>-15</left>
+			<visible>Control.IsVisible(110) + String.IsEmpty(Skin.String(ColorLyricsSelect))</visible>
+  	            <animation type="WindowOpen" reversible="false">
+                  <include>CommonOpenEffect</include>
+  	            </animation>
+                <animation type="WindowClose" reversible="false">
+                  <include>CommonCloseEffect</include>
+                </animation>
+  	            <animation type="Visible" reversible="false">
+                  <include>CommonOpenEffect</include>
+  	            </animation>
+                <animation type="Hidden" reversible="false">
+                  <include>CommonCloseEffect</include>
+                </animation>
+			<control type="label">
+			  <description>No lyrics found</description>
+			  <top>340</top>
+				<width>1280</width>
+				<label>$ADDON[script.cu.lrclyrics 32001]</label>
+				<font>FontSize_50</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>99000000</shadowcolor>
+				<align>center</align>
+				<scroll>true</scroll>
+				<scrollspeed>20</scrollspeed>
+				<visible>!Control.HasFocus(110)</visible>
+			</control>
+
+		  <!-- ** Required ** Do not change <id> or <type> -->
+      <control type="list" id="110">
+    		<animation type="Conditional" condition="![Player.ShowInfo | Player.Paused | Player.Forwarding | Player.Rewinding]">
+                <effect type="slide" start="0,0" end="0,-65" time="250" tween="sine" easing="in" />
+    		</animation>
+				<left>50</left>
+				<top>146</top>
+				<width>1200</width>
+				<height>573</height>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<onup>110</onup>
+				<ondown>110</ondown>
+				<pagecontrol/>
+			  <scrolltime tween="cubic" easing="out">500</scrolltime>
+				<itemlayout height="63">
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width>1200</width>
+						<height>63</height>
+				    <font>FontSize_44</font>
+						<aligny>center</aligny>
+						<align>center</align>
+				    <textcolor>99ffffff</textcolor>
+				    <shadowcolor>99000000</shadowcolor>
+						<label fallback="--">$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="63">
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width>1200</width>
+						<height>63</height>
+				    <font>FontSize_44</font>
+						<aligny>center</aligny>
+						<align>center</align>
+				    <textcolor>99ffffff</textcolor>
+				    <shadowcolor>99000000</shadowcolor>
+						<label fallback="--">$INFO[ListItem.Label]</label>
+						<visible>!Control.HasFocus(110)</visible>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width>1200</width>
+						<height>63</height>
+				    <font>FontSize_44</font>
+						<aligny>center</aligny>
+						<align>center</align>
+				    <textcolor>$VAR[Text.GlobalColor]</textcolor>
+				    <shadowcolor>99000000</shadowcolor>
+						<label fallback="--">$INFO[ListItem.Label,__  ,  __]</label>
+						<visible>Control.HasFocus(110)</visible>
+					</control>
+				</focusedlayout>
+            </control>
+	    </control>
+    </include>
+
+	<include name="ColorLyrics">
+	    <control type="group">
+		<left>-325</left>
+		<visible>Control.IsVisible(111) + String.IsEqual(Skin.String(ColorLyricsSelect),ColorLyrics)</visible>
+		    <animation type="Conditional" condition="![Player.ShowInfo | Player.Paused | Player.Forwarding | Player.Rewinding]">
+                <effect type="slide" start="0,0" end="0,-65" time="250" tween="sine" easing="in" />
+    		</animation>
+            <control type="list" id="111">
+                <left>0</left>
+				<top>146</top>
+				<width>1280</width>
+				<height>573</height>
+				<onleft>noop</onleft>
+				<onright>noop</onright>
+				<onup>110</onup>
+				<ondown>110</ondown>
+				<pagecontrol/>
+                <itemlayout>                   
+                </itemlayout>
+                <focusedlayout>                    
+                </focusedlayout>
+            </control> 
+            <animation effect="zoom" start="100" end="66" condition="Player.ShowInfo + Skin.HasSetting(BigMusicVis)">Conditional</animation>
+            <animation effect="slide" start="0" end="720,400" condition="Player.ShowInfo + Skin.HasSetting(BigMusicVis)">Conditional</animation>
+            <animation effect="slide" start="0" end="0,200" condition="!Player.ShowInfo | !Skin.HasSetting(BigMusicVis)">Conditional</animation>           
+            <control type="group">                
+                <!-- Short LINEA 1 & 6 -->
+                <control type="group">
+                    <left>510</left>
+                    <top>-20</top>
+                    <animation effect="rotate" center="auto" start="4" end="4" time="0" condition="true">Conditional</animation>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,1)</visible>
+                        <animation effect="slide" start="0,-600" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation> 
+						<left>-1</left>
+                        <top>-1</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)] $INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,1)</visible>
+                        <animation effect="slide" start="0,-600" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation> 
+						<left>2</left>
+                        <top>2</top> 
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)] $INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,1)</visible>
+                        <animation effect="slide" start="0,-600" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>                                               
+                        <left>0</left>
+                        <top>0</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+                        <font>Lyrics50</font>						
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>[COLOR=ff69bbd3]$INFO[Container(110).ListItem.Property(part1)] [/COLOR][COLOR=ffe16b6b]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=fff8e950]$INFO[Container(110).ListItem.Property(part3)] [/COLOR][COLOR=fffffaf0]$INFO[Container(110).ListItem.Property(part4)][/COLOR]</label>
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,6)</visible>
+                        <animation effect="slide" start="0,-600" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+						<left>-1</left>
+                        <top>-1</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)] $INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,6)</visible>
+                        <animation effect="slide" start="0,-600" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation> 
+						<left>2</left>
+                        <top>2</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)] $INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,6)</visible>
+                        <animation effect="slide" start="0,-600" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>                                               
+                        <left>0</left>
+                        <top>0</top> 
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+                        <font>Lyrics50</font>						
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>[COLOR=ff69bbd3]$INFO[Container(110).ListItem.Property(part1)] [/COLOR][COLOR=ffe16b6b]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=fff8e950]$INFO[Container(110).ListItem.Property(part3)] [/COLOR][COLOR=fffffaf0]$INFO[Container(110).ListItem.Property(part4)][/COLOR]</label>
+                    </control>
+                </control>
+                <!-- Short LINEA 3 & 8 -->
+                <control type="group">
+                    <left>510</left>
+                    <top>-20</top>
+                    <animation effect="rotate" center="auto" start="4" end="4" time="0" condition="true">Conditional</animation>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,3)</visible>
+                        <animation effect="slide" start="-900,0" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+						<left>-1</left>
+                        <top>-1</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                         
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,3)</visible>
+                        <animation effect="slide" start="-900,0" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+						<left>2</left>
+                        <top>2</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                          
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,3)</visible>
+                        <animation effect="slide" start="-900,0" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+						<left>0</left>
+                        <top>0</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+                        <font>Lyrics50</font>						
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>[COLOR=ffff9a32]$INFO[Container(110).ListItem.Property(part1)] [/COLOR][COLOR=ffbcfb24]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=ff9a9699]$INFO[Container(110).ListItem.Property(part3)][CR][/COLOR][COLOR=fffffaf0]$INFO[Container(110).ListItem.Property(part4)][/COLOR]</label>                         
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,8)</visible>
+                        <animation effect="slide" start="-900,0" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+						<left>-1</left>
+                        <top>-1</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                         
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,8)</visible>
+                        <animation effect="slide" start="-900,0" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+						<left>2</left>
+                        <top>2</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                         
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,8)</visible>
+                        <animation effect="slide" start="-900,0" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+						<left>0</left>
+                        <top>0</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+                        <font>Lyrics50</font>						
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>[COLOR=ffff9a32]$INFO[Container(110).ListItem.Property(part1)] [/COLOR][COLOR=ffbcfb24]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=ff9a9699]$INFO[Container(110).ListItem.Property(part3)][CR][/COLOR][COLOR=fffffaf0]$INFO[Container(110).ListItem.Property(part4)][/COLOR]</label>                          
+                    </control>
+                </control>
+                <!-- Short LINEA 5 & 0 -->
+                <control type="group">
+                    <left>510</left>
+                    <top>-20</top>
+                    <animation effect="rotate" center="auto" start="4" end="4" time="0" condition="true">Conditional</animation>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,5)</visible>
+                        <animation effect="zoom" center="auto" start="0" end="100" time="250" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+                        <left>-1</left>
+                        <top>-1</top> 
+						<width>920</width>
+				        <height>400</height>
+						<font>Lyrics50</font>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>						
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,5)</visible>
+                        <animation effect="zoom" center="auto" start="0" end="100" time="250" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation> 
+						<left>2</left>
+                        <top>2</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>						
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,5)</visible>
+                        <animation effect="zoom" center="auto" start="0" end="100" time="250" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>                                              
+                        <left>0</left>
+                        <top>0</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+                        <font>Lyrics50</font>						
+                        <shadowcolor>ff000000</shadowcolor>                       
+                        <label>[COLOR=ff00bfc0]$INFO[Container(110).ListItem.Property(part1)] [/COLOR][COLOR=ff98ea33]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=fffffaf0]$INFO[Container(110).ListItem.Property(part3)][/COLOR][CR][COLOR=ffdaa8ea]$INFO[Container(110).ListItem.Property(part4)][/COLOR]</label>
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,0)</visible>
+                        <animation effect="zoom" center="auto" start="0" end="100" time="250" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>  
+						<left>-1</left>
+                        <top>-1</top> 
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>						
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,0)</visible>
+                        <animation effect="zoom" center="auto" start="0" end="100" time="250" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation> 
+						<left>2</left>
+                        <top>2</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>						
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,0)</visible>
+                        <animation effect="zoom" center="auto" start="0" end="100" time="250" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>                                              
+                        <left>0</left>
+                        <top>0</top> 
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+                        <font>Lyrics50</font>						
+                        <shadowcolor>ff000000</shadowcolor>                        
+                        <label>[COLOR=ff00bfc0]$INFO[Container(110).ListItem.Property(part1)] [/COLOR][COLOR=ff98ea33]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=fffffaf0]$INFO[Container(110).ListItem.Property(part3)][/COLOR][CR][COLOR=ffdaa8ea]$INFO[Container(110).ListItem.Property(part4)][/COLOR]</label>
+                    </control>
+                </control>
+                <!-- Short LINEA 7 & 2 -->
+                <control type="group">
+                    <left>510</left>
+                    <top>-20</top>
+                    <animation effect="rotate" center="auto" start="4" end="4" time="0" condition="true">Conditional</animation>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,7)</visible>
+                        <animation effect="slide" start="900,0" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+                        <left>-1</left>
+                        <top>-1</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,7)</visible>
+                        <animation effect="slide" start="900,0" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+                        <left>2</left>
+                        <top>2</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,7)</visible>
+                        <animation effect="slide" start="900,0" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+                        <left>0</left>
+                        <top>0</top> 
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+                        <font>Lyrics50</font>						
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>[COLOR=ff4cb050]$INFO[Container(110).ListItem.Property(part1)] [/COLOR][COLOR=fffec106]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=ff2095f4]$INFO[Container(110).ListItem.Property(part3)][/COLOR][CR][COLOR=fffffaf0]$INFO[Container(110).ListItem.Property(part4)][/COLOR]</label>
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,2)</visible>
+                        <animation effect="slide" start="900,0" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+                        <left>-1</left>
+                        <top>-1</top> 
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,2)</visible>
+                        <animation effect="slide" start="900,0" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+                        <left>2</left>
+                        <top>2</top> 
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,2)</visible>
+                        <animation effect="slide" start="900,0" end="0,0" time="250" tween="sine" easing="out" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+                        <left>0</left>
+                        <top>0</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+                        <font>Lyrics50</font>						
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>[COLOR=ff4cb050]$INFO[Container(110).ListItem.Property(part1)] [/COLOR][COLOR=fffec106]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=ff2095f4]$INFO[Container(110).ListItem.Property(part3)][/COLOR][CR][COLOR=fffffaf0]$INFO[Container(110).ListItem.Property(part4)][/COLOR]</label>
+                    </control>
+                </control>
+                <!-- Short LINEA 9 & 4 -->
+                <control type="group">
+                    <left>510</left>
+                    <top>-20</top>
+                    <animation effect="rotate" center="auto" start="4" end="4" time="0" condition="true">Conditional</animation>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,9)</visible>
+                        <animation effect="zoom" center="auto" start="400" end="100" time="250" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+                        <left>-1</left>
+                        <top>-1</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,9)</visible>
+                        <animation effect="zoom" center="auto" start="400" end="100" time="250" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+                        <left>2</left>
+                        <top>2</top> 
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,9)</visible>
+                        <animation effect="zoom" center="auto" start="400" end="100" time="250" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+                        <left>0</left>
+                        <top>0</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>[COLOR=ff00e676]$INFO[Container(110).ListItem.Property(part1)] [/COLOR][COLOR=fffffaf0]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=fffb8c00]$INFO[Container(110).ListItem.Property(part3)][/COLOR][CR][COLOR=ffb39ddb]$INFO[Container(110).ListItem.Property(part4)][/COLOR]</label>
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,4)</visible>
+                        <animation effect="zoom" center="auto" start="400" end="100" time="250" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+                        <left>-1</left>
+                        <top>-1</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+						<font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+						<shadowcolor>ff000000</shadowcolor> 
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,4)</visible>
+                        <animation effect="zoom" center="auto" start="400" end="100" time="250" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+                        <left>2</left>
+                        <top>2</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+                        <font>Lyrics50</font>
+						<textcolor>ff000000</textcolor>
+                        <shadowcolor>ff000000</shadowcolor>                       
+                        <label>$INFO[Container(110).ListItem.Property(part1)] $INFO[Container(110).ListItem.Property(part2)] $INFO[Container(110).ListItem.Property(part3)][CR]$INFO[Container(110).ListItem.Property(part4)]</label>                        
+                    </control>
+                    <control type="textbox">
+                        <visible>!Container(110).OnNext + !Container(110).OnPrevious + String.EndsWith(Container(110).Currentitem,4)</visible>
+                        <animation effect="zoom" center="auto" start="400" end="100" time="250" reversible="false">Visible</animation>
+                        <animation effect="fade" start="0" end="0" time="10">Hidden</animation>
+                        <left>0</left>
+                        <top>0</top>
+						<width>920</width>
+				        <height>400</height>
+						<align>center</align>
+                        <aligny>center</aligny>
+                        <font>Lyrics50</font>
+                        <shadowcolor>ff000000</shadowcolor>
+                        <label>[COLOR=ff00e676]$INFO[Container(110).ListItem.Property(part1)] [/COLOR][COLOR=fffffaf0]$INFO[Container(110).ListItem.Property(part2)] [/COLOR][COLOR=fffb8c00]$INFO[Container(110).ListItem.Property(part3)][/COLOR][CR][COLOR=ffb39ddb]$INFO[Container(110).ListItem.Property(part4)][/COLOR]</label>
+                    </control>
+                </control>
+            </control>             
+        </control>
+	</include>
+</includes>
