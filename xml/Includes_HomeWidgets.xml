@@ -12,7 +12,7 @@
 		<value condition="String.Contains(Container(20).ListItem.Property(widgetPath),years.xml)">DefaultYear.png</value>
 		<value condition="String.Contains(Container(20).ListItem.Property(widgetPath),studios.xml)">DefaultStudios.png</value>
 		<value condition="String.Contains(Container(20).ListItem.Property(widgetPath),country.xml)">DefaultCountry.png</value>
-		<value condition="String.Contains(Container(20).ListItem.Property(widgetPath),tags.xml)">DefaultTags.png</value>		
+		<value condition="String.Contains(Container(20).ListItem.Property(widgetPath),tags.xml)">DefaultTags.png</value>
     <value>$INFO[ListItem.Icon]</value>
 	</variable>
 
@@ -66,7 +66,7 @@
 				<height>$PARAM[height]</height>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<texture border="30">windows/home/panel_widgets.png</texture>
-			</control>			
+			</control>
 			<control type="image">
 				<width>$PARAM[width]</width>
 				<height>$PARAM[height]</height>
@@ -86,14 +86,14 @@
 			<!-- for support Widgets Icon Weather Animated -->
 			<control type="image">
 				<width>$PARAM[width]</width>
-				<height>$PARAM[height]</height>		    
+				<height>$PARAM[height]</height>
 				<aspectratio align="center" aligny="center">scale</aspectratio>
 			  <texture background="true" fallback="thumbs/fallback_square_tp.png">$VAR[HomeWidgetsIcons]</texture>
 			  <bordersize>ThumbsBordersize6pix</bordersize>
 		    <visible>!String.IsEmpty(Skin.String(weathericons.multi)) + [Window.IsVisible(Home) | Window.IsVisible(PlayerControls) | Window.IsVisible(script-globalsearch-main.xml)] + String.IsEmpty(ListItem.Art(thumb))</visible>
 			</control>
 			<!-- for support Icon Weather Animated -->
-			<control type="multiimage"> 
+			<control type="multiimage">
 			    <top>9</top>
 				<left>9</left>
 				<width>174</width>
@@ -680,119 +680,119 @@
 		</control>
 
         <!-- Data Providers Info -->
-		    <control type="group">
+		        <control type="group">
 		        <include>HomeMenu_OpenCloseSlideAnimation</include>
 		        <visible>ControlGroup(22).HasFocus + !Skin.HasSetting(HideExtraInfo)</visible>
-                <visible>String.IsEqual(Container(20).ListItem.Property(widgetType),weather) | String.IsEqual(Container(20).ListItem.Property(widgetType),movies_online) | String.IsEqual(Container(20).ListItem.Property(widgetType),tvshows_online) | String.IsEqual(Container(20).ListItem.Property(widgetType),music_online) | String.IsEqual(Container(20).ListItem.Property(widgetType),mixed_online) | String.IsEqual(Container(20).ListItem.Property(Widget),MovieTrailers)</visible>
-		    	<animation type="Visible" reversible="false">
-	          <effect type="slide" start="0,0" end="0,55" time="230" tween="sine" easing="out" />
-		    		<effect type="fade" start="0" end="100" time="230" tween="sine" easing="out" />
-		    	</animation>
-		    	<animation type="Hidden"  reversible="false">
-	          <effect type="slide" start="0,55" end="0,0" time="300" tween="sine" easing="out" />
-		    		<effect type="fade" start="100" end="0" time="240" tween="sine" easing="out" />
-		    	</animation>
-		    	<control type="image">
-		    	    <left>40</left>
-  		    	    <top>440</top>
-		    		<width>270</width>
-		    		<height>90</height>
-		    		<colordiffuse>homeinfo</colordiffuse>
-		    		<aspectratio align="center" aligny="center">keep</aspectratio>
-		    		<texture>$INFO[Window(Weather).Property(WeatherProviderLogo)]</texture>
-		    		<visible>String.IsEqual(Container(20).ListItem.Property(widgetType),weather)</visible>
-		    	</control>
-		    	<control type="grouplist">
-		    	    <left>40</left>
-  		    	    <top>400</top>
-		    		<width>490</width>
-		    		<height>68</height>
-		    		<align>left</align>
-		    		<itemgap>2</itemgap>
-		    		<orientation>horizontal</orientation>
-		    		<visible>!String.IsEqual(Container(20).ListItem.Property(widgetType),weather)</visible>
+            <visible>String.IsEqual(Container(20).ListItem.Property(widgetType),weather) | String.IsEqual(Container(20).ListItem.Property(widgetType),movies_online) | String.IsEqual(Container(20).ListItem.Property(widgetType),tvshows_online) | String.IsEqual(Container(20).ListItem.Property(widgetType),music_online) | String.IsEqual(Container(20).ListItem.Property(widgetType),mixed_online) | String.IsEqual(Container(20).ListItem.Property(Widget),MovieTrailers)</visible>
+		    	  <animation type="Visible" reversible="false">
+	               <effect type="slide" start="0,0" end="0,55" time="230" tween="sine" easing="out" />
+		    		     <effect type="fade" start="0" end="100" time="230" tween="sine" easing="out" />
+		    	  </animation>
+		    	  <animation type="Hidden"  reversible="false">
+	               <effect type="slide" start="0,55" end="0,0" time="300" tween="sine" easing="out" />
+		    	       <effect type="fade" start="100" end="0" time="240" tween="sine" easing="out" />
+		      	</animation>
+		      	<control type="image">
+		    	       <left>40</left>
+  		    	     <top>440</top>
+		    		     <width>270</width>
+		    	       <height>90</height>
+		    	  	   <colordiffuse>homeinfo</colordiffuse>
+		    		     <aspectratio align="center" aligny="center">keep</aspectratio>
+		    	  	   <texture>$INFO[Window(Weather).Property(WeatherProviderLogo)]</texture>
+		    		     <visible>String.IsEqual(Container(20).ListItem.Property(widgetType),weather)</visible>
+		    	  </control>
+		    	  <control type="grouplist">
+		    	       <left>40</left>
+  		    	     <top>450</top>
+		    		     <width>490</width>
+		    	 	     <height>68</height>
+		    		     <align>left</align>
+		    		     <itemgap>2</itemgap>
+		    		     <orientation>horizontal</orientation>
+		    		     <visible>!String.IsEqual(Container(20).ListItem.Property(widgetType),weather)</visible>
 		    		<control type="image">
-		    			<width>68</width>
-		    			<height>68</height>
-		    			<aspectratio>stretch</aspectratio>
-		    			<texture background="true">$VAR[HomeWidgetsDataProvidersIcons]</texture>
-		    			<colordiffuse>homeinfo</colordiffuse>
+		    			   <width>68</width>
+		    			   <height>68</height>
+		    			   <aspectratio>stretch</aspectratio>
+		    			   <texture background="true">$VAR[HomeWidgetsDataProvidersIcons]</texture>
+		    			   <colordiffuse>homeinfo</colordiffuse>
 		    		</control>
-  		        <control type="group">
-		    		<width>490</width>
-  		    		<control type="label">
-  		    	    <top>15</top>
-  		    			<width>490</width>
-  		    			<height>15</height>
-  		    			<font>FontSize_20B</font>
-		    				<label>$LOCALIZE[31230]</label>
-  		    			<textcolor>homeinfo</textcolor>
-  		    			<scroll>false</scroll>
-  		    		</control>
-  		    		<control type="label">
-  		    	    <top>35</top>
-  		    			<width>490</width>
-  		    			<height>15</height>
-  		    			<font>FontSize_20</font>
-		    				<label>$VAR[HomeWidgetsDataProvidersLabels]</label>
-  		    			<textcolor>homeinfo</textcolor>
-  		    			<scroll>false</scroll>
-  		    		</control>
+  		      <control type="group">
+		    		     <width>490</width>
+  		    	<control type="label">
+  		    	     <top>15</top>
+  		    			 <width>490</width>
+  		    			 <height>15</height>
+  		    			 <font>FontSize_20B</font>
+		    				 <label>$LOCALIZE[31230]</label>
+  		    			 <textcolor>homeinfo</textcolor>
+  		    			 <scroll>false</scroll>
   		    	</control>
-	        </control>
-	    </control>
-    </control>
+  		    	<control type="label">
+  		    	     <top>35</top>
+  		    			 <width>490</width>
+  		    			 <height>15</height>
+  		    			 <font>FontSize_20</font>
+		    				 <label>$VAR[HomeWidgetsDataProvidersLabels]</label>
+  		    			 <textcolor>homeinfo</textcolor>
+  		    			 <scroll>false</scroll>
+  		    	</control>
+  		   </control>
+	     </control>
+	   </control>
+  </control>
 </include>
 
-	<include name="HomeWidgets_ContentInfo">
-	 <control type="group">
-		  <left>45</left>
-		  <top>25</top>
-  		  <include>ShutdownMenuAnimation</include>
-  		  <include>OpenCloseSlideAnimationTwo</include>
-	      <include>TopRightSlideAnimations</include>
-	      <include>InfoDialogs_ContentInfoAnimation</include>	    
-		  <visible>ControlGroup(22).HasFocus()</visible>
+<include name="HomeWidgets_ContentInfo">
+	    <control type="group">
+		      <left>45</left>
+		      <top>25</top>
+  		    <include>ShutdownMenuAnimation</include>
+  		    <include>OpenCloseSlideAnimationTwo</include>
+	        <include>TopRightSlideAnimations</include>
+	        <include>InfoDialogs_ContentInfoAnimation</include>
+		      <visible>ControlGroup(22).HasFocus()</visible>
 		  <control type="grouplist">
-  			<left>0</left>
-  			<top>0</top>
-  			<height>70</height>
-  			<width>1000</width>
-  			<align>left</align>
-  			<itemgap>15</itemgap>
-  			<orientation>horizontal</orientation>
-  	    <include>LogoBig</include>
-  	    <control type="label">
-  			  <include>TopBigLabel</include>
-    			<label>$VAR[HomeWidgetsHeaderLabels]</label>
-  			</control>
-			</control>
+  			  <left>0</left>
+  			  <top>0</top>
+  			  <height>70</height>
+  			  <width>1000</width>
+  			  <align>left</align>
+  			  <itemgap>15</itemgap>
+  			  <orientation>horizontal</orientation>
+  	      <include>LogoBig</include>
+  	      <control type="label">
+  			      <include>TopBigLabel</include>
+    			    <label>$VAR[HomeWidgetsHeaderLabels]</label>
+  		    </control>
+	    </control>
 			<control type="label">
-				<description>Page Count Label</description>
-				<left>66</left>
-				<top>45</top>
-				<width>300</width>
-				<height>20</height>
-				<font>FontSize_18</font>
-				<textcolor>$VAR[Text.GlobalColor]</textcolor>
-				<scroll>false</scroll>
-				<align>left</align>
-				<aligny>center</aligny>
-  			<label>$VAR[ContainerNumItems]</label>
+				  <description>Page Count Label</description>
+				  <left>66</left>
+				  <top>45</top>
+				  <width>300</width>
+				  <height>20</height>
+				  <font>FontSize_18</font>
+				  <textcolor>$VAR[Text.GlobalColor]</textcolor>
+				  <scroll>false</scroll>
+				  <align>left</align>
+				  <aligny>center</aligny>
+  			  <label>$VAR[ContainerNumItems]</label>
 			</control>
-	 </control>
+	  </control>
   </include>
 
 	<include name="WidgetsArrow_Left">
-		<width>50</width>
-		<height>50</height>
-		<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-		<texture>icons/arrow_widgets_left.png</texture>
+		  <width>50</width>
+		  <height>50</height>
+		  <colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+		  <texture>icons/arrow_widgets_left.png</texture>
 	</include>
 	<include name="WidgetsArrow_Right">
-		<width>50</width>
-		<height>50</height>
-		<texture>icons/arrow_widgets_right.png</texture>
+		  <width>50</width>
+		  <height>50</height>
+		  <texture>icons/arrow_widgets_right.png</texture>
 	</include>
 
 	<variable name="HomeWidgetContent_Top250Movies">
@@ -837,7 +837,7 @@
 		<!-- <value condition="Control.HasFocus(25) + String.IsEqual(Container(20).ListItem.Property(widgetType),Weather) + !String.IsEmpty(Container(25).ListItem.Label)">[CAPITALIZE]$INFO[Container(25).ListItem.Property(Outlook)][/CAPITALIZE]$COMMA $INFO[Container(25).ListItem.Property(HighTemperature),$LOCALIZE[419]:,]$COMMA $INFO[Container(25).ListItem.Property(LowTemperature),$LOCALIZE[418]:,]</value> -->
 		<value condition="Control.HasFocus(25) + [String.IsEqual(Container(20).ListItem.Property(widget),NextAiredTVShows) | String.IsEqual(Container(20).ListItem.Property(widget),UnAiredTVShows)]">$INFO[Container(25).ListItem.Season]$INFO[Container(25).ListItem.Episode,x,. ]$INFO[Container(25).ListItem.Title]</value>
 		<value condition="Control.HasFocus(25) + ![String.IsEmpty(Container(25).ListItem.Episode) | String.IsEmpty(Container(25).ListItem.Property(UnWatchedEpisodes))]">$INFO[Container(25).ListItem.Episode,, $LOCALIZE[20360]]$INFO[Container(25).ListItem.Property(UnWatchedEpisodes),$COMMA , $LOCALIZE[16101]]</value>
-		<value condition="Control.HasFocus(25) + !String.IsEmpty(Container(25).ListItem.Episode)">$INFO[Container(25).ListItem.Season]$INFO[Container(25).ListItem.Episode,x,. ]$INFO[Container(25).ListItem.Title]</value>		
+		<value condition="Control.HasFocus(25) + !String.IsEmpty(Container(25).ListItem.Episode)">$INFO[Container(25).ListItem.Season]$INFO[Container(25).ListItem.Episode,x,. ]$INFO[Container(25).ListItem.Title]</value>
 		<value condition="Control.HasFocus(25) + ![String.IsEmpty(Container(25).ListItem.Year) | String.IsEmpty(Container(25).ListItem.Rating) | String.IsEmpty(Container(25).ListItem.Duration)]">$INFO[Container(25).ListItem.Year]$INFO[Container(25).ListItem.Rating, • ]$VAR[ListItemDuration, • ,]</value>
 		<value condition="Control.HasFocus(25) + [String.IsEqual(Container(20).ListItem.Property(widgetType),albums) | String.IsEqual(Container(20).ListItem.Property(widgetType),music)] + !String.IsEmpty(Container(25).ListItem.Artist)">$INFO[Container(25).ListItem.Artist]</value>
 		<value condition="Control.HasFocus(25) + [String.IsEqual(Container(20).ListItem.Property(widget),Library) + String.IsEqual(Container(20).ListItem.Property(widgetType),Songs)] + !String.IsEmpty(Container(25).ListItem.Artist)">$INFO[Container(25).ListItem.Album]$INFO[Container(25).ListItem.Artist, - ]</value>
@@ -870,7 +870,7 @@
     <value condition="String.IsEqual(Container(20).ListItem.Property(Widget),NearConcerts) | String.IsEqual(Container(20).ListItem.Property(Widget),TopArtists)">Last.fm</value>
     <value condition="String.IsEqual(Container(20).ListItem.Property(Widget),RSSVideoFeeds)">YouTube</value>
   </variable>
- 
+
 	<variable name="RSSVideoFeedType">
 		<value condition="String.IsEqual(Skin.String(RSSVideoFeedType),Channel)">plugin://script.extendedinfo?info=youtubeplaylistvideos&amp;&amp;id=$INFO[Skin.String(RSSVideoFeedURL)]</value>
 		<value condition="String.IsEqual(Skin.String(RSSVideoFeedType),User)">plugin://script.extendedinfo?info=youtubeusersearchvideos&amp;&amp;id=$INFO[Skin.String(RSSVideoFeedURL)]</value>
