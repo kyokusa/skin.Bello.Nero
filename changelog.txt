@@ -1,8 +1,13 @@
+v7.0.1a - for Kodi Leia 18.xx Beta.4 (04/01/2019)
+
+- changes xbmc.gui 5.13 to 5.14
+_________________________________________________
+
 v7.0.0a - for Kodi Leia 18.xx Beta.4 (21/10/2018)
 
 - Update changes and corrections to Kodi-Leia 18.xx features
 - Implementation of all previous changes in this latest version
-- Modify the new NeroPulse Home + Themes + Modifications Themes 
+- Modify the new NeroPulse Home + Themes + Modifications Themes
 - Added and modify for Grab-Fanart
 - Added title artist playing fanart and Grab-Fanart home (no Weather-Multi)
 - Adjustment of the weather section and modify background images of the weather icons
