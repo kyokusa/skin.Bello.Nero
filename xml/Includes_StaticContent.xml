@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<includes> 
+<includes>
 
 	<!-- ==================== -->
 	<!-- == Settings Items == -->
@@ -178,20 +178,13 @@
             <onclick>CleanLibrary(Music)</onclick>
 		    <visible>!Skin.HasSetting(QuickNavCleanMusicLibraryButton)</visible>
 	     </item>
-	     <item id="15">
-			<label>$LOCALIZE[31380]</label>
-			<icon>special://skin/extras/icons/UpdateIMDb.png</icon>
-  		    <onclick>Dialog.Close(PlayerControls)</onclick>
-			<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=IMDBUpdate,header=$LOCALIZE[24069]...)</onclick>
-		    <visible>[System.HasAddon(script.imdbupdate) + System.HasAddon(script.skin.helper.service)] + !Skin.HasSetting(QuickNavUpdateIMDbRatingsButton)</visible>
-	     </item>
 	     <item id="16">
 			<label>$LOCALIZE[589]</label>
 			<icon>special://skin/extras/icons/PartyMode.png</icon>
   		    <onclick>Dialog.Close(PlayerControls)</onclick>
             <onclick>ActivateWindow(Music,Songs,return)</onclick>
             <onclick>PlayerControl(PartyMode)</onclick>
-<!--        
+<!--
             <onclick>AlarmClock(PartyMode,PlayerControl(PartyMode),00:01,silent)</onclick>
             <onclick>AlarmClock(GoFullscreen,Action(Fullscreen),00:02,silent)</onclick>
 -->
@@ -287,13 +280,13 @@
 		<include content="CustomItems_Item">
 			<param name="ItemIndex" value="10" />
 		</include>
-  </include>  
-    
+  </include>
+
 	<!-- =================== -->
 	<!-- == Weather Items == -->
 	<!-- =================== -->
 	<!-- for support Widgets Background Icon Weather Animated -->
-	
+
   <include name="Weather10Days_Item">
 		<item>
 		    <icon>$VAR[WeatherIconsPathMulti]$INFO[Window(Weather).Property(Daily.$PARAM[DailyIndex].FanartCode)]$VAR[WeatherIconsMulti]</icon>
@@ -333,7 +326,7 @@
 		</include>
 		<include content="Weather10Days_Item">
 			<param name="DailyIndex" value="7" />
-		</include>			
+		</include>
   </include>
-  
+
 </includes>

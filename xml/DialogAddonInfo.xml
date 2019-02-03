@@ -3,7 +3,7 @@
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<onload>ClearProperty(addoninfo)</onload>
 	<controls>
-	
+
 		<control type="group">
 			<visible>!Window.IsActive(AddonSettings)
 				     + !Window.IsActive(TextViewer)
@@ -439,7 +439,7 @@
 				  <include>TopMenuButton</include>
 					<label></label>
 				</control>
-				<!-- 
+				<!--
 				<control type="togglebutton" id="130">
 					<description>Auto-Update</description>
 					<label>$INFO[Control.GetLabel(13)]: $LOCALIZE[31012]</label>

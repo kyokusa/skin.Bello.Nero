@@ -170,15 +170,6 @@
 				<onclick>Skin.ToggleSetting(QuickNavCleanMusicLibraryButton)</onclick>
 				<selected>!Skin.HasSetting(QuickNavCleanMusicLibraryButton)</selected>
 			</control>
-			<control type="radiobutton" id="8625">
-				<description>Update IMDb Ratings Button</description>
-			  <width>425</width>
-			  <textwidth>380</textwidth>
-        <include>DialogsButton</include>
-				<label>$LOCALIZE[31380]</label>
-				<onclick>Skin.ToggleSetting(QuickNavUpdateIMDbRatingsButton)</onclick>
-				<selected>!Skin.HasSetting(QuickNavUpdateIMDbRatingsButton)</selected>
-			</control>
 			<control type="radiobutton" id="8626">
 				<description>Favourites Button</description>
 			  <width>425</width>
@@ -513,12 +504,8 @@
 				<onclick>Skin.ToggleSetting(3DWallViewMusic)</onclick>
 				<selected>!Skin.HasSetting(3DWallViewMusic)</selected>
 			  <visible>String.IsEqual(Window(SkinSettings).Property(ManageButtons),managemusicviews)</visible>
-			</control>
+	  	</control>
 		</control>
-
-
-	</control>
+	 </control>
  </controls>
 </window>
-
-

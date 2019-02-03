@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<includes> 
+<includes>
 
  <!-- ======================= -->
  <!-- ===== EPG Timeline ==== -->
  <!-- ======================= -->
  <include name="EPGTimeline_View">
 	<control type="group">
-		<description>TV Guide Timeline</description>
-        <visible>Control.IsVisible(10)</visible>
+    <description>TV Guide Timeline</description>
+    <visible>Control.IsVisible(10)</visible>
 		<include>FullscreenDimensions</include>
-        <include>InfoDialogsVisible_ZoomAnimation</include>
-        <include>VisibleHiddenSlideAnimation</include>
-        <include>HomeMenu_OpenCloseSlideAnimation</include>
+    <include>InfoDialogsVisible_ZoomAnimation</include>
+    <include>VisibleHiddenSlideAnimation</include>
+    <include>HomeMenu_OpenCloseSlideAnimation</include>
 		<control type="epggrid" id="10">
 			<description>EPG Grid</description>
 			<left>35</left>
@@ -21,14 +21,13 @@
 			<onleft>9000</onleft>
 			<onright>9000</onright>
 			<onup>10</onup>
-			<ondown>10</ondown>
-			<onback>9000</onback>
+			<ondown>10</ondown>		
 			<pagecontrol>10</pagecontrol>
 			<scrolltime>250</scrolltime>
 			<timeblocks>40</timeblocks>
 			<rulerunit>6</rulerunit>
 			<viewtype label="19032">list</viewtype>
-		    <progresstexture border="0,59,19,19">windows/pvr/EPGProgressIndicator.png</progresstexture>
+		  <progresstexture border="0,59,19,19">windows/pvr/EPGProgressIndicator.png</progresstexture>
 			<rulerlayout height="50" width="40">
 				<control type="label" id="2">
 					<left>10</left>
@@ -44,24 +43,24 @@
 				</control>
 			</rulerlayout>
 			<channellayout height="50" width="340">
-	            <control type="group">
+	      <control type="group">
 					<control type="image">
-                        <description>Number Sep</description>
+            <description>Number Sep</description>
 						<left>10</left>
 						<top>0</top>
 						<width>60</width>
 						<height>45</height>
 						<texture>windows/pvr/seperator.png</texture>
-			            <include>VisibleFadeEffect2</include>
+			      <include>VisibleFadeEffect2</include>
 					</control>
 					<control type="image">
-                        <description>Channel Sep</description>
+            <description>Channel Sep</description>
 						<left>74</left>
 						<top>0</top>
 						<width>261</width>
 						<height>45</height>
 						<texture>windows/pvr/seperator.png</texture>
-			            <include>VisibleFadeEffect2</include>
+			      <include>VisibleFadeEffect2</include>
 					</control>
 					<control type="label">
 						<left>10</left>
@@ -87,7 +86,7 @@
 						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-					    <label>$INFO[ListItem.ChannelName]</label>
+					  <label>$INFO[ListItem.ChannelName]</label>
 					</control>
 					<control type="image">
 						<left>10</left>
@@ -95,23 +94,23 @@
 						<width>868</width>
 						<height>45</height>
 						<texture>windows/pvr/selected.png</texture>
-					    <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
+					  <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
 					</control>
-                </control>
+        </control>
 			</channellayout>
 			<focusedchannellayout height="50" width="340">
-	            <control type="group">
+	      <control type="group">
 					<control type="image">
-                        <description>Number Sep</description>
+            <description>Number Sep</description>
 						<left>10</left>
 						<top>0</top>
 						<width>60</width>
 						<height>45</height>
 						<texture>windows/pvr/seperator.png</texture>
-			            <include>VisibleFadeEffect2</include>
+			      <include>VisibleFadeEffect2</include>
 					</control>
 					<control type="image">
-                        <description>Number Focus</description>
+            <description>Number Focus</description>
 						<left>10</left>
 						<top>0</top>
 						<width>60</width>
@@ -120,16 +119,16 @@
 						<texture>windows/pvr/focus.png</texture>
 					</control>
 					<control type="image">
-                        <description>Channel Sep</description>
+            <description>Channel Sep</description>
 						<left>74</left>
 						<top>0</top>
 						<width>261</width>
 						<height>45</height>
 						<texture>windows/pvr/seperator.png</texture>
-			            <include>VisibleFadeEffect2</include>
+			      <include>VisibleFadeEffect2</include>
 					</control>
 					<control type="image">
-                        <description>Channel Focus</description>
+            <description>Channel Focus</description>
 						<left>74</left>
 						<top>0</top>
 						<width>261</width>
@@ -171,7 +170,7 @@
 						<texture>windows/pvr/selected.png</texture>
 					  <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
 					</control>
-                </control>
+        </control>
 			</focusedchannellayout>
 			<itemlayout height="50" width="102">
 				<control type="image" id="2">
@@ -309,29 +308,29 @@
 					<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-				    <label>$INFO[ListItem.Label]</label>
+				  <label>$INFO[ListItem.Label]</label>
 					<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
 				</control>
-                <control type="image">
-        	        <left>0</left>
-        	        <top>8</top>
-        	        <width>32</width>
-        	        <height>32</height>
-			    	<aspectratio>keep</aspectratio>
-        	        <texture>windows/pvr/rec.png</texture>
-			    	<animation effect="fade" start="70" end="100" time="800" pulse="true" condition="true">Conditional</animation>
-			    	<visible>ListItem.IsRecording</visible>
-                </control>
-                <control type="image">
-        	        <left>0</left>
-        	        <top>8</top>
-        	        <width>32</width>
-        	        <height>32</height>
-			    	<aspectratio>keep</aspectratio>
-			    	<colordiffuse>98ffffff</colordiffuse>
-        	        <texture>windows/pvr/timer_epg.png</texture>
-			        <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-                </control>
+        <control type="image">
+        	<left>0</left>
+        	<top>8</top>
+        	<width>32</width>
+        	<height>32</height>
+			    <aspectratio>keep</aspectratio>
+        	<texture>windows/pvr/rec.png</texture>
+			    <animation effect="fade" start="70" end="100" time="800" pulse="true" condition="true">Conditional</animation>
+			    <visible>ListItem.IsRecording</visible>
+        </control>
+        <control type="image">
+          <left>0</left>
+          <top>8</top>
+          <width>32</width>
+          <height>32</height>
+			    <aspectratio>keep</aspectratio>
+			    <colordiffuse>98ffffff</colordiffuse>
+        	<texture>windows/pvr/timer_epg.png</texture>
+			    <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+        </control>
 			</itemlayout>
 			<focusedlayout height="50" width="102">
 				<control type="image" id="2">
@@ -442,7 +441,7 @@
 					+ !String.IsEqual(ListItem.Property(GenreType),112) + !String.IsEqual(ListItem.Property(GenreType),128)
 					+ !String.IsEqual(ListItem.Property(GenreType),144) + !String.IsEqual(ListItem.Property(GenreType),160)
 					+ !String.IsEqual(ListItem.Property(GenreType),176)</visible>
-				</control>					
+				</control>
 				<control type="image" id="2">
 					<left>0</left>
 					<top>0</top>
@@ -479,103 +478,102 @@
 				  <label>$INFO[ListItem.Label]</label>
 					<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
 				</control>
-                <control type="image">
-                	<left>0</left>
-                	<top>8</top>
-                	<width>32</width>
-                	<height>32</height>
-		        	<aspectratio>keep</aspectratio>
-                	<texture>windows/pvr/rec.png</texture>
-		            <animation effect="fade" start="70" end="100" time="800" pulse="true" condition="true">Conditional</animation>
-		        	<visible>ListItem.IsRecording</visible>
-                </control>
-                <control type="image">
-                	<left>0</left>
-                	<top>8</top>
-                	<width>32</width>
-                	<height>32</height>
-					<aspectratio>keep</aspectratio>
+        <control type="image">
+        	<left>0</left>
+          <top>8</top>
+          <width>32</width>
+          <height>32</height>
+		      <aspectratio>keep</aspectratio>
+          <texture>windows/pvr/rec.png</texture>
+		      <animation effect="fade" start="70" end="100" time="800" pulse="true" condition="true">Conditional</animation>
+		      <visible>ListItem.IsRecording</visible>
+        </control>
+        <control type="image">
+        	<left>0</left>
+          <top>8</top>
+          <width>32</width>
+          <height>32</height>
+			    <aspectratio>keep</aspectratio>
 					<colordiffuse>ccffffff</colordiffuse>
-                 	<texture>windows/pvr/timer_epg.png</texture>
+        	<texture>windows/pvr/timer_epg.png</texture>
 					<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-                </control>
+        </control>
 			</focusedlayout>
 		</control>
-        <include>EPGTimelineInfo</include>
+    <include>EPGTimelineInfo</include>
 	</control>
  </include>
 
-
- <!-- =================== -->
- <!-- ===== EPG Now ===== -->
- <!-- =================== -->
+<!-- =================== -->
+<!-- ===== EPG Now ===== -->
+<!-- =================== -->
 <include name="EPGNow_View">
 	<control type="group">
 		<description>TV Guide Now</description>
-        <visible>Control.IsVisible(11)</visible>
+    <visible>Control.IsVisible(11)</visible>
 		<include>FullscreenDimensions</include>
-        <include>InfoDialogsVisible_ZoomAnimation</include>
-        <include>VisibleHiddenSlideAnimation</include>
-        <include>HomeMenu_OpenCloseSlideAnimation</include>
+    <include>InfoDialogsVisible_ZoomAnimation</include>
+    <include>VisibleHiddenSlideAnimation</include>
+    <include>HomeMenu_OpenCloseSlideAnimation</include>
 		<control type="list" id="11">
 			<left>35</left>
 			<top>105</top>
 			<width>1200</width>
 			<height>540</height>
-            <onleft>131</onleft>
-            <onright>60</onright>
-            <onup>11</onup>
-            <ondown>11</ondown>
-            <preloaditems>2</preloaditems>
+      <onleft>131</onleft>
+      <onright>60</onright>
+      <onup>11</onup>
+      <ondown>11</ondown>
+      <preloaditems>2</preloaditems>
 			<viewtype label="19030">list</viewtype>
 			<pagecontrol>60</pagecontrol>
-		    <scrolltime tween="cubic" easing="out">300</scrolltime>
+		  <scrolltime tween="cubic" easing="out">300</scrolltime>
 			<itemlayout height="50">
-	            <control type="group">
+	      <control type="group">
 					<control type="image">
-                        <description>ChannelNumber Sep</description>
+            <description>ChannelNumber Sep</description>
 						<left>10</left>
 						<top>0</top>
 						<width>60</width>
 						<height>45</height>
 						<texture>windows/pvr/seperator.png</texture>
-			            <include>VisibleFadeEffect2</include>
+			      <include>VisibleFadeEffect2</include>
 					</control>
 					<control type="image">
-                        <description>ChannelName Sep</description>
+            <description>ChannelName Sep</description>
 						<left>74</left>
 						<top>0</top>
 						<width>265</width>
 						<height>45</height>
 						<texture>windows/pvr/seperator.png</texture>
-			            <include>VisibleFadeEffect2</include>
+			      <include>VisibleFadeEffect2</include>
 					</control>
 					<control type="image">
-                        <description>Description Sep</description>
+            <description>Description Sep</description>
 						<left>343</left>
 						<top>0</top>
 						<width>535</width>
 						<height>45</height>
 						<texture>windows/pvr/seperator.png</texture>
-			            <include>VisibleFadeEffect2</include>
+			      <include>VisibleFadeEffect2</include>
 					</control>
 					<control type="image">
-                        <description>Time Sep</description>
+            <description>Time Sep</description>
 						<left>882</left>
 						<top>0</top>
 						<width>157</width>
 						<height>45</height>
 						<texture>windows/pvr/seperator.png</texture>
-			            <include>VisibleFadeEffect2</include>
+			      <include>VisibleFadeEffect2</include>
 					</control>
 					<control type="image">
-                        <description>Duration Sep</description>
+            <description>Duration Sep</description>
 						<left>1043</left>
 						<top>0</top>
 						<width>157</width>
 						<height>45</height>
 						<texture>windows/pvr/seperator.png</texture>
-			            <include>VisibleFadeEffect2</include>
+			      <include>VisibleFadeEffect2</include>
 					</control>
 					<control type="label">
 						<left>10</left>
@@ -589,18 +587,18 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.ChannelNumber]</label>
-                        <visible>![ListItem.HasTimer + !ListItem.IsRecording]</visible>
+            <visible>![ListItem.HasTimer + !ListItem.IsRecording]</visible>
 					</control>
-                    <control type="image">
-                     	<left>25</left>
-          	            <top>10</top>
-          	            <width>32</width>
-                       	<height>32</height>
-				    	<aspectratio>keep</aspectratio>
-				        <colordiffuse>98ffffff</colordiffuse>
-          	            <texture>windows/pvr/timer.png</texture>
-                        <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-                    </control>
+          <control type="image">
+            <left>25</left>
+          	<top>10</top>
+          	<width>32</width>
+          	<height>32</height>
+				    <aspectratio>keep</aspectratio>
+				    <colordiffuse>98ffffff</colordiffuse>
+          	<texture>windows/pvr/timer.png</texture>
+            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+          </control>
 					<control type="label">
 						<left>87</left>
 						<top>0</top>
@@ -638,7 +636,7 @@
 						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-	                    <label>$INFO[ListItem.StartTime]</label>
+	          <label>$INFO[ListItem.StartTime]</label>
 					</control>
 					<control type="label">
 						<left>1046</left>
@@ -651,11 +649,11 @@
 						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-	                    <label>$INFO[ListItem.Duration]</label>
+	          <label>$INFO[ListItem.Duration]</label>
 					</control>
 					<control type="group">
 						<left>285</left>
-                        <visible>ListItem.IsRecording</visible>
+            <visible>ListItem.IsRecording</visible>
 						<control type="label">
 							<width>100</width>
 							<height>50</height>
@@ -667,14 +665,14 @@
 							<aligny>center</aligny>
 							<label>REC</label>
 						</control>
-                        <control type="image">
-            	            <left>21</left>
-            	            <top>9</top>
-            	            <width>32</width>
-            	            <height>32</height>
-				        	<aspectratio>keep</aspectratio>
-            	            <texture>windows/pvr/rec.png</texture>
-                        </control>
+            <control type="image">
+            	<left>21</left>
+            	<top>9</top>
+            	<width>32</width>
+            	<height>32</height>
+				      <aspectratio>keep</aspectratio>
+            	<texture>windows/pvr/rec.png</texture>
+            </control>
 					</control>
 					<control type="image">
 						<left>10</left>
@@ -684,13 +682,13 @@
 						<texture>windows/pvr/selected.png</texture>
 					  <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
 					</control>
-                </control>
+        </control>
 			</itemlayout>
 			<focusedlayout height="50">
 	        <control type="group">
 		      <include>PVRListFocusAnimation</include>
 					<control type="image">
-                        <description>ChannelNumber Sep</description>
+            <description>ChannelNumber Sep</description>
 						<left>10</left>
 						<top>0</top>
 						<width>60</width>
@@ -699,7 +697,7 @@
 						<texture>windows/pvr/focus.png</texture>
 					</control>
 					<control type="image">
-                        <description>ChannelName Sep</description>
+            <description>ChannelName Sep</description>
 						<left>74</left>
 						<top>0</top>
 						<width>265</width>
@@ -708,7 +706,7 @@
 						<texture>windows/pvr/focus.png</texture>
 					</control>
 					<control type="image">
-                        <description>Description Sep</description>
+            <description>Description Sep</description>
 						<left>343</left>
 						<top>0</top>
 						<width>535</width>
@@ -717,7 +715,7 @@
 						<texture>windows/pvr/focus.png</texture>
 					</control>
 					<control type="image">
-                        <description>Time Sep</description>
+            <description>Time Sep</description>
 						<left>882</left>
 						<top>0</top>
 						<width>157</width>
@@ -726,7 +724,7 @@
 						<texture>windows/pvr/focus.png</texture>
 					</control>
 					<control type="image">
-                        <description>Duration Sep</description>
+            <description>Duration Sep</description>
 						<left>1043</left>
 						<top>0</top>
 						<width>157</width>
@@ -746,18 +744,18 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.ChannelNumber]</label>
-                        <visible>!ListItem.HasTimer</visible>
+            <visible>!ListItem.HasTimer</visible>
 					</control>
-                    <control type="image">
-                     	<left>25</left>
-                    	<top>10</top>
-                    	<width>32</width>
-          	            <height>32</height>
-				     	<aspectratio>keep</aspectratio>
-				        <colordiffuse>ccffffff</colordiffuse>
-          	            <texture>windows/pvr/timer.png</texture>
-                        <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-                    </control>
+          <control type="image">
+           	<left>25</left>
+          	<top>10</top>
+          	<width>32</width>
+	          <height>32</height>
+          	<aspectratio>keep</aspectratio>
+            <colordiffuse>ccffffff</colordiffuse>
+	          <texture>windows/pvr/timer.png</texture>
+            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+          </control>
 					<control type="label">
 						<left>87</left>
 						<top>0</top>
@@ -795,7 +793,7 @@
 						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-	                    <label>$INFO[ListItem.StartTime]</label>
+	          <label>$INFO[ListItem.StartTime]</label>
 					</control>
 					<control type="label">
 						<left>1046</left>
@@ -808,30 +806,30 @@
 						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-	                    <label>$INFO[ListItem.Duration]</label>
+	          <label>$INFO[ListItem.Duration]</label>
 					</control>
 					<control type="group">
-					    <left>285</left>
-                        <visible>ListItem.IsRecording</visible>
-					    <control type="label">
-					    	<width>100</width>
-					    	<height>50</height>
-					    	<font>FontSize_12B</font>
-					    	<textcolor>white</textcolor>
-					    	<shadowcolor>77000000</shadowcolor>
-					    	<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-					    	<align>left</align>
-					    	<aligny>center</aligny>
-					    	<label>REC</label>
-					    </control>							
-                        <control type="image">
-            	            <left>21</left>
-            	            <top>9</top>
-            	            <width>32</width>
-            	            <height>32</height>
-					    	<aspectratio>keep</aspectratio>
-                         	<texture>windows/pvr/rec.png</texture>
-                        </control>
+					  <left>285</left>
+            <visible>ListItem.IsRecording</visible>
+					  <control type="label">
+					  	<width>100</width>
+					  	<height>50</height>
+					  	<font>FontSize_12B</font>
+					  	<textcolor>white</textcolor>
+					  	<shadowcolor>77000000</shadowcolor>
+					  	<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+					  	<align>left</align>
+					  	<aligny>center</aligny>
+					  	<label>REC</label>
+					  </control>
+            <control type="image">
+              <left>21</left>
+              <top>9</top>
+              <width>32</width>
+              <height>32</height>
+					  	<aspectratio>keep</aspectratio>
+              <texture>windows/pvr/rec.png</texture>
+            </control>
 					</control>
 					<control type="image">
 						<left>10</left>
@@ -841,7 +839,7 @@
 						<texture>windows/pvr/selected.png</texture>
 					  <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
 					</control>
-                </control>
+        </control>
 			</focusedlayout>
 		</control>
 		<control type="scrollbar" id="60">
@@ -863,77 +861,76 @@
 	</control>
  </include>
 
-
  <!-- ==================== -->
  <!-- ===== EPG Next ===== -->
  <!-- ==================== -->
  <include name="EPGNext_View">
 	<control type="group" id="110">
 		<description>TV Guide Next</description>
-        <visible>Control.IsVisible(12)</visible>
+    <visible>Control.IsVisible(12)</visible>
 		<include>FullscreenDimensions</include>
-        <include>InfoDialogsVisible_ZoomAnimation</include>
-        <include>VisibleHiddenSlideAnimation</include>
-        <include>HomeMenu_OpenCloseSlideAnimation</include>
+    <include>InfoDialogsVisible_ZoomAnimation</include>
+    <include>VisibleHiddenSlideAnimation</include>
+    <include>HomeMenu_OpenCloseSlideAnimation</include>
 		<control type="list" id="12">
 			<left>35</left>
 			<top>105</top>
 			<width>1200</width>
 			<height>540</height>
-            <onleft>131</onleft>
-            <onright>60</onright>
-            <onup>12</onup>
-            <ondown>12</ondown>
-            <preloaditems>2</preloaditems>
+      <onleft>131</onleft>
+      <onright>60</onright>
+      <onup>12</onup>
+      <ondown>12</ondown>
+      <preloaditems>2</preloaditems>
 			<viewtype label="19031">list</viewtype>
 			<pagecontrol>60</pagecontrol>
-		    <scrolltime tween="cubic" easing="out">300</scrolltime>
+		  <scrolltime tween="cubic" easing="out">300</scrolltime>
 			<itemlayout height="50">
-	      <control type="group">
-				<control type="image">
-                    <description>ChannelNumber Sep</description>
+	    <control type="group">
+			  <control type="image">
+          <description>ChannelNumber Sep</description>
 					<left>10</left>
 					<top>0</top>
 					<width>60</width>
 					<height>45</height>
 					<texture>windows/pvr/seperator.png</texture>
-			        <include>VisibleFadeEffect2</include>
+			    <include>VisibleFadeEffect2</include>
 				</control>
 				<control type="image">
-                    <description>ChannelName Sep</description>
+          <description>ChannelName Sep</description>
 					<left>74</left>
 					<top>0</top>
 					<width>265</width>
 					<height>45</height>
 					<texture>windows/pvr/seperator.png</texture>
-			        <include>VisibleFadeEffect2</include>
+			    <include>VisibleFadeEffect2</include>
 				</control>
 				<control type="image">
-                    <description>Description Sep</description>
+          <description>Description Sep</description>
 					<left>343</left>
 					<top>0</top>
 					<width>535</width>
 					<height>45</height>
 					<texture>windows/pvr/seperator.png</texture>
-			        <include>VisibleFadeEffect2</include>
+			    <include>VisibleFadeEffect2</include>
 				</control>
 				<control type="image">
-                    <description>Time Sep</description>
+          <description>Time Sep</description>
 					<left>882</left>
 					<top>0</top>
 					<width>157</width>
 					<height>45</height>
 					<texture>windows/pvr/seperator.png</texture>
-			        <include>VisibleFadeEffect2</include>
+			    <include>VisibleFadeEffect2</include>
 				</control>
 				<control type="image">
-                    <description>Duration Sep</description>
+          <description>Duration Sep</description>
 					<left>1043</left>
 					<top>0</top>
 					<width>157</width>
 					<height>45</height>
 					<texture>windows/pvr/seperator.png</texture>
-			        <include>VisibleFadeEffect2</include>
+			    <include>VisibleFadeEffect2</include>
 				</control>
 				<control type="label">
 					<left>10</left>
@@ -947,73 +944,73 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<label>$INFO[ListItem.ChannelNumber]</label>
-                    <visible>![ListItem.HasTimer + !ListItem.IsRecording]</visible>
+          <visible>![ListItem.HasTimer + !ListItem.IsRecording]</visible>
 				</control>
-                <control type="image">
-                 	<left>25</left>
-                	<top>10</top>
-          	        <width>32</width>
-          	        <height>32</height>
+        <control type="image">
+        	<left>25</left>
+        	<top>10</top>
+          <width>32</width>
+          <height>32</height>
 					<aspectratio>keep</aspectratio>
-				    <colordiffuse>98ffffff</colordiffuse>
-          	        <texture>windows/pvr/timer.png</texture>
-                    <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-                </control>
-					<control type="label">
-						<left>87</left>
-						<top>0</top>
-						<width>245</width>
-						<height>45</height>
-						<font>FontSize_22</font>
-						<textcolor>98ffffff</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.ChannelName]</label>
-					</control>
-					<control type="label">
-						<left>355</left>
-						<top>0</top>
-						<width>490</width>
-						<height>45</height>
-						<font>FontSize_20</font>
-						<textcolor>98ffffff</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="label">
-						<left>885</left>
-						<top>0</top>
-						<width>151</width>
-						<height>45</height>
-						<font>FontSize_20</font>
-						<textcolor>98ffffff</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-	                    <label>$INFO[ListItem.StartTime]</label>
-					</control>
-					<control type="label">
-						<left>1046</left>
-						<top>0</top>
-						<width>151</width>
-						<height>45</height>
-						<font>FontSize_20</font>
-						<textcolor>98ffffff</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-	                    <label>$INFO[ListItem.Duration]</label>
-					</control>
-					<control type="group">
-						<left>285</left>
-                        <visible>ListItem.IsRecording</visible>
+				  <colordiffuse>98ffffff</colordiffuse>
+          <texture>windows/pvr/timer.png</texture>
+          <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+        </control>
+				<control type="label">
+					<left>87</left>
+					<top>0</top>
+					<width>245</width>
+					<height>45</height>
+					<font>FontSize_22</font>
+					<textcolor>98ffffff</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.ChannelName]</label>
+				</control>
+				<control type="label">
+					<left>355</left>
+					<top>0</top>
+					<width>490</width>
+					<height>45</height>
+					<font>FontSize_20</font>
+					<textcolor>98ffffff</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<left>885</left>
+					<top>0</top>
+					<width>151</width>
+					<height>45</height>
+					<font>FontSize_20</font>
+					<textcolor>98ffffff</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+          <label>$INFO[ListItem.StartTime]</label>
+				</control>
+				<control type="label">
+					<left>1046</left>
+					<top>0</top>
+					<width>151</width>
+					<height>45</height>
+					<font>FontSize_20</font>
+					<textcolor>98ffffff</textcolor>
+					<shadowcolor>77000000</shadowcolor>
+					<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+	        <label>$INFO[ListItem.Duration]</label>
+				</control>
+				<control type="group">
+					<left>285</left>
+          <visible>ListItem.IsRecording</visible>
 					<control type="label">
 						<width>100</width>
 						<height>50</height>
@@ -1025,98 +1022,98 @@
 						<aligny>center</aligny>
 						<label>REC</label>
 					</control>
-                    <control type="image">
-                    	<left>21</left>
-                    	<top>9</top>
-                    	<width>32</width>
-                    	<height>32</height>
-			        	<aspectratio>keep</aspectratio>
-                    	<texture>windows/pvr/rec.png</texture>
-                    </control>
-				    </control>
-					<control type="image">
-						<left>10</left>
-						<top>0</top>
-						<width>868</width>
-						<height>45</height>
-						<texture>windows/pvr/selected.png</texture>
-					  <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
-					</control>
-                </control>
+          <control type="image">
+            <left>21</left>
+            <top>9</top>
+            <width>32</width>
+            <height>32</height>
+			      <aspectratio>keep</aspectratio>
+            <texture>windows/pvr/rec.png</texture>
+          </control>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>0</top>
+					<width>868</width>
+					<height>45</height>
+					<texture>windows/pvr/selected.png</texture>
+				  <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
+				</control>
+      </control>
 			</itemlayout>
 			<focusedlayout height="50">
-	        <control type="group">
-		        <include>PVRListFocusAnimation</include>
-					<control type="image">
-                        <description>ChannelNumber Sep</description>
-						<left>10</left>
-						<top>0</top>
-						<width>60</width>
-						<height>45</height>
-						<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-						<texture>windows/pvr/focus.png</texture>
-					</control>
-					<control type="image">
-                        <description>ChannelName Sep</description>
-						<left>74</left>
-						<top>0</top>
-						<width>265</width>
-						<height>45</height>
-						<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-						<texture>windows/pvr/focus.png</texture>
-					</control>
-					<control type="image">
-                        <description>Description Sep</description>
-						<left>343</left>
-						<top>0</top>
-						<width>535</width>
-						<height>45</height>
-						<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-						<texture>windows/pvr/focus.png</texture>
-					</control>
-					<control type="image">
-                        <description>Time Sep</description>
-						<left>882</left>
-						<top>0</top>
-						<width>157</width>
-						<height>45</height>
-						<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-						<texture>windows/pvr/focus.png</texture>
-					</control>
-					<control type="image">
-                        <description>Duration Sep</description>
-						<left>1043</left>
-						<top>0</top>
-						<width>157</width>
-						<height>45</height>
-						<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-						<texture>windows/pvr/focus.png</texture>
-					</control>
-					<control type="label">
-						<left>10</left>
-						<top>0</top>
-						<width>60</width>
-						<height>45</height>
-						<font>FontSize_22</font>
-						<textcolor>white</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.ChannelNumber]</label>
-                        <visible>!ListItem.HasTimer</visible>
-					</control>
-                    <control type="image">
-                    	<left>25</left>
-                    	<top>10</top>
-                    	<width>32</width>
-                    	<height>32</height>
-			          	<aspectratio>keep</aspectratio>
-			          	<colordiffuse>ccffffff</colordiffuse>
-                    	<texture>windows/pvr/timer.png</texture>
-                        <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-                    </control>
-					<control type="label">
+	      <control type="group">
+		    <include>PVRListFocusAnimation</include>
+			    <control type="image">
+            <description>ChannelNumber Sep</description>
+				    <left>10</left>
+				    <top>0</top>
+				    <width>60</width>
+				    <height>45</height>
+				    <colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+				    <texture>windows/pvr/focus.png</texture>
+			    </control>
+			    <control type="image">
+            <description>ChannelName Sep</description>
+				    <left>74</left>
+				    <top>0</top>
+				    <width>265</width>
+				    <height>45</height>
+				    <colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+				    <texture>windows/pvr/focus.png</texture>
+			    </control>
+			    <control type="image">
+            <description>Description Sep</description>
+				    <left>343</left>
+				    <top>0</top>
+				    <width>535</width>
+				    <height>45</height>
+				    <colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+				    <texture>windows/pvr/focus.png</texture>
+			    </control>
+			    <control type="image">
+            <description>Time Sep</description>
+				    <left>882</left>
+				    <top>0</top>
+				    <width>157</width>
+				    <height>45</height>
+				    <colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+				    <texture>windows/pvr/focus.png</texture>
+			    </control>
+			    <control type="image">
+            <description>Duration Sep</description>
+				    <left>1043</left>
+				    <top>0</top>
+				    <width>157</width>
+				    <height>45</height>
+				    <colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+				    <texture>windows/pvr/focus.png</texture>
+			    </control>
+			    <control type="label">
+			    	<left>10</left>
+			    	<top>0</top>
+			    	<width>60</width>
+			    	<height>45</height>
+			    	<font>FontSize_22</font>
+			    	<textcolor>white</textcolor>
+			    	<shadowcolor>77000000</shadowcolor>
+			    	<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+			    	<align>center</align>
+			    	<aligny>center</aligny>
+			    	<label>$INFO[ListItem.ChannelNumber]</label>
+            <visible>!ListItem.HasTimer</visible>
+		     	</control>
+          <control type="image">
+          	<left>25</left>
+          	<top>10</top>
+          	<width>32</width>
+          	<height>32</height>
+			     	<aspectratio>keep</aspectratio>
+			     	<colordiffuse>ccffffff</colordiffuse>
+          	<texture>windows/pvr/timer.png</texture>
+            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+          </control>
+			    <control type="label">
 						<left>87</left>
 						<top>0</top>
 						<width>245</width>
@@ -1153,7 +1150,7 @@
 						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-	                    <label>$INFO[ListItem.StartTime]</label>
+	          <label>$INFO[ListItem.StartTime]</label>
 					</control>
 					<control type="label">
 						<left>1046</left>
@@ -1166,11 +1163,11 @@
 						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-	                    <label>$INFO[ListItem.Duration]</label>
+	          <label>$INFO[ListItem.Duration]</label>
 					</control>
 					<control type="group">
-						    <left>285</left>
-                            <visible>ListItem.IsRecording</visible>
+						<left>285</left>
+            <visible>ListItem.IsRecording</visible>
 						<control type="label">
 							<width>100</width>
 							<height>50</height>
@@ -1181,15 +1178,15 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<label>REC</label>
-						</control>							
-                        <control type="image">
-                        	<left>21</left>
-                        	<top>9</top>
-                        	<width>32</width>
-                        	<height>32</height>
-			            	<aspectratio>keep</aspectratio>
-                        	<texture>windows/pvr/rec.png</texture>
-                        </control>
+						</control>
+            <control type="image">
+            	<left>21</left>
+            	<top>9</top>
+            	<width>32</width>
+            	<height>32</height>
+      	      <aspectratio>keep</aspectratio>
+            	<texture>windows/pvr/rec.png</texture>
+            </control>
 					</control>
 					<control type="image">
 						<left>10</left>
@@ -1199,7 +1196,7 @@
 						<texture>windows/pvr/selected.png</texture>
 					  <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
 					</control>
-                </control>
+        </control>
 			</focusedlayout>
 		</control>
 		<control type="scrollbar" id="60">
@@ -1221,52 +1218,51 @@
 	</control>
  </include>
 
-
  <!-- ======================= -->
  <!-- ===== EPG Channel ===== -->
  <!-- ======================= -->
  <include name="EPGChannel_View">
 	<control type="group">
 		<description>TV Guide Channel</description>
-        <visible>Control.IsVisible(13)</visible>
+    <visible>Control.IsVisible(13)</visible>
 		<include>FullscreenDimensions</include>
-        <include>InfoDialogsVisible_ZoomAnimation</include>
-        <include>VisibleHiddenSlideAnimation</include>
-        <include>HomeMenu_OpenCloseSlideAnimation</include>
+    <include>InfoDialogsVisible_ZoomAnimation</include>
+    <include>VisibleHiddenSlideAnimation</include>
+    <include>HomeMenu_OpenCloseSlideAnimation</include>
 		<control type="group">
-				<left>917</left>
-				<top>105</top>
-                <visible>Integer.IsGreater(Container(13).NumItems,0)</visible>
+			<left>917</left>
+			<top>105</top>
+      <visible>Integer.IsGreater(Container(13).NumItems,0)</visible>
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
 				<width>318</width>
 				<height>540</height>
 				<texture border="5">windows/pvr/seperator.png</texture>
-		        <include>VisibleFadeEffect2</include>
+		    <include>VisibleFadeEffect2</include>
 			</control>
-        <control type="label">
-            <left>10</left>
-            <top>0</top>
-            <width>295</width>
-			<height>35</height>
-            <font>FontSize_20B</font>
-            <label>$INFO[Container(13).ListItem.Title]</label>
-            <textcolor>98ffffff</textcolor>
-            <shadowcolor>77000000</shadowcolor>
-            <scroll>false</scroll>
-        </control>
-        <control type="label">
-            <left>10</left>
-            <top>27</top>
-            <width>295</width>
-			<height>25</height>
-            <font>FontSize_18</font>
-			<label>$INFO[Container(13).ListItem.Genre]</label>
-            <textcolor>98ffffff</textcolor>
-            <shadowcolor>77000000</shadowcolor>
-            <scroll>false</scroll>
-        </control>
+      <control type="label">
+        <left>10</left>
+        <top>0</top>
+        <width>295</width>
+			  <height>35</height>
+        <font>FontSize_20B</font>
+        <label>$INFO[Container(13).ListItem.Title]</label>
+        <textcolor>98ffffff</textcolor>
+        <shadowcolor>77000000</shadowcolor>
+        <scroll>false</scroll>
+      </control>
+      <control type="label">
+        <left>10</left>
+        <top>27</top>
+        <width>295</width>
+			  <height>25</height>
+        <font>FontSize_18</font>
+			  <label>$INFO[Container(13).ListItem.Genre]</label>
+        <textcolor>98ffffff</textcolor>
+        <shadowcolor>77000000</shadowcolor>
+        <scroll>false</scroll>
+      </control>
 			<control type="textbox">
 				<left>10</left>
 				<top>57</top>
@@ -1277,13 +1273,13 @@
 				<shadowcolor>77000000</shadowcolor>
 				<align>justify</align>
 				<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-                <info>Container(13).ListItem.Plot</info>
+        <info>Container(13).ListItem.Plot</info>
 			</control>
 		</control>
 		<control type="group">
 			<left>35</left>
 			<top>270</top>
-            <visible>!Integer.IsGreater(Container(13).NumItems,0)</visible>
+      <visible>!Integer.IsGreater(Container(13).NumItems,0)</visible>
 			<include>PVRListFocusAnimation</include>
 			<control type="image">
 				<left>10</left>
@@ -1311,7 +1307,7 @@
 				<shadowcolor>77000000</shadowcolor>
 				<align>left</align>
 				<aligny>center</aligny>
-                <label>..</label>
+        <label>..</label>
 			</control>
 			<control type="label">
 				<left>87</left>
@@ -1323,7 +1319,7 @@
 				<shadowcolor>77000000</shadowcolor>
 				<align>left</align>
 				<aligny>center</aligny>
-                <label>$LOCALIZE[19055]</label>
+        <label>$LOCALIZE[19055]</label>
 			</control>
 		</control>
 		<control type="list" id="13">
@@ -1331,18 +1327,18 @@
 			<top>105</top>
 			<width>1190</width>
 			<height>540</height>
-            <onleft>131</onleft>
-            <onright>60</onright>
-            <onup>13</onup>
-            <ondown>13</ondown>
-            <preloaditems>2</preloaditems>
+      <onleft>131</onleft>
+      <onright>60</onright>
+      <onup>13</onup>
+      <ondown>13</ondown>
+      <preloaditems>2</preloaditems>
 			<viewtype label="19029">list</viewtype>
 			<pagecontrol>60</pagecontrol>
-		    <scrolltime tween="cubic" easing="out">300</scrolltime>
+		  <scrolltime tween="cubic" easing="out">300</scrolltime>
 			<itemlayout height="50">
-	    <control type="group">
+	  <control type="group">
 		<control type="image">
-            <description>ChannelNumber Sep</description>
+      <description>ChannelNumber Sep</description>
 			<left>10</left>
 			<top>0</top>
 			<width>60</width>
@@ -1351,7 +1347,7 @@
 			<include>VisibleFadeEffect2</include>
 		</control>
 		<control type="image">
-            <description>Title Sep</description>
+      <description>Title Sep</description>
 			<left>74</left>
 			<top>0</top>
 			<width>392</width>
@@ -1360,16 +1356,16 @@
 			<include>VisibleFadeEffect2</include>
 		</control>
 		<control type="image">
-            <description>Date Sep</description>
+      <description>Date Sep</description>
 			<left>470</left>
 			<top>0</top>
 			<width>202</width>
 			<height>45</height>
 			<texture>windows/pvr/seperator.png</texture>
-		    <include>VisibleFadeEffect2</include>
+		  <include>VisibleFadeEffect2</include>
 		</control>
 		<control type="image">
-            <description>Time Sep</description>
+      <description>Time Sep</description>
 			<left>676</left>
 			<top>0</top>
 			<width>202</width>
@@ -1377,16 +1373,16 @@
 			<texture>windows/pvr/seperator.png</texture>
 			<include>VisibleFadeEffect2</include>
 		</control>
-        <control type="image">
-          	<left>427</left>
-          	<top>8</top>
-          	<width>32</width>
-          	<height>32</height>
+    <control type="image">
+      <left>427</left>
+      <top>8</top>
+      <width>32</width>
+      <height>32</height>
 			<aspectratio>keep</aspectratio>
 			<colordiffuse>98ffffff</colordiffuse>
-          	<texture>windows/pvr/timer.png</texture>
-            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-        </control>
+      <texture>windows/pvr/timer.png</texture>
+      <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+    </control>
 		<control type="label">
 			<left>10</left>
 			<top>0</top>
@@ -1424,7 +1420,7 @@
 			<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 			<align>center</align>
 			<aligny>center</aligny>
-	        <label>$INFO[ListItem.StartDate]</label>
+	    <label>$INFO[ListItem.StartDate]</label>
 		</control>
 		<control type="label">
 			<left>680</left>
@@ -1437,55 +1433,55 @@
 			<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 			<align>center</align>
 			<aligny>center</aligny>
-	        <label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ]</label>
+	    <label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ]</label>
 		</control>
 		<control type="group">
 			<left>413</left>
-            <visible>ListItem.IsRecording</visible>
-		<control type="label">
-			<width>100</width>
-			<height>50</height>
-			<font>FontSize_12B</font>
-			<textcolor>98ffffff</textcolor>
-			<shadowcolor>77000000</shadowcolor>
-			<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-			<align>left</align>
-			<aligny>center</aligny>
-			<label>REC</label>
+      <visible>ListItem.IsRecording</visible>
+		  <control type="label">
+		  	<width>100</width>
+		  	<height>50</height>
+		  	<font>FontSize_12B</font>
+		  	<textcolor>98ffffff</textcolor>
+		  	<shadowcolor>77000000</shadowcolor>
+		  	<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+		  	<align>left</align>
+		  	<aligny>center</aligny>
+		  	<label>REC</label>
+		  </control>
+      <control type="image">
+        <left>21</left>
+        <top>9</top>
+        <width>32</width>
+        <height>32</height>
+			  <aspectratio>keep</aspectratio>
+        <texture>windows/pvr/rec.png</texture>
+      </control>
 		</control>
-        <control type="image">
-            <left>21</left>
-            <top>9</top>
-            <width>32</width>
-            <height>32</height>
-			<aspectratio>keep</aspectratio>
-            <texture>windows/pvr/rec.png</texture>
-        </control>
+	 	<control type="image">
+	 		<left>10</left>
+	 		<top>0</top>
+	 		<width>868</width>
+	 		<height>45</height>
+	 		<texture>windows/pvr/selected.png</texture>
+	 	  <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
+	 	</control>
+    </control>
+		</itemlayout>
+		<focusedlayout height="50">
+	  <control type="group">
+		  <include>PVRListFocusAnimation</include>
+		  <control type="image">
+        <description>ChannelNumber Sep</description>
+			  <left>10</left>
+			  <top>0</top>
+			  <width>60</width>
+			  <height>45</height>
+			  <colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+			  <texture>windows/pvr/focus.png</texture>
 		</control>
 		<control type="image">
-			<left>10</left>
-			<top>0</top>
-			<width>868</width>
-			<height>45</height>
-			<texture>windows/pvr/selected.png</texture>
-		    <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
-		</control>
-        </control>
-			</itemlayout>
-			<focusedlayout height="50">
-	    <control type="group">
-		    <include>PVRListFocusAnimation</include>
-		<control type="image">
-            <description>ChannelNumber Sep</description>
-			<left>10</left>
-			<top>0</top>
-			<width>60</width>
-			<height>45</height>
-			<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-			<texture>windows/pvr/focus.png</texture>
-		</control>
-		<control type="image">
-            <description>Title Sep</description>
+      <description>Title Sep</description>
 			<left>74</left>
 			<top>0</top>
 			<width>392</width>
@@ -1494,7 +1490,7 @@
 			<texture>windows/pvr/focus.png</texture>
 		</control>
 		<control type="image">
-            <description>Date Sep</description>
+      <description>Date Sep</description>
 			<left>470</left>
 			<top>0</top>
 			<width>202</width>
@@ -1503,7 +1499,7 @@
 			<texture>windows/pvr/focus.png</texture>
 		</control>
 		<control type="image">
-            <description>Time Sep</description>
+      <description>Time Sep</description>
 			<left>676</left>
 			<top>0</top>
 			<width>202</width>
@@ -1511,71 +1507,71 @@
 			<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
 			<texture>windows/pvr/focus.png</texture>
 		</control>
-        <control type="image">
-          	<left>427</left>
-          	<top>8</top>
-          	<width>32</width>
-          	<height>32</height>
+    <control type="image">
+    	<left>427</left>
+    	<top>8</top>
+    	<width>32</width>
+    	<height>32</height>
 			<aspectratio>keep</aspectratio>
 			<colordiffuse>ccffffff</colordiffuse>
-          	<texture>windows/pvr/timer.png</texture>
-            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-        </control>
-			<control type="label">
-				<left>10</left>
-				<top>0</top>
-				<width>60</width>
-				<height>45</height>
-				<font>FontSize_22</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>77000000</shadowcolor>
-				<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-				<align>center</align>
-				<aligny>center</aligny>
-				<label fallback="..">$INFO[ListItem.ChannelNumber]</label>
-			</control>
-			<control type="label">
-				<left>87</left>
-				<top>0</top>
-				<width>320</width>
-				<height>45</height>
-				<font>FontSize_20</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>77000000</shadowcolor>
-				<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-				<align>left</align>
-				<aligny>center</aligny>
-				<label>$INFO[ListItem.Label]</label>
-			</control>
-			<control type="label">
-				<left>470</left>
-				<top>0</top>
-				<width>200</width>
-				<height>45</height>
-				<font>FontSize_20</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>77000000</shadowcolor>
-				<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-				<align>center</align>
-				<aligny>center</aligny>
-	            <label>$INFO[ListItem.StartDate]</label>
-			</control>
-			<control type="label">
-				<left>680</left>
-				<top>0</top>
-				<width>195</width>
-				<height>45</height>
-				<font>FontSize_20</font>
-				<textcolor>white</textcolor>
-				<shadowcolor>77000000</shadowcolor>
-				<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-				<align>center</align>
-				<aligny>center</aligny>
-	            <label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ]</label>
-			</control>
-			<control type="group">
-			    <left>413</left>
-                <visible>ListItem.IsRecording</visible>
+    	<texture>windows/pvr/timer.png</texture>
+      <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+    </control>
+		<control type="label">
+			<left>10</left>
+			<top>0</top>
+			<width>60</width>
+			<height>45</height>
+			<font>FontSize_22</font>
+			<textcolor>white</textcolor>
+			<shadowcolor>77000000</shadowcolor>
+			<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+			<align>center</align>
+			<aligny>center</aligny>
+			<label fallback="..">$INFO[ListItem.ChannelNumber]</label>
+		</control>
+		<control type="label">
+			<left>87</left>
+			<top>0</top>
+			<width>320</width>
+			<height>45</height>
+			<font>FontSize_20</font>
+			<textcolor>white</textcolor>
+			<shadowcolor>77000000</shadowcolor>
+			<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+			<align>left</align>
+			<aligny>center</aligny>
+			<label>$INFO[ListItem.Label]</label>
+		</control>
+		<control type="label">
+			<left>470</left>
+			<top>0</top>
+			<width>200</width>
+			<height>45</height>
+			<font>FontSize_20</font>
+			<textcolor>white</textcolor>
+			<shadowcolor>77000000</shadowcolor>
+			<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+			<align>center</align>
+			<aligny>center</aligny>
+      <label>$INFO[ListItem.StartDate]</label>
+		</control>
+		<control type="label">
+			<left>680</left>
+			<top>0</top>
+			<width>195</width>
+			<height>45</height>
+			<font>FontSize_20</font>
+			<textcolor>white</textcolor>
+			<shadowcolor>77000000</shadowcolor>
+			<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+			<align>center</align>
+			<aligny>center</aligny>
+      <label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ]</label>
+		</control>
+		<control type="group">
+			<left>413</left>
+      <visible>ListItem.IsRecording</visible>
 			<control type="label">
 				<width>100</width>
 				<height>50</height>
@@ -1587,14 +1583,14 @@
 				<aligny>center</aligny>
 				<label>REC</label>
 			</control>
-            <control type="image">
-            	<left>21</left>
-            	<top>9</top>
-            	<width>32</width>
-            	<height>32</height>
+      <control type="image">
+        <left>21</left>
+        <top>9</top>
+        <width>32</width>
+        <height>32</height>
 				<aspectratio>keep</aspectratio>
-            	<texture>windows/pvr/rec.png</texture>
-            </control>
+        <texture>windows/pvr/rec.png</texture>
+      </control>
 		</control>
 		<control type="image">
 			<left>10</left>
@@ -1604,759 +1600,758 @@
 			<texture>windows/pvr/selected.png</texture>
 			<visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
 		</control>
+  </control>
+	</focusedlayout>
+	  </control>
+	    <control type="scrollbar" id="60">
+	    	<left>914</left>
+	    	<top>269</top>
+	    	<width>2</width>
+	    	<height>347</height>
+	    	<texturesliderbackground/>
+	    	<texturesliderbar border="0,14,0,14">views/scrollbar/scrollbar_pvr.png</texturesliderbar>
+	    	<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar_pvr.png</texturesliderbarfocus>
+	    	<textureslidernib/>
+	    	<textureslidernibfocus/>
+	    	<onleft>13</onleft>
+	    	<onright>13</onright>
+	    	<showonepage>false</showonepage>
+	    	<orientation>vertical</orientation>
+	      <animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60)">Conditional</animation>
+	    </control>
+	  </control>
+  </include>
+
+  <!-- ================================= -->
+  <!-- ===== Channels FullList View ==== -->
+  <!-- ================================= -->
+  <include name="FullList_View">
+    <control type="group">
+    	<description>Channels</description>
+      <visible>Control.IsVisible(50)</visible>
+    	<include>FullscreenDimensions</include>
+      <include>InfoDialogsVisible_ZoomAnimation</include>
+      <include>VisibleHiddenSlideAnimation</include>
+      <include>HomeMenu_OpenCloseSlideAnimation</include>
+      <control type="group">
+    	  <left>917</left>
+    	  <top>105</top>
+    	  <control type="image">
+          <description>Plot panel</description>
+    		  <left>0</left>
+    		  <top>0</top>
+    		  <width>318</width>
+    		  <height>540</height>
+    		  <texture border="4">windows/pvr/seperator.png</texture>
+          <include>VisibleFadeEffect2</include>
+       	</control>
+        <control type="label">
+          <left>10</left>
+          <top>5</top>
+          <width>295</width>
+    	    <height>35</height>
+          <font>FontSize_20B</font>
+          <label fallback="..">$INFO[Container(50).ListItem.Title]</label>
+          <textcolor>98ffffff</textcolor>
+          <shadowcolor>77000000</shadowcolor>
+          <scroll>false</scroll>
+          <visible>Container(50).ListItem.HasEpg</visible>
+        </control>
+        <control type="label">
+          <left>10</left>
+          <top>32</top>
+          <width>295</width>
+    	    <height>25</height>
+          <font>FontSize_18</font>
+    	    <label>$INFO[Container(50).ListItem.StartTime,, - ]$INFO[Container(50).ListItem.EndTime]</label>
+          <textcolor>98ffffff</textcolor>
+          <shadowcolor>77000000</shadowcolor>
+          <scroll>false</scroll>
+          <visible>Container(50).ListItem.HasEpg</visible>
+        </control>
+    	  <control type="textbox">
+    		  <left>10</left>
+    		  <top>65</top>
+    		  <width>295</width>
+    		  <height>227</height>
+    		  <font>FontSize_18</font>
+    		  <textcolor>98ffffff</textcolor>
+    		  <shadowcolor>77000000</shadowcolor>
+    		  <align>justify</align>
+    		  <autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+          <label>$INFO[Container(50).ListItem.Plot]</label>
+    	  </control>
+        <control type="label">
+          <left>10</left>
+          <top>300</top>
+          <width>295</width>
+        	<height>45</height>
+          <font>FontSize_18</font>
+          <label>$INFO[Container(50).ListItem.NextTitle,[B]$LOCALIZE[19031]:[/B] , ]$INFO[Container(50).ListItem.NextStartTime,(,)]</label>
+          <textcolor>98ffffff</textcolor>
+          <shadowcolor>77000000</shadowcolor>
+          <scroll>false</scroll>
+          <visible>Container(50).ListItem.HasEpg</visible>
+        </control>
+      </control>
+
+      <!-- add PVR Group -->
+    	<control type="list" id="50">
+    		<left>35</left>
+    		<top>105</top>
+    		<width>1190</width>
+    		<height>540</height>
+    		<onleft>28</onleft>
+    		<onright>60</onright>
+    		<onup>50</onup>
+    		<ondown>50</ondown>
+        <preloaditems>2</preloaditems>
+    		<viewtype label="537">list</viewtype>
+    		<pagecontrol>60</pagecontrol>
+    	  <scrolltime tween="cubic" easing="out">300</scrolltime>
+    		<itemlayout height="50">
+    		<control type="image">
+          <description>Number Sep</description>
+    			<left>10</left>
+    			<top>0</top>
+    			<width>60</width>
+    			<height>45</height>
+    			<texture>windows/pvr/seperator.png</texture>
+    	    <include>VisibleFadeEffect2</include>
+    		</control>
+    		<control type="image">
+          <description>Label Sep</description>
+    			<left>74</left>
+    			<top>0</top>
+    			<width>265</width>
+    			<height>45</height>
+    			<texture>windows/pvr/seperator.png</texture>
+    	    <include>VisibleFadeEffect2</include>
+    		</control>
+    		<control type="image">
+          <description>Title Sep</description>
+    			<left>343</left>
+    			<top>0</top>
+    			<width>535</width>
+    			<height>45</height>
+    			<texture>windows/pvr/seperator.png</texture>
+          <include>VisibleFadeEffect2</include>
+    		</control>
+    		<control type="label">
+    			<left>10</left>
+    			<top>0</top>
+    			<width>60</width>
+    			<height>45</height>
+    			<font>FontSize_22</font>
+    			<textcolor>98ffffff</textcolor>
+    			<shadowcolor>77000000</shadowcolor>
+    			<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+    			<align>center</align>
+    			<aligny>center</aligny>
+    			<label>$INFO[ListItem.ChannelNumber]</label>
+          <visible>![ListItem.HasTimer + !ListItem.IsRecording]</visible>
+    		</control>
+          <control type="image">
+        	<left>25</left>
+        	<top>10</top>
+        	<width>32</width>
+        	<height>32</height>
+        	<aspectratio>keep</aspectratio>
+        	<colordiffuse>98ffffff</colordiffuse>
+        	<texture>windows/pvr/timer.png</texture>
+          <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+        </control>
+    		<control type="label">
+    			<left>87</left>
+    			<top>0</top>
+    			<width>245</width>
+    			<height>45</height>
+    			<font>FontSize_22</font>
+    			<textcolor>98ffffff</textcolor>
+    			<shadowcolor>77000000</shadowcolor>
+    			<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+    			<align>left</align>
+    			<aligny>center</aligny>
+    			<label>$INFO[ListItem.Label]</label>
+    		</control>
+    		<control type="label">
+    			<left>355</left>
+    			<top>0</top>
+    			<width>490</width>
+    			<height>45</height>
+    			<font>FontSize_20</font>
+    			<textcolor>98ffffff</textcolor>
+    			<shadowcolor>77000000</shadowcolor>
+    			<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+    			<align>left</align>
+    			<aligny>center</aligny>
+    			<label fallback="..">$INFO[ListItem.Title]</label>
+    		</control>
+    		<control type="group">
+    			<left>285</left>
+          <visible>ListItem.IsRecording</visible>
+    			<control type="label">
+    				<width>100</width>
+    				<height>50</height>
+    				<font>FontSize_12B</font>
+    				<textcolor>98ffffff</textcolor>
+    				<shadowcolor>77000000</shadowcolor>
+    				<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+    				<align>left</align>
+    				<aligny>center</aligny>
+    				<label>REC</label>
+    			</control>
+          <control type="image">
+          	<left>21</left>
+          	<top>9</top>
+          	<width>32</width>
+          	<height>32</height>
+           	<aspectratio>keep</aspectratio>
+          	<texture>windows/pvr/rec.png</texture>
+          </control>
+    		</control>
+    		<control type="group">
+    		  <description>Progress</description>
+    		  <visible>ListItem.HasEpg</visible>
+    		  <left>837</left>
+    		  <top>5</top>
+    		  <control type="image">
+    		  	<width>36</width>
+    		  	<height>36</height>
+    		  	<aspectratio>stretch</aspectratio>
+    		  	<texture>windows/pvr/clock_progress/back.png</texture>
+    			</control>
+    			<control type="image">
+    				<width>36</width>
+    				<height>36</height>
+    				<aspectratio>stretch</aspectratio>
+    			  <colordiffuse>98ffffff</colordiffuse>
+    				<texture>$VAR[PVRTimeProgress]</texture>
+    			</control>
+    		</control>
+    		<control type="image">
+    			<left>10</left>
+    			<top>0</top>
+    			<width>868</width>
+    			<height>45</height>
+    			<texture>windows/pvr/selected.png</texture>
+    		  <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
+    		</control>
+    		</itemlayout>
+    		<focusedlayout height="50">
+          <control type="group">
+    	    <include>PVRListFocusAnimation</include>
+    			<control type="image">
+            <description>Number Sep</description>
+    				<left>10</left>
+    				<top>0</top>
+    				<width>60</width>
+    				<height>45</height>
+    				<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+    				<texture>windows/pvr/focus.png</texture>
+    			</control>
+    			<control type="image">
+            <description>Label Sep</description>
+    				<left>74</left>
+    				<top>0</top>
+    				<width>265</width>
+    				<height>45</height>
+    				<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+    				<texture>windows/pvr/focus.png</texture>
+    			</control>
+    			<control type="image">
+            <description>Title Sep</description>
+    				<left>343</left>
+    				<top>0</top>
+    				<width>535</width>
+    				<height>45</height>
+    				<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+    				<texture>windows/pvr/focus.png</texture>
+    			</control>
+    			<control type="label">
+    				<left>10</left>
+    				<top>0</top>
+    				<width>60</width>
+    				<height>45</height>
+    				<font>FontSize_22</font>
+    				<textcolor>white</textcolor>
+    				<shadowcolor>77000000</shadowcolor>
+    				<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+    				<align>center</align>
+    				<aligny>center</aligny>
+    				<label>$INFO[ListItem.ChannelNumber]</label>
+            <visible>![ListItem.HasTimer + !ListItem.IsRecording]</visible>
+    			</control>
+          <control type="image">
+          	<left>25</left>
+          	<top>10</top>
+          	<width>32</width>
+          	<height>32</height>
+    	      <aspectratio>keep</aspectratio>
+    	      <colordiffuse>ccffffff</colordiffuse>
+          	<texture>windows/pvr/timer.png</texture>
+            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+          </control>
+    			<control type="label">
+    				<left>87</left>
+    				<top>0</top>
+    				<width>245</width>
+    				<height>45</height>
+    				<font>FontSize_22</font>
+    				<textcolor>white</textcolor>
+    				<shadowcolor>77000000</shadowcolor>
+    				<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+    				<align>left</align>
+    				<aligny>center</aligny>
+    				<label>$INFO[ListItem.Label]</label>
+    			</control>
+    			<control type="label">
+    				<left>355</left>
+    				<top>0</top>
+    				<width>490</width>
+    				<height>45</height>
+    				<font>FontSize_20</font>
+    				<textcolor>white</textcolor>
+    				<shadowcolor>77000000</shadowcolor>
+    				<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+    				<align>left</align>
+    				<aligny>center</aligny>
+    				<label fallback="..">$INFO[ListItem.Title]</label>
+    			</control>
+    			<control type="group">
+    				<left>285</left>
+            <visible>ListItem.IsRecording</visible>
+    				<control type="label">
+    					<width>100</width>
+    					<height>50</height>
+    					<font>FontSize_12B</font>
+    					<textcolor>white</textcolor>
+    					<shadowcolor>77000000</shadowcolor>
+    					<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+    					<align>left</align>
+    					<aligny>center</aligny>
+    					<label>REC</label>
+    				</control>
+            <control type="image">
+            	<left>21</left>
+            	<top>9</top>
+            	<width>32</width>
+            	<height>32</height>
+      	      <aspectratio>keep</aspectratio>
+            	<texture>windows/pvr/rec.png</texture>
+            </control>
+    			</control>
+    			<control type="group">
+    				<description>Progress</description>
+    				<visible>ListItem.HasEpg</visible>
+    				<left>837</left>
+    				<top>5</top>
+    				<control type="image">
+    					<width>36</width>
+    					<height>36</height>
+    					<aspectratio>stretch</aspectratio>
+    					<texture>windows/pvr/clock_progress/back.png</texture>
+    				</control>
+    				<control type="image">
+    					<width>36</width>
+    					<height>36</height>
+    					<aspectratio>stretch</aspectratio>
+    					<texture>$VAR[PVRTimeProgress]</texture>
+    				</control>
+    			</control>
+    			<control type="image">
+    				<left>10</left>
+    				<top>0</top>
+    				<width>868</width>
+    				<height>45</height>
+    				<texture>windows/pvr/selected.png</texture>
+    			    <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
+    			</control>
+        </control>
+      </focusedlayout>
     </control>
-		</focusedlayout>
-		    </control>
-		        <control type="scrollbar" id="60">
-		        	<left>914</left>
-		        	<top>269</top>
-		        	<width>2</width>
-		        	<height>347</height>
-		        	<texturesliderbackground/>
-		        	<texturesliderbar border="0,14,0,14">views/scrollbar/scrollbar_pvr.png</texturesliderbar>
-		        	<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar_pvr.png</texturesliderbarfocus>
-		        	<textureslidernib/>
-		        	<textureslidernibfocus/>
-		        	<onleft>13</onleft>
-		        	<onright>13</onright>
-		        	<showonepage>false</showonepage>
-		        	<orientation>vertical</orientation>
-		            <animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60)">Conditional</animation>
-		        </control>
-	        </control>
-        </include>
+    <control type="scrollbar" id="60">
+    	<left>914</left>
+    	<top>269</top>
+    	<width>2</width>
+    	<height>347</height>
+    	<texturesliderbackground/>
+    	<texturesliderbar border="0,14,0,14">views/scrollbar/scrollbar_pvr.png</texturesliderbar>
+    	<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar_pvr.png</texturesliderbarfocus>
+    	<textureslidernib/>
+    	<textureslidernibfocus/>
+    	<onleft>50</onleft>
+    	<onright>50</onright>
+    	<showonepage>false</showonepage>
+    	<orientation>vertical</orientation>
+    	<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60)">Conditional</animation>
+    </control>
+  </control>
+</include>
 
-
- <!-- ================================= -->
- <!-- ===== Channels FullList View ==== -->
- <!-- ================================= -->
- <include name="FullList_View">
-	<control type="group">
-		<description>Channels</description>
-        <visible>Control.IsVisible(50)</visible>
-		<include>FullscreenDimensions</include>
-        <include>InfoDialogsVisible_ZoomAnimation</include>
-        <include>VisibleHiddenSlideAnimation</include>
-        <include>HomeMenu_OpenCloseSlideAnimation</include>
-	    <control type="group">
-		    <left>917</left>
-		    <top>105</top>
-		<control type="image">
-            <description>Plot panel</description>
-			<left>0</left>
-			<top>0</top>
-			<width>318</width>
-			<height>540</height>
-			<texture border="4">windows/pvr/seperator.png</texture>
-	        <include>VisibleFadeEffect2</include>
-		</control>
-        <control type="label">
-            <left>10</left>
-            <top>5</top>
-            <width>295</width>
-	    	<height>35</height>
-            <font>FontSize_20B</font>
-            <label fallback="..">$INFO[Container(50).ListItem.Title]</label>
-            <textcolor>98ffffff</textcolor>
-            <shadowcolor>77000000</shadowcolor>
-            <scroll>false</scroll>
-            <visible>Container(50).ListItem.HasEpg</visible>
-        </control>
-        <control type="label">
-            <left>10</left>
-            <top>32</top>
-            <width>295</width>
-	    	<height>25</height>
-            <font>FontSize_18</font>
-	    	<label>$INFO[Container(50).ListItem.StartTime,, - ]$INFO[Container(50).ListItem.EndTime]</label>
-            <textcolor>98ffffff</textcolor>
-            <shadowcolor>77000000</shadowcolor>
-            <scroll>false</scroll>
-            <visible>Container(50).ListItem.HasEpg</visible>
-        </control>
-		<control type="textbox">
-			<left>10</left>
-			<top>65</top>
-			<width>295</width>
-			<height>227</height>
-			<font>FontSize_18</font>
-			<textcolor>98ffffff</textcolor>
-			<shadowcolor>77000000</shadowcolor>
-			<align>justify</align>
-			<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-            <label>$INFO[Container(50).ListItem.Plot]</label>
-		</control>
-        <control type="label">
-            <left>10</left>
-            <top>300</top>
-            <width>295</width>
-	    	<height>45</height>
-            <font>FontSize_18</font>
-            <label>$INFO[Container(50).ListItem.NextTitle,[B]$LOCALIZE[19031]:[/B] , ]$INFO[Container(50).ListItem.NextStartTime,(,)]</label>
-            <textcolor>98ffffff</textcolor>
-            <shadowcolor>77000000</shadowcolor>
-            <scroll>false</scroll>
-            <visible>Container(50).ListItem.HasEpg</visible>
-        </control>
-	</control>
-	<!-- add PVR Group -->
-		<control type="list" id="50">
-			<left>35</left>
-			<top>105</top>
-			<width>1190</width>
-			<height>540</height>
-			<onleft>28</onleft>
-			<onright>60</onright>
-			<onup>50</onup>
-			<ondown>50</ondown>
-            <preloaditems>2</preloaditems>
-			<viewtype label="537">list</viewtype>
-			<pagecontrol>60</pagecontrol>
-		    <scrolltime tween="cubic" easing="out">300</scrolltime>
-			<itemlayout height="50">
-				<control type="image">
-                    <description>Number Sep</description>
-					<left>10</left>
-					<top>0</top>
-					<width>60</width>
-					<height>45</height>
-					<texture>windows/pvr/seperator.png</texture>
-		            <include>VisibleFadeEffect2</include>
-				</control>
-				<control type="image">
-                    <description>Label Sep</description>
-					<left>74</left>
-					<top>0</top>
-					<width>265</width>
-					<height>45</height>
-					<texture>windows/pvr/seperator.png</texture>
-		            <include>VisibleFadeEffect2</include>
-				</control>
-				<control type="image">
-                    <description>Title Sep</description>
-					<left>343</left>
-					<top>0</top>
-					<width>535</width>
-					<height>45</height>
-					<texture>windows/pvr/seperator.png</texture>
-		            <include>VisibleFadeEffect2</include>
-				</control>
-				<control type="label">
-					<left>10</left>
-					<top>0</top>
-					<width>60</width>
-					<height>45</height>
-					<font>FontSize_22</font>
-					<textcolor>98ffffff</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.ChannelNumber]</label>
-                    <visible>![ListItem.HasTimer + !ListItem.IsRecording]</visible>
-				</control>
-                <control type="image">
-                	<left>25</left>
-                	<top>10</top>
-                	<width>32</width>
-                	<height>32</height>
-		        	<aspectratio>keep</aspectratio>
-		        	<colordiffuse>98ffffff</colordiffuse>
-                	<texture>windows/pvr/timer.png</texture>
-                    <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-                </control>
-				<control type="label">
-					<left>87</left>
-					<top>0</top>
-					<width>245</width>
-					<height>45</height>
-					<font>FontSize_22</font>
-					<textcolor>98ffffff</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
-				</control>
-				<control type="label">
-					<left>355</left>
-					<top>0</top>
-					<width>490</width>
-					<height>45</height>
-					<font>FontSize_20</font>
-					<textcolor>98ffffff</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label fallback="..">$INFO[ListItem.Title]</label>
-				</control>
-				<control type="group">
-					<left>285</left>
-                    <visible>ListItem.IsRecording</visible>
-					<control type="label">
-						<width>100</width>
-						<height>50</height>
-						<font>FontSize_12B</font>
-						<textcolor>98ffffff</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>REC</label>
-					</control>
-                    <control type="image">
-                      	<left>21</left>
-                      	<top>9</top>
-                      	<width>32</width>
-                      	<height>32</height>
-		            	<aspectratio>keep</aspectratio>
-                      	<texture>windows/pvr/rec.png</texture>
-                    </control>
-				</control>
-				<control type="group">
-					<description>Progress</description>
-					<visible>ListItem.HasEpg</visible>
-					<left>837</left>
-					<top>5</top>
-					<control type="image">
-						<width>36</width>
-						<height>36</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>windows/pvr/clock_progress/back.png</texture>
-					</control>
-					<control type="image">
-						<width>36</width>
-						<height>36</height>
-						<aspectratio>stretch</aspectratio>
-				    <colordiffuse>98ffffff</colordiffuse>
-						<texture>$VAR[PVRTimeProgress]</texture>
-					</control>
-				</control>
-				<control type="image">
-					<left>10</left>
-					<top>0</top>
-					<width>868</width>
-					<height>45</height>
-					<texture>windows/pvr/selected.png</texture>
-				    <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
-				</control>
-			</itemlayout>
-			<focusedlayout height="50">
-	            <control type="group">
-		            <include>PVRListFocusAnimation</include>
-					<control type="image">
-                        <description>Number Sep</description>
-						<left>10</left>
-						<top>0</top>
-						<width>60</width>
-						<height>45</height>
-						<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-						<texture>windows/pvr/focus.png</texture>
-					</control>
-					<control type="image">
-                        <description>Label Sep</description>
-						<left>74</left>
-						<top>0</top>
-						<width>265</width>
-						<height>45</height>
-						<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-						<texture>windows/pvr/focus.png</texture>
-					</control>
-					<control type="image">
-                        <description>Title Sep</description>
-						<left>343</left>
-						<top>0</top>
-						<width>535</width>
-						<height>45</height>
-						<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-						<texture>windows/pvr/focus.png</texture>
-					</control>
-					<control type="label">
-						<left>10</left>
-						<top>0</top>
-						<width>60</width>
-						<height>45</height>
-						<font>FontSize_22</font>
-						<textcolor>white</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.ChannelNumber]</label>
-                        <visible>![ListItem.HasTimer + !ListItem.IsRecording]</visible>
-					</control>
-                    <control type="image">
-                      	<left>25</left>
-                      	<top>10</top>
-                      	<width>32</width>
-                      	<height>32</height>
-		            	<aspectratio>keep</aspectratio>
-		            	<colordiffuse>ccffffff</colordiffuse>
-                      	<texture>windows/pvr/timer.png</texture>
-                        <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-                    </control>
-					<control type="label">
-						<left>87</left>
-						<top>0</top>
-						<width>245</width>
-						<height>45</height>
-						<font>FontSize_22</font>
-						<textcolor>white</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="label">
-						<left>355</left>
-						<top>0</top>
-						<width>490</width>
-						<height>45</height>
-						<font>FontSize_20</font>
-						<textcolor>white</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label fallback="..">$INFO[ListItem.Title]</label>
-					</control>
-					<control type="group">
-						<left>285</left>
-                        <visible>ListItem.IsRecording</visible>
-						<control type="label">
-							<width>100</width>
-							<height>50</height>
-							<font>FontSize_12B</font>
-							<textcolor>white</textcolor>
-							<shadowcolor>77000000</shadowcolor>
-							<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>REC</label>
-						</control>
-                        <control type="image">
-                        	<left>21</left>
-                        	<top>9</top>
-                        	<width>32</width>
-                        	<height>32</height>
-			            	<aspectratio>keep</aspectratio>
-                        	<texture>windows/pvr/rec.png</texture>
-                        </control>
-					</control>
-					<control type="group">
-						<description>Progress</description>
-						<visible>ListItem.HasEpg</visible>
-						<left>837</left>
-						<top>5</top>
-						<control type="image">
-							<width>36</width>
-							<height>36</height>
-							<aspectratio>stretch</aspectratio>
-							<texture>windows/pvr/clock_progress/back.png</texture>
-						</control>
-						<control type="image">
-							<width>36</width>
-							<height>36</height>
-							<aspectratio>stretch</aspectratio>
-							<texture>$VAR[PVRTimeProgress]</texture>
-						</control>
-					</control>
-					<control type="image">
-						<left>10</left>
-						<top>0</top>
-						<width>868</width>
-						<height>45</height>
-						<texture>windows/pvr/selected.png</texture>
-					    <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
-					</control>
-                </control>
-			</focusedlayout>
-		</control>
-		<control type="scrollbar" id="60">
-			<left>914</left>
-			<top>269</top>
-			<width>2</width>
-			<height>347</height>
-			<texturesliderbackground/>
-			<texturesliderbar border="0,14,0,14">views/scrollbar/scrollbar_pvr.png</texturesliderbar>
-			<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar_pvr.png</texturesliderbarfocus>
-			<textureslidernib/>
-			<textureslidernibfocus/>
-			<onleft>50</onleft>
-			<onright>50</onright>
-			<showonepage>false</showonepage>
-			<orientation>vertical</orientation>
-		  <animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60)">Conditional</animation>
-		</control>
-	</control>
- </include>
-
-
- <!-- ================================= -->
- <!-- ===== Channels MiniList View ==== -->
- <!-- ================================= -->
- <include name="MiniList_View">
-	<control type="group">
-		<description>Channels</description>
-        <visible>Control.IsVisible(51)</visible>
-	  	<include>FullscreenDimensions</include>
-        <include>InfoDialogsVisible_ZoomAnimation</include>
-        <include>VisibleHiddenSlideAnimation</include>
-        <include>HomeMenu_OpenCloseSlideAnimation</include>
-	<control type="group">
-		<left>917</left>
-		<top>400</top>
-	<control type="image">
+  <!-- ================================= -->
+  <!-- ===== Channels MiniList View ==== -->
+  <!-- ================================= -->
+  <include name="MiniList_View">
+    <control type="group">
+    	<description>Channels</description>
+      <visible>Control.IsVisible(51)</visible>
+      <include>FullscreenDimensions</include>
+      <include>InfoDialogsVisible_ZoomAnimation</include>
+      <include>VisibleHiddenSlideAnimation</include>
+      <include>HomeMenu_OpenCloseSlideAnimation</include>
+      <control type="group">
+    	<left>917</left>
+    	<top>400</top>
+      <control type="image">
         <description>Plot panel</description>
-		<left>0</left>
-		<top>0</top>
-		<width>318</width>
-		<height>245</height>
-		<texture border="4">windows/pvr/seperator.png</texture>
-	    <include>VisibleFadeEffect2</include>
-    </control>
-    <control type="label">
+    	  <left>0</left>
+    	  <top>0</top>
+    	  <width>318</width>
+    	  <height>245</height>
+    	  <texture border="4">windows/pvr/seperator.png</texture>
+        <include>VisibleFadeEffect2</include>
+      </control>
+      <control type="label">
         <left>10</left>
         <top>5</top>
         <width>295</width>
-		<height>35</height>
+    	  <height>35</height>
         <font>FontSize_20B</font>
         <label fallback="..">$INFO[Container(51).ListItem.Title]</label>
         <textcolor>98ffffff</textcolor>
         <shadowcolor>77000000</shadowcolor>
         <scroll>false</scroll>
         <visible>Container(51).ListItem.HasEpg</visible>
-    </control>
-    <control type="label">
+      </control>
+      <control type="label">
         <left>10</left>
         <top>32</top>
         <width>295</width>
-		<height>25</height>
+    	  <height>25</height>
         <font>FontSize_18</font>
-		<label>$INFO[Container(51).ListItem.StartTime,, - ]$INFO[Container(51).ListItem.EndTime]</label>
+       	<label>$INFO[Container(51).ListItem.StartTime,, - ]$INFO[Container(51).ListItem.EndTime]</label>
         <textcolor>98ffffff</textcolor>
         <shadowcolor>77000000</shadowcolor>
         <scroll>false</scroll>
         <visible>Container(51).ListItem.HasEpg</visible>
-    </control>
-	<control type="textbox">
-		<left>10</left>
-		<top>65</top>
-		<width>295</width>
-		<height>125</height>
-		<font>FontSize_18</font>
-		<textcolor>98ffffff</textcolor>
-		<shadowcolor>77000000</shadowcolor>
-		<align>justify</align>
-		<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+      </control>
+      <control type="textbox">
+      	<left>10</left>
+      	<top>65</top>
+      	<width>295</width>
+      	<height>125</height>
+      	<font>FontSize_18</font>
+      	<textcolor>98ffffff</textcolor>
+      	<shadowcolor>77000000</shadowcolor>
+      	<align>justify</align>
+      	<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
         <label>$INFO[Container(51).ListItem.Plot]</label>
-	</control>
-    <control type="label">
+      </control>
+      <control type="label">
         <left>10</left>
         <top>200</top>
         <width>295</width>
-		<height>45</height>
+      	<height>45</height>
         <font>FontSize_18</font>
         <textcolor>98ffffff</textcolor>
         <shadowcolor>77000000</shadowcolor>
         <label>$INFO[Container(51).ListItem.NextTitle,[B]$LOCALIZE[19031]:[/B] , ]$INFO[Container(51).ListItem.NextStartTime,(,)]</label>
         <scroll>false</scroll>
         <visible>Container(51).ListItem.HasEpg</visible>
+      </control>
     </control>
-	</control>
-	<!-- add PVR Group -->
-		<control type="list" id="51">
-			<left>35</left>
-			<top>400</top>
-			<width>1190</width>
-			<height>250</height>
-			<onleft>28</onleft>
-			<onright>60</onright>
-			<onup>51</onup>
-			<ondown>51</ondown>
-            <preloaditems>2</preloaditems>
-			<viewtype label="535">list</viewtype>
-			<pagecontrol>60</pagecontrol>
-		    <scrolltime tween="cubic" easing="out">300</scrolltime>
-			<itemlayout height="50">
-				<control type="image">
-                    <description>Number Sep</description>
-					<left>10</left>
-					<top>0</top>
-					<width>60</width>
-					<height>45</height>
-					<texture>windows/pvr/seperator.png</texture>
-		            <include>VisibleFadeEffect2</include>
-				</control>
-				<control type="image">
-                    <description>Label Sep</description>
-					<left>74</left>
-					<top>0</top>
-					<width>265</width>
-					<height>45</height>
-					<texture>windows/pvr/seperator.png</texture>
-		            <include>VisibleFadeEffect2</include>
-				</control>
-				<control type="image">
-                    <description>Title Sep</description>
-					<left>343</left>
-					<top>0</top>
-					<width>535</width>
-					<height>45</height>
-					<texture>windows/pvr/seperator.png</texture>
-		            <include>VisibleFadeEffect2</include>
-				</control>
-				<control type="label">
-					<left>10</left>
-					<top>0</top>
-					<width>60</width>
-					<height>45</height>
-					<font>FontSize_22</font>
-					<textcolor>98ffffff</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.ChannelNumber]</label>
-                    <visible>![ListItem.HasTimer + !ListItem.IsRecording]</visible>
-				</control>
-                <control type="image">
-                	<left>25</left>
-                	<top>10</top>
-                	<width>32</width>
-                	<height>32</height>
-		        	<aspectratio>keep</aspectratio>
-		        	<colordiffuse>98ffffff</colordiffuse>
-                	<texture>windows/pvr/timer.png</texture>
-                  <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-                </control>
-				<control type="label">
-					<left>87</left>
-					<top>0</top>
-					<width>245</width>
-					<height>45</height>
-					<font>FontSize_22</font>
-					<textcolor>98ffffff</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
-				</control>
-				<control type="label">
-					<left>355</left>
-					<top>0</top>
-					<width>490</width>
-					<height>45</height>
-					<font>FontSize_20</font>
-					<textcolor>98ffffff</textcolor>
-					<shadowcolor>77000000</shadowcolor>
-					<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label fallback="..">$INFO[ListItem.Title]</label>
-				</control>
-				<control type="group">
-					<left>285</left>
-                    <visible>ListItem.IsRecording</visible>
-					    <control type="label">
-					    	<width>100</width>
-					    	<height>50</height>
-					    	<font>FontSize_12B</font>
-					    	<textcolor>98ffffff</textcolor>
-					    	<shadowcolor>77000000</shadowcolor>
-					    	<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-					    	<align>left</align>
-					    	<aligny>center</aligny>
-					    	<label>REC</label>
-					    </control>
-                        <control type="image">
-                         	<left>21</left>
-                        	<top>9</top>
-                         	<width>32</width>
-          	                <height>32</height>
-			                <aspectratio>keep</aspectratio>
-          	                <texture>windows/pvr/rec.png</texture>
-                        </control>
-				    </control>
-				    <control type="group">
-				        <description>Progress</description>
-					    <visible>ListItem.HasEpg</visible>
-					    <left>837</left>
-					    <top>5</top>
-					<control type="image">
-						<width>36</width>
-						<height>36</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>windows/pvr/clock_progress/back.png</texture>
-					</control>
-					<control type="image">
-						<width>36</width>
-						<height>36</height>
-						<aspectratio>stretch</aspectratio>
-				    <colordiffuse>98ffffff</colordiffuse>
-						<texture>$VAR[PVRTimeProgress]</texture>
-					</control>
-				</control>
-				<control type="image">
-					<left>10</left>
-					<top>0</top>
-					<width>868</width>
-					<height>45</height>
-					<texture>windows/pvr/selected.png</texture>
-				  <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
-				</control>
-			</itemlayout>
-			<focusedlayout height="50">
-	            <control type="group">
-		            <include>PVRListFocusAnimation</include>
-					<control type="image">
-                        <description>Number Sep</description>
-						<left>10</left>
-						<top>0</top>
-						<width>60</width>
-						<height>45</height>
-						<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-						<texture>windows/pvr/focus.png</texture>
-					</control>
-					<control type="image">
-                        <description>Label Sep</description>
-						<left>74</left>
-						<top>0</top>
-						<width>265</width>
-						<height>45</height>
-						<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-						<texture>windows/pvr/focus.png</texture>
-					</control>
-					<control type="image">
-                        <description>Title Sep</description>
-						<left>343</left>
-						<top>0</top>
-						<width>535</width>
-						<height>45</height>
-						<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-						<texture>windows/pvr/focus.png</texture>
-					</control>
-					<control type="label">
-						<left>10</left>
-						<top>0</top>
-						<width>60</width>
-						<height>45</height>
-						<font>FontSize_22</font>
-						<textcolor>white</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.ChannelNumber]</label>
-                        <visible>![ListItem.HasTimer + !ListItem.IsRecording]</visible>
-					</control>
-                    <control type="image">
-          	            <left>25</left>
-          	            <top>10</top>
-          	            <width>32</width>
-          	            <height>32</height>
-						<aspectratio>keep</aspectratio>
-                     	<texture>windows/pvr/timer.png</texture>
-                        <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-                    </control>
-					<control type="label">
-						<left>87</left>
-						<top>0</top>
-						<width>245</width>
-						<height>45</height>
-						<font>FontSize_22</font>
-						<textcolor>white</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="label">
-						<left>355</left>
-						<top>0</top>
-						<width>490</width>
-						<height>45</height>
-						<font>FontSize_20</font>
-						<textcolor>white</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label fallback="..">$INFO[ListItem.Title]</label>
-					</control>
-					<control type="group">
-					<left>285</left>
-                    <visible>ListItem.IsRecording</visible>
-					<control type="label">
-						<width>100</width>
-						<height>50</height>
-						<font>FontSize_12B</font>
-						<textcolor>white</textcolor>
-						<shadowcolor>77000000</shadowcolor>
-						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-						<label>REC</label>
-					</control>
-                    <control type="image">
-                    	<left>21</left>
-                    	<top>9</top>
-                    	<width>32</width>
-                    	<height>32</height>
-			        	<aspectratio>keep</aspectratio>
-                    	<texture>windows/pvr/rec.png</texture>
-                    </control>
-					</control>
-					<control type="group">
-						<description>Progress</description>
-						<visible>ListItem.HasEpg</visible>
-						<left>837</left>
-						<top>5</top>
-						<control type="image">
-							<width>36</width>
-							<height>36</height>
-							<aspectratio>stretch</aspectratio>
-							<texture>windows/pvr/clock_progress/back.png</texture>
-						</control>
-						<control type="image">
-							<width>36</width>
-							<height>36</height>
-							<aspectratio>stretch</aspectratio>
-							<texture>$VAR[PVRTimeProgress]</texture>
-						</control>
-					</control>
-					<control type="image">
-						<left>10</left>
-						<top>0</top>
-						<width>868</width>
-						<height>45</height>
-						<texture>windows/pvr/selected.png</texture>
-					    <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
-					</control>
-                </control>
-			</focusedlayout>
-		</control>
-		<control type="scrollbar" id="60">
-			<left>914</left>
-			<top>369</top>
-			<width>2</width>
-			<height>247</height>
-			<texturesliderbackground/>
-			<texturesliderbar border="0,14,0,14">views/scrollbar/scrollbar_pvr.png</texturesliderbar>
-			<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar_pvr.png</texturesliderbarfocus>
-			<textureslidernib/>
-			<textureslidernibfocus/>
-			<onleft>51</onleft>
-			<onright>51</onright>
-			<showonepage>false</showonepage>
-			<orientation>vertical</orientation>
-		  <animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60)">Conditional</animation>
-		</control>
-	</control>
- </include>
 
+    <!-- add PVR Group -->
+    <control type="list" id="51">
+  	  <left>35</left>
+  	  <top>400</top>
+  	  <width>1190</width>
+  	  <height>250</height>
+  	  <onleft>28</onleft>
+  	  <onright>60</onright>
+  	  <onup>51</onup>
+  	  <ondown>51</ondown>
+      <preloaditems>2</preloaditems>
+    	<viewtype label="535">list</viewtype>
+    	<pagecontrol>60</pagecontrol>
+      <scrolltime tween="cubic" easing="out">300</scrolltime>
+    	<itemlayout height="50">
+  		<control type="image">
+        <description>Number Sep</description>
+  			<left>10</left>
+  			<top>0</top>
+  			<width>60</width>
+  			<height>45</height>
+  			<texture>windows/pvr/seperator.png</texture>
+        <include>VisibleFadeEffect2</include>
+  		</control>
+  		<control type="image">
+      <description>Label Sep</description>
+  			<left>74</left>
+  			<top>0</top>
+  			<width>265</width>
+  			<height>45</height>
+  			<texture>windows/pvr/seperator.png</texture>
+      <include>VisibleFadeEffect2</include>
+  		</control>
+  		<control type="image">
+      <description>Title Sep</description>
+  			<left>343</left>
+  			<top>0</top>
+  			<width>535</width>
+  			<height>45</height>
+  			<texture>windows/pvr/seperator.png</texture>
+      <include>VisibleFadeEffect2</include>
+  		</control>
+  		<control type="label">
+  			<left>10</left>
+  			<top>0</top>
+  			<width>60</width>
+  			<height>45</height>
+  			<font>FontSize_22</font>
+  			<textcolor>98ffffff</textcolor>
+  			<shadowcolor>77000000</shadowcolor>
+  			<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+  			<align>center</align>
+  			<aligny>center</aligny>
+  			<label>$INFO[ListItem.ChannelNumber]</label>
+        <visible>![ListItem.HasTimer + !ListItem.IsRecording]</visible>
+  		</control>
+      <control type="image">
+        <left>25</left>
+        <top>10</top>
+        <width>32</width>
+        <height>32</height>
+        <aspectratio>keep</aspectratio>
+        <colordiffuse>98ffffff</colordiffuse>
+        <texture>windows/pvr/timer.png</texture>
+        <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+      </control>
+  		<control type="label">
+  			<left>87</left>
+  			<top>0</top>
+  			<width>245</width>
+  			<height>45</height>
+  			<font>FontSize_22</font>
+  			<textcolor>98ffffff</textcolor>
+  			<shadowcolor>77000000</shadowcolor>
+  			<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+  			<align>left</align>
+  			<aligny>center</aligny>
+  			<label>$INFO[ListItem.Label]</label>
+  		</control>
+  		<control type="label">
+  			<left>355</left>
+  			<top>0</top>
+  			<width>490</width>
+  			<height>45</height>
+  			<font>FontSize_20</font>
+  			<textcolor>98ffffff</textcolor>
+  		  <shadowcolor>77000000</shadowcolor>
+  		  <selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+  		  <align>left</align>
+  		  <aligny>center</aligny>
+  		  <label fallback="..">$INFO[ListItem.Title]</label>
+  	  </control>
+  	  <control type="group">
+        <left>285</left>
+        <visible>ListItem.IsRecording</visible>
+        <control type="label">
+      	  <width>100</width>
+      	  <height>50</height>
+      	  <font>FontSize_12B</font>
+      	  <textcolor>98ffffff</textcolor>
+      	  <shadowcolor>77000000</shadowcolor>
+      	  <selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+      	  <align>left</align>
+      	  <aligny>center</aligny>
+      	  <label>REC</label>
+        </control>
+        <control type="image">
+       	  <left>21</left>
+      	  <top>9</top>
+       	  <width>32</width>
+          <height>32</height>
+          <aspectratio>keep</aspectratio>
+          <texture>windows/pvr/rec.png</texture>
+        </control>
+  	  </control>
+  	  <control type="group">
+        <description>Progress</description>
+        <visible>ListItem.HasEpg</visible>
+        <left>837</left>
+        <top>5</top>
+        <control type="image">
+      	  <width>36</width>
+      	  <height>36</height>
+      	  <aspectratio>stretch</aspectratio>
+      	  <texture>windows/pvr/clock_progress/back.png</texture>
+        </control>
+  		  <control type="image">
+  			  <width>36</width>
+  			  <height>36</height>
+  			  <aspectratio>stretch</aspectratio>
+  	      <colordiffuse>98ffffff</colordiffuse>
+  			  <texture>$VAR[PVRTimeProgress]</texture>
+  		  </control>
+  	  </control>
+  	  <control type="image">
+  		  <left>10</left>
+  		  <top>0</top>
+  		  <width>868</width>
+  		  <height>45</height>
+  		  <texture>windows/pvr/selected.png</texture>
+  	    <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
+  	  </control>
+      </itemlayout>
+      <focusedlayout height="50">
+      <control type="group">
+      <include>PVRListFocusAnimation</include>
+  	  <control type="image">
+        <description>Number Sep</description>
+  		  <left>10</left>
+  		  <top>0</top>
+  		  <width>60</width>
+  		  <height>45</height>
+  		  <colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+  		  <texture>windows/pvr/focus.png</texture>
+  	  </control>
+  	  <control type="image">
+        <description>Label Sep</description>
+  		  <left>74</left>
+  		  <top>0</top>
+  		  <width>265</width>
+  		  <height>45</height>
+  		  <colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+  		  <texture>windows/pvr/focus.png</texture>
+  	  </control>
+  	  <control type="image">
+        <description>Title Sep</description>
+  	  	<left>343</left>
+  	  	<top>0</top>
+  	  	<width>535</width>
+  	  	<height>45</height>
+  	  	<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+  	  	<texture>windows/pvr/focus.png</texture>
+  	  </control>
+  	  <control type="label">
+  	  	<left>10</left>
+  	  	<top>0</top>
+  	  	<width>60</width>
+  	  	<height>45</height>
+  	  	<font>FontSize_22</font>
+  	  	<textcolor>white</textcolor>
+  	  	<shadowcolor>77000000</shadowcolor>
+  	  	<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+  	  	<align>center</align>
+  	  	<aligny>center</aligny>
+  	  	<label>$INFO[ListItem.ChannelNumber]</label>
+        <visible>![ListItem.HasTimer + !ListItem.IsRecording]</visible>
+  	  </control>
+      <control type="image">
+        <left>25</left>
+        <top>10</top>
+        <width>32</width>
+        <height>32</height>
+        <aspectratio>keep</aspectratio>
+        <texture>windows/pvr/timer.png</texture>
+        <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+      </control>
+  	  <control type="label">
+  	  	<left>87</left>
+  	  	<top>0</top>
+  	  	<width>245</width>
+  	  	<height>45</height>
+  	  	<font>FontSize_22</font>
+  	  	<textcolor>white</textcolor>
+  	  	<shadowcolor>77000000</shadowcolor>
+  	  	<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+  	  	<align>left</align>
+  	  	<aligny>center</aligny>
+  	  	<label>$INFO[ListItem.Label]</label>
+  	  </control>
+  	  <control type="label">
+  	  	<left>355</left>
+  	  	<top>0</top>
+  	  	<width>490</width>
+  	  	<height>45</height>
+  	  	<font>FontSize_20</font>
+  	  	<textcolor>white</textcolor>
+  	  	<shadowcolor>77000000</shadowcolor>
+  	  	<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+  	  	<align>left</align>
+  	  	<aligny>center</aligny>
+  	  	<label fallback="..">$INFO[ListItem.Title]</label>
+  	  </control>
+  	  <control type="group">
+  	    <left>285</left>
+        <visible>ListItem.IsRecording</visible>
+  	    <control type="label">
+  	    	<width>100</width>
+  	    	<height>50</height>
+  	    	<font>FontSize_12B</font>
+  	    	<textcolor>white</textcolor>
+  	    	<shadowcolor>77000000</shadowcolor>
+  	    	<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
+  	    	<align>left</align>
+  	    	<aligny>center</aligny>
+  	    	<label>REC</label>
+  	    </control>
+        <control type="image">
+      	  <left>21</left>
+      	  <top>9</top>
+      	  <width>32</width>
+      	  <height>32</height>
+          <aspectratio>keep</aspectratio>
+      	<texture>windows/pvr/rec.png</texture>
+        </control>
+  	  </control>
+  	  <control type="group">
+  	  	<description>Progress</description>
+  	  	<visible>ListItem.HasEpg</visible>
+  	  	<left>837</left>
+  	  	<top>5</top>
+  	  	<control type="image">
+  	  	<width>36</width>
+  	  	<height>36</height>
+  	  	<aspectratio>stretch</aspectratio>
+  	  	<texture>windows/pvr/clock_progress/back.png</texture>
+  	  </control>
+  	  <control type="image">
+  	  	<width>36</width>
+  			<height>36</height>
+  		  <aspectratio>stretch</aspectratio>
+  			<texture>$VAR[PVRTimeProgress]</texture>
+  		</control>
+  	</control>
+  	<control type="image">
+  		<left>10</left>
+  		<top>0</top>
+  		<width>868</width>
+  		<height>45</height>
+  		<texture>windows/pvr/selected.png</texture>
+  	  <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
+  	</control>
+    </control>
+    </focusedlayout>
+    </control>
+      <control type="scrollbar" id="60">
+      	<left>914</left>
+      	<top>369</top>
+      	<width>2</width>
+      	<height>247</height>
+      	<texturesliderbackground/>
+      	<texturesliderbar border="0,14,0,14">views/scrollbar/scrollbar_pvr.png</texturesliderbar>
+      	<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar_pvr.png</texturesliderbarfocus>
+      	<textureslidernib/>
+      	<textureslidernibfocus/>
+      	<onleft>51</onleft>
+      	<onright>51</onright>
+      	<showonepage>false</showonepage>
+      	<orientation>vertical</orientation>
+        <animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(60)">Conditional</animation>
+      </control>
+    </control>
+  </include>
 </includes>

@@ -4,29 +4,29 @@
     <visible>Skin.HasSetting(EnableGlobalRSS) | [Window.IsActive(home) + !Skin.HasSetting(EnableGlobalRSS)]</visible>
     <controls>
 	    <control type="group">
-            <visible>!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation) + !Window.IsVisible(screencalibration) + !Window.IsVisible(screensaver) + !Window.IsVisible(slideshow) + !Window.IsVisible(startup)</visible>
-			<control type="rss">
-				<description>RSS feed</description>
-				<left>0</left>
-			    <top>690</top>
-				<height>0</height>
-				<width>1250</width>
-				<font>FontSize_20</font>
-				<urlset>1</urlset>
-				<textcolor>99ffffff</textcolor>
-				<titlecolor>$VAR[Text.GlobalColor]</titlecolor>
-				<headlinecolor>bbffffff</headlinecolor>
-				<shadowcolor>99000000</shadowcolor>
-			</control>
-			<control type="image">
-				<description>RSS Icon</description>
-				<left>1250</left>
-				<top>694</top>
-				<width>22</width>
-				<height>22</height>
-				<texture>rss_icon.png</texture>
-			  <visible>System.Getbool(lookandfeel.enablerssfeeds)</visible>
-			</control>
+      <visible>!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation) + !Window.IsVisible(screencalibration) + !Window.IsVisible(screensaver) + !Window.IsVisible(slideshow) + !Window.IsVisible(startup)</visible>
+			  <control type="rss">
+			  	<description>RSS feed</description>
+			  	<left>0</left>
+			    <top>692</top>
+			  	<height>0</height>
+			  	<width>1250</width>
+			  	<font>FontSize_20</font>
+			  	<urlset>1</urlset>
+			  	<textcolor>99ffffff</textcolor>
+			  	<titlecolor>$VAR[Text.GlobalColor]</titlecolor>
+			  	<headlinecolor>bbffffff</headlinecolor>
+			  	<shadowcolor>99000000</shadowcolor>
+			  </control>
+			  <control type="image">
+			  	<description>RSS Icon</description>
+			  	<left>1250</left>
+			  	<top>696</top>
+			  	<width>22</width>
+			  	<height>22</height>
+			  	<texture>rss_icon.png</texture>
+			    <visible>System.Getbool(lookandfeel.enablerssfeeds)</visible>
+			  </control>
 	    </control>
     </controls>
-</window> 
+</window>

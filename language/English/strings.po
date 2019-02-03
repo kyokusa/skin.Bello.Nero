@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Bello
-# Addon id: skin.bello
-# Addon Provider: Nessus
+# Addon Name: Bello Nero
+# Addon id: skin.bello.nero
+# Addon Provider: Nessus,eQUIV,iCanuck,Kyo
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Skins\n"
@@ -232,9 +232,25 @@ msgstr ""
 
 msgctxt "#31053"
 msgid "Enable wallpapers for weather icons"
-msgstr "Abilita gli sfondi per le icone del meteo"
+msgstr ""
 
-#empty strings from id 31054 to 31079
+msgctxt "#31054"
+msgid "General Options"
+msgstr ""
+
+msgctxt "#31055"
+msgid "Add-on Options"
+msgstr ""
+
+msgctxt "#31056"
+msgid "Shape"
+msgstr ""
+
+msgctxt "#31057"
+msgid "Plus info"
+msgstr ""
+
+#empty strings from id 31058 to 31079
 #View Type labels
 
 msgctxt "#31080"
@@ -291,7 +307,7 @@ msgid "Widget"
 msgstr ""
 
 msgctxt "#31093"
-msgid "Quick Navigation Widgets"
+msgid "Choose the type of Quick Navigation"
 msgstr ""
 
 msgctxt "#31094"
@@ -434,8 +450,7 @@ msgctxt "#31137"
 msgid "Enable Notifications"
 msgstr ""
 
-msgctxt "#31138"
-msgid "Extra Art [COLOR=55ffffff](Requires script.artwork.downloader)[/COLOR]"
+#empty strings from id 31138 to 31138
 
 msgctxt "#31139"
 msgid "Enable Add-ons Notifications"
@@ -896,10 +911,7 @@ msgctxt "#31280"
 msgid "Most Popular Movies"
 msgstr ""
 
-#empty strings from id 31281 to 31285
-
-
-#empty strings from id 31286 to 31299
+#empty strings from id 31281 to 31299
 #Video and Music OSD Labels
 
 msgctxt "#31300"
@@ -983,7 +995,7 @@ msgid "Still watching ?"
 msgstr ""
 
 msgctxt "#31320"
-msgid ""NextUp will stop in..."
+msgid ""UpNext will stop in..."
 msgstr ""
 
 msgctxt "#31321"
@@ -1072,10 +1084,7 @@ msgctxt "#31379"
 msgid "Custom Items"
 msgstr ""
 
-msgctxt "#31380"
-msgid "Update IMDb Info [COLOR=55ffffff](Requires script.imdbupdate)[/COLOR]"
-msgid ""
-msgstr ""
+#empty strings from id 31380 to 31380
 
 msgctxt "#31381"
 msgid "Search Video Library"
@@ -1098,7 +1107,6 @@ msgid "Search TheMovieDB"
 msgstr ""
 
 #empty strings from id 31386 to 31408
-
 
 #Settings Category Description & Header Labels
 msgctxt "#31409"

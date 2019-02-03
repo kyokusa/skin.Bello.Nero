@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Bello
-# Addon id: skin.bello
-# Addon Provider: Nessus
+# Addon Name: Bello Nero
+# Addon id: skin.bello.nero
+# Addon Provider: Nessus,eQUIV,iCanuck,Kyo
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Skins\n"
@@ -192,7 +192,23 @@ msgctxt "#31053"
 msgid "Enable wallpapers for weather icons"
 msgstr "Abilita gli sfondi per le icone del meteo"
 
-#empty strings from id 31054 to 31079
+msgctxt "#31054"
+msgid "General Options"
+msgstr "Opzioni Generali"
+
+msgctxt "#31055"
+msgid "Add-on Options"
+msgstr "Opzioni Add-on"
+
+msgctxt "#31056"
+msgid "Shape"
+msgstr "Configura"
+
+msgctxt "#31057"
+msgid "Plus info"
+msgstr "Più info"
+
+#empty strings from id 31058 to 31079
 #View Type labels
 
 msgctxt "#31080"
@@ -249,8 +265,8 @@ msgid "Widget"
 msgstr "Widget"
 
 msgctxt "#31093"
-msgid "Quick Navigation Widgets"
-msgstr "Widget Navigazione Veloce"
+msgid "Choose the type of Quick Navigation"
+msgstr "Scegli il tipo di Navigazione Veloce"
 
 msgctxt "#31094"
 msgid "Movies Widgets"
@@ -384,10 +400,7 @@ msgctxt "#31137"
 msgid "Enable Notifications"
 msgstr "Abilita Notifiche"
 
-msgctxt "#31138"
-msgid "Download Extra Art [COLOR=55ffffff](Requires script.artwork.downloader)[/COLOR]"
-msgstr "Scarica Extra Art [COLOR=55ffffff](Richiede script.artwork.downloader)[/COLOR]"
-
+#empty strings from id 31138 to 31138
 
 msgctxt "#31139"
 msgid "Enable Add-ons Notifications"
@@ -439,7 +452,7 @@ msgstr "Scarica [COLOR=selected]poster.jpg[/COLOR] per tutte le Serie TV"
 
 msgctxt "#31151"
 msgid "Show RSS feed in whole skin"
-msgstr "Mostra i feed RSS in tutto lo skin"
+msgstr "Mostra i feed RSS in tutta la skin"
 
 msgctxt "#31152"
 msgid "Download [COLOR=selected]landscape.jpg[/COLOR] for all Movies"
@@ -489,7 +502,7 @@ msgstr "Informazioni sul Cast"
 
 msgctxt "#31164"
 msgid "Press DOWN for more info"
-msgstr "Premi GIU' per pi� informazioni"
+msgstr "Premi GIU' per più informazioni"
 
 msgctxt "#31165"
 msgid "Download [COLOR=selected]disc.png[/COLOR] for all Movies"
@@ -930,7 +943,7 @@ msgid "Still watching ?"
 msgstr "Stai ancora guardando?"
 
 msgctxt "#31320"
-msgid ""NextUp will stop in..."
+msgid ""UpNext will stop in..."
 msgstr "Il prossimo si fermera' in..."
 
 #empty strings from id 31321 to 31349
@@ -988,12 +1001,12 @@ msgid "Disable Quick Navigation"
 msgstr "Disabilita Navigazione Veloce"
 
 msgctxt "#31376"
-msgid "Default QuickNav Items"
-msgstr "Elementi Predefiniti Menu' Veloce"
+msgid "Default Quick Navigation Items"
+msgstr "Elementi Predefiniti Navigazione Veloce"
 
 msgctxt "#31377"
-msgid "Custom QuickNav Items"
-msgstr "Elementi Personalizzati Menu' Veloce"
+msgid "Manage Custom Items"
+msgstr "Gestisci Elementi Personalizzati"
 
 msgctxt "#31378"
 msgid "Custom Item"
@@ -1003,11 +1016,7 @@ msgctxt "#31379"
 msgid "Custom Items"
 msgstr "Elementi Personalizzati"
 
-msgctxt "#31380"
-msgid "Update IMDb Info"
-msgstr "Aggiorna Informazioni IMDb"
-
-#empty strings from id 31381 to 31407
+#empty strings from id 31380 to 31407
 
 msgctxt "#31408"
 msgid "Autosave"

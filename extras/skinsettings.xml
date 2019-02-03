@@ -56,37 +56,7 @@
   <setting id="QuickNavWidgetMusicType" value="4" label="$LOCALIZE[31249]" condition="" icon="" description=""/>
   <setting id="QuickNavWidgetMusicType" value="5" label="$LOCALIZE[31202]" condition="" icon="" description=""/>
 
-  <!-- Download Extra Art -->
-  <setting id="ExtraArt" value="||SKIPSTRING||" label="[B]Poster[/B]" condition="" icon="icons/movies.png" description="$LOCALIZE[31155]">
-		<onselect condition="True">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,poster)</onselect>
-	</setting>
-  <setting id="ExtraArt" value="||SKIPSTRING||" label="[B]ClearLogo[/B]" condition="" icon="icons/movies.png" description="$LOCALIZE[31160]">
-		<onselect condition="True">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,clearlogo)</onselect>
-	</setting>
-  <setting id="ExtraArt" value="||SKIPSTRING||" label="[B]DiscArt[/B]" condition="" icon="icons/movies.png" description="$LOCALIZE[31165]">
-		<onselect condition="True">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,discart)</onselect>
-	</setting>
-  <setting id="ExtraArt" value="||SKIPSTRING||" label="[B]Landscape[/B]" condition="" icon="icons/movies.png" description="$LOCALIZE[31152]">
-		<onselect condition="True">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,landscape)</onselect>
-	</setting>
-  <setting id="ExtraArt" value="||SKIPSTRING||" label="[B]Poster[/B]" condition="" icon="icons/tvshows.png" description="$LOCALIZE[31150]">
-		<onselect condition="True">RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,poster)</onselect>
-	</setting>
-  <setting id="ExtraArt" value="||SKIPSTRING||" label="[B]ClearLogo[/B]" condition="" icon="icons/tvshows.png" description="$LOCALIZE[31146]">
-		<onselect condition="True">RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearlogo)</onselect>
-	</setting>
-  <setting id="ExtraArt" value="||SKIPSTRING||" label="[B]ClearArt[/B]" condition="" icon="icons/tvshows.png" description="$LOCALIZE[31147]">
-		<onselect condition="True">RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,clearart)</onselect>
-	</setting>
-  <setting id="ExtraArt" value="||SKIPSTRING||" label="[B]Landscape[/B]" condition="" icon="icons/tvshows.png" description="$LOCALIZE[31148]">
-		<onselect condition="True">RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,landscape)</onselect>
-	</setting>
-  <setting id="ExtraArt" value="||SKIPSTRING||" label="[B]Banner[/B]" condition="" icon="icons/tvshows.png" description="$LOCALIZE[31149]">
-		<onselect condition="True">RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,banner)</onselect>
-	</setting>
-
-
-  <!-- RSS Video Feeds -->
+    <!-- RSS Video Feeds -->
 	<setting id="RSSVideoFeedURL" value="Euronews" label="Euronews (Default)" condition="" icon="https://yt3.ggpht.com/-E6JZH-KyyCc/AAAAAAAAAAI/AAAAAAAAAAA/fqL-p-2Wk40/s176-c-k-no-mo-rj-c0xffffff/photo.jpg" description="" default="True">
 		<onselect condition="True">Skin.SetString(RSSVideoFeedType,User)</onselect>
 	</setting>

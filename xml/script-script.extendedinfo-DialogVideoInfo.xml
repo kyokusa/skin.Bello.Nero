@@ -245,7 +245,7 @@
 				</control>
 			</control>
 
-<!-- 
+<!--
   		Media Flags *DISABLED*
 			<control type="grouplist">
 				<left>375</left>
@@ -662,7 +662,7 @@
 				<orientation>horizontal</orientation>
 				<include>VisibleFadeEffect</include>
 				<visible>!String.IsEmpty(Window.Property(file))</visible>
-				<visible>Integer.IsEqual(Container(420).NumItems,1) | ![String.IsEqual(Window.Property(videoinfo),1) + ControlGroup(410).HasFocus] + ![String.IsEqual(Window.Property(videoinfo),3) + ControlGroup(420).HasFocus] + ![String.IsEqual(Window.Property(videoinfo),4) + Control.HasFocus(350)]</visible>
+				<visible>Integer.IsEqual(Container(420).NumItems,0) | ![String.IsEqual(Window.Property(videoinfo),1) + ControlGroup(410).HasFocus] + ![String.IsEqual(Window.Property(videoinfo),3) + ControlGroup(420).HasFocus] + ![String.IsEqual(Window.Property(videoinfo),4) + Control.HasFocus(350)]</visible>
 				<control type="image">
 					<width>20</width>
 					<height>20</height>
@@ -689,7 +689,7 @@
 			  <itemgap>6</itemgap>
 				<orientation>horizontal</orientation>
 				<include>VisibleFadeEffect</include>
-				<visible>!Integer.IsEqual(Container(420).NumItems,1)</visible>
+				<visible>!Integer.IsEqual(Container(420).NumItems,0)</visible>
 				<visible>[String.IsEqual(Window.Property(videoinfo),1) + ControlGroup(410).HasFocus] | [String.IsEqual(Window.Property(videoinfo),3) + ControlGroup(420).HasFocus] | [String.IsEqual(Window.Property(videoinfo),4) + Control.HasFocus(350)]</visible>
 				<control type="image">
 					<width>20</width>
@@ -760,7 +760,7 @@
 				  <include>TopBigLabel</include>
 				  <label>$LOCALIZE[31014]</label>
 				</control>
-				<!-- 
+				<!--
 				<control type="button" id="8">
 					<description>Play (Movies)</description>
 					<label>$LOCALIZE[208]</label>

@@ -223,7 +223,7 @@
 			<shortcut label="31379" type="32099" widget="CustomItems" widgetType="mixed">$INCLUDE[CustomItems]</shortcut>
 			<shortcut label="10508" type="32099" widget="Weather10DaysForecast" widgetType="weather" condition="!String.IsEmpty(Weather.Plugin)">$INCLUDE[Weather10Days_Forecast]</shortcut>
     </node>
-		
+
 		<!-- Submenus Widgets -->
 		<node label="31209">
 			<shortcut label="Movies Submenu" type="32099" widget="MoviesSubmenu" widgetType="submenu" condition="Library.HasContent(movies)">$INCLUDE[skinshortcuts-group-movies]</shortcut>
@@ -268,10 +268,10 @@
   <!-- =========== -->
   <backgroundBrowse default="special://skin/extras/backgrounds/">True</backgroundBrowse>
   <background label="Global Fanart" condition="System.HasAddon(script.grab.fanart)">Home_Global_Fanart</background>
-  <background label="Movies Fanart" condition="System.HasAddon(script.grab.fanart)">Home_Movie_Fanart</background>  
+  <background label="Movies Fanart" condition="System.HasAddon(script.grab.fanart)">Home_Movie_Fanart</background>
   <background label="Video Fanart" condition="System.HasAddon(script.grab.fanart)">Home_Video_Fanart</background>
   <background label="Music Fanart" condition="System.HasAddon(script.grab.fanart)">Home_Music_Fanart</background>
-  <background label="TV Fanart" condition="System.HasAddon(script.grab.fanart)">Home_TV_Fanart</background>  	
+  <background label="TV Fanart" condition="System.HasAddon(script.grab.fanart)">Home_TV_Fanart</background>
   <background label="3DWall Movies" condition="Library.HasContent(movies)">3DWallBG_Movies_Posters</background>
   <background label="3DWall Movies Logos" condition="Library.HasContent(movies)">3DWallBG_Movies_Logo</background>
   <background label="3DWall Movies DiscArt" condition="Library.HasContent(movies)">3DWallBG_Movies_DiscArt</background>
@@ -279,7 +279,7 @@
   <background label="3DWall TV Shows Logos" condition="Library.HasContent(tvshows)">3DWallBG_TVShows_Logo</background>
   <background label="3DWall TV Shows Landscape" condition="Library.HasContent(tvshows)">3DWallBG_TVShows_Landscape</background>
   <background label="3DWall Albums" condition="Library.HasContent(music)">3DWallBG_Albums</background>
-  <background label="3DWall Artists" condition="Library.HasContent(music)">3DWallBG_Artists</background>	
+  <background label="3DWall Artists" condition="Library.HasContent(music)">3DWallBG_Artists</background>
   <background label="Conditional Weather" condition="!IsEmpty(Skin.String(WeatherFanart.path))">BackgroundWeather</background>
   <background label="smartshortcuts">||BROWSE||plugin://script.skin.helper.service/?action=backgrounds</background>
 

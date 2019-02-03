@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<includes> 
+<includes>
 	<include file="Defaults.xml" />
 	<include file="Includes_Animations.xml" />
 	<include file="Includes_Backgrounds.xml" />
-    <include file="Includes_Home.xml" />
-    <include file="Includes_Views.xml" />
+  <include file="Includes_Home.xml" />
+  <include file="Includes_Views.xml" />
 	<include file="Includes_Walls.xml" />
 	<include file="Includes_Flags.xml" />
 	<include file="Includes_Menus.xml" />
 	<include file="Includes_NextAiredInfo.xml" />
 	<include file="Includes_Notifications.xml" />
 	<include file="Includes_HomeWidgets.xml" />
-    <include file="Includes_StaticContent.xml" />
+  <include file="Includes_StaticContent.xml" />
 	<include file="Includes_Weather.xml" />
-    <include file="Includes_PVR.xml" />	
+  <include file="Includes_PVR.xml" />
 	<include file="Includes_Dialogs.xml" />
 	<include file="Variables.xml" />
 	<include file="Includes_OSD.xml" />
@@ -21,9 +21,9 @@
 	<!-- Color Lyrics -->
 	<include file="Includes_Lyrics.xml" />
 	<!-- NERO MOD -->
-	<include file="Includes_Nero.xml" />	
+	<include file="Includes_Nero.xml" />
 
-<!-- 
+<!--
   Custom Windows IDs (This is for references purpose only)
    Custom_DialogOK.xml							id=1110
    Custom_DialogVisualization.xml		id=1112
@@ -57,7 +57,7 @@
 		<include>BackgroundVignette</include>
 	</include>
 
-	<include name="BackgroundItemsPVR">	    
+	<include name="BackgroundItemsPVR">
 		    <include>BackgroundContent</include>
 		    <include>BackgroundVignette</include>
 		<control type="image">
@@ -102,12 +102,12 @@
         			| Window.IsActive(DialogSelect.xml)
 							| [Window.IsActive(TextViewer) + ![Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsActive(script-script.extendedinfo-DialogInfo.xml)]]
 							| Window.IsActive(ContentSettings)
-							| Window.IsActive(MediaSource) 
+							| Window.IsActive(MediaSource)
 							| Window.IsActive(PictureInfo)
-							| Window.IsActive(SmartPlaylistEditor) 
+							| Window.IsActive(SmartPlaylistEditor)
 							| Window.IsActive(SmartPlaylistRule)
 							| Window.IsActive(PeripheralSettings)
-							| Window.IsActive(script-RSS_Editor.xml) 
+							| Window.IsActive(script-RSS_Editor.xml)
         			| Window.IsActive(script-skinshortcuts.xml)
         			| Window.IsActive(script-Maps Browser-dialog.xml)
         			| Window.IsActive(1110)
@@ -140,8 +140,8 @@
 			<height>66</height>
 			<width min="0" max="360">auto</width>
 			<font>FontSize_20</font>
-			<textcolor>88ffffff</textcolor>			
-			<shadowcolor>77000000</shadowcolor>			
+			<textcolor>88ffffff</textcolor>
+			<shadowcolor>77000000</shadowcolor>
 	</include>
 	<include name="TopBigLabel">
 			<height>50</height>
@@ -228,7 +228,7 @@
 				<label>$INFO[Control.GetLabel(20)]</label>
 			    <visible>Window.IsActive(SettingsCategory.xml)</visible>
 		</control>
-		
+
 <!-- *Disabled*
 	    <control type="label">
 			    <include>TopSmallLabel</include>
@@ -241,7 +241,7 @@
  -->
 		</control>
 	 </control>
-	 
+
 	 <control type="group" id="9000">
 		<left>30</left>
 		<top>25</top>
@@ -389,7 +389,7 @@
 			<sliderwidth>150</sliderwidth>
 			<sliderheight>18</sliderheight>
 		    <textoffsetx>15</textoffsetx>
-	</include>	
+	</include>
 	<include name="TopLeftMenusButton">
 			<width>405</width>
 			<height>37</height>
@@ -432,10 +432,10 @@
 			<radiowidth></radiowidth>
 			<radioheight></radioheight>
 	</include>
-	
+
   <!-- ================== -->
   <!-- Common Now Playing -->
-  <!-- ================== --> 
+  <!-- ================== -->
 	<include name="CommonNowPlaying">
 		<control type="grouplist">
 			<include>VisibleHiddenSlideAnimation</include>
@@ -835,7 +835,7 @@
 				    <visible>Control.HasFocus(21)</visible>
 				</control>
 			</control>
-		</control>		
+		</control>
 	</include>
 
 	<include name="CommonWeatherAndClock">
@@ -855,7 +855,7 @@
 	            <include>CommonVisibleEffect</include>
 	        </animation>
 	    </control>
-	</include>	
+	</include>
 
 	<include name="SettingsWeatherAndClock">
 		 <control type="group">
@@ -871,7 +871,7 @@
 		       <include>CommonVisibleEffect</include>
 		    </animation>
 		 </control>
-	</include>	
+	</include>
 
 	<include name="WeatherAndClock">
 		<control type="grouplist" id="1">
@@ -882,7 +882,7 @@
 			<itemgap>0</itemgap>
 			<align>right</align>
 			<orientation>horizontal</orientation>
-			
+
 		<!---- Weather ---- for support Icon Weather Animated -->
 	    <control type="group"  id="1">
 				<left>-45</left>
@@ -896,7 +896,7 @@
 			        <align>right</align>
 					<aligny>center</aligny>
 				    <texture>$INFO[Window(Weather).Property(Current.FanartCode),weather/icons.default.small/,.png]</texture>
-					<visible>Weather.IsFetched + !String.IsEmpty(Skin.String(weathericons.multi))</visible>		
+					<visible>Weather.IsFetched + !String.IsEmpty(Skin.String(weathericons.multi))</visible>
 				</control>
 				<control type="multiimage" id="1">
 					<left>-7</left>
@@ -1149,8 +1149,8 @@
 					<aligny>center</aligny>
 					<font>FontSize_16B</font>
 					<textcolor>99grey</textcolor>
-			        <shadowcolor>99000000</shadowcolor>   
-					<label>$INFO[ListItem.Label]</label>           
+			        <shadowcolor>99000000</shadowcolor>
+					<label>$INFO[ListItem.Label]</label>
 					<visible>!Control.HasFocus(7006)</visible>
 	                <visible>!String.IsEmpty(Control.GetLabel(312).index(1))</visible>
 				</control>
@@ -1171,7 +1171,7 @@
 		   <content>plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).index(1)]&amp;&amp;limit=8</content>
 		</control>
 	</include>
-	
+
 	<!-- animation Discart -->
 	<include name="Animation_Discart">
 	    <animation type="WindowOpen" reversible="false">
@@ -1220,35 +1220,35 @@
 		<onload condition="Window.IsActive(mediafilter)">Dialog.Close(mediafilter)</onload>
 		<onload condition="Window.IsActive(PVROSDChannels)">Dialog.Close(PVROSDChannels)</onload>
 		<onload condition="Window.IsActive(PVROSDGuide)">Dialog.Close(PVROSDGuide)</onload>
-        <onload condition="Window.IsActive(PVRGuideInfo)">Dialog.Close(PVRGuideInfo)</onload>
-        <onload condition="Window.IsActive(PVRRecordingInfo)">Dialog.Close(PVRRecordingInfo)</onload>
-        <onload condition="Window.IsActive(PVRTimerSetting)">Dialog.Close(PVRTimerSetting)</onload>
-        <onload condition="Window.IsActive(PVRGroupManager)">Dialog.Close(PVRGroupManager)</onload>
-        <onload condition="Window.IsActive(PVRChannelManager)">Dialog.Close(PVRChannelManager)</onload>
-        <onload condition="Window.IsActive(PVRGuideSearch)">Dialog.Close(PVRGuideSearch)</onload>
-        <onload condition="Window.IsActive(AudioDSPManager)">Dialog.Close(AudioDSPManager)</onload>
-        <onload condition="Window.IsActive(OSDAudioDSPSettings)">Dialog.Close(OSDAudioDSPSettings)</onload>
-        <onload condition="Window.IsActive(DialogParametricEQ.xml)">Dialog.Close(DialogParametricEQ.xml)</onload>
-        <onload condition="Window.IsActive(DialogSpeakerGain.xml)">Dialog.Close(DialogSpeakerGain.xml)</onload>
-        <onload condition="Window.IsActive(DialogSpeakerDistance.xml)">Dialog.Close(DialogSpeakerDistance.xml)</onload>
-        <onload condition="Window.IsActive(DialogMasterModeFreeSurround.xml)">Dialog.Close(DialogMasterModeFreeSurround.xml)</onload>
-	    <onload condition="Window.IsActive(1110)">Dialog.Close(1110)</onload>
-	    <onload condition="Window.IsActive(1112)">Dialog.Close(1112)</onload>
-	    <onload condition="Window.IsActive(1113)">Dialog.Close(1113)</onload>
-	    <onload condition="Window.IsActive(1117)">Dialog.Close(1117)</onload>
-	    <onload condition="Window.IsActive(1118)">Dialog.Close(1118)</onload>
-	    <onload condition="Window.IsActive(1119)">Dialog.Close(1119)</onload>
-        <onunload condition="Window.IsActive(script-script.extendedinfo-DialogInfo.xml)">PreviousMenu</onunload>
-        <onunload condition="Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml)">PreviousMenu</onunload>
-        <onunload condition="Window.IsActive(script-script.extendedinfo-VideoList.xml)">PreviousMenu</onunload>
-        <onunload condition="Window.IsActive(script-script.extendedinfo-YoutubeList.xml)">PreviousMenu</onunload>
-        <onunload condition="Window.IsActive(script-globalsearch-infodialog.xml)">PreviousMenu</onunload>
-        <onunload condition="Window.IsActive(script-globalsearch-main.xml)">PreviousMenu</onunload>
-        <onunload condition="Window.IsActive(script-Maps Browser-dialog.xml)">PreviousMenu</onunload>
-        <onunload condition="Window.IsActive(script-Maps Browser-main.xml)">PreviousMenu</onunload>
-        <onunload condition="Window.IsActive(script-cu-lrclyrics-main.xml)">PreviousMenu</onunload>
-        <onunload condition="Window.IsActive(script-nextup-notification-NextUpInfo.xml)">PreviousMenu</onunload>
-        <onunload condition="Window.IsActive(script-nextup-notification-StillWatchingInfo.xml)">PreviousMenu</onunload>
+    <onload condition="Window.IsActive(PVRGuideInfo)">Dialog.Close(PVRGuideInfo)</onload>
+    <onload condition="Window.IsActive(PVRRecordingInfo)">Dialog.Close(PVRRecordingInfo)</onload>
+    <onload condition="Window.IsActive(PVRTimerSetting)">Dialog.Close(PVRTimerSetting)</onload>
+    <onload condition="Window.IsActive(PVRGroupManager)">Dialog.Close(PVRGroupManager)</onload>
+    <onload condition="Window.IsActive(PVRChannelManager)">Dialog.Close(PVRChannelManager)</onload>
+    <onload condition="Window.IsActive(PVRGuideSearch)">Dialog.Close(PVRGuideSearch)</onload>
+    <onload condition="Window.IsActive(AudioDSPManager)">Dialog.Close(AudioDSPManager)</onload>
+    <onload condition="Window.IsActive(OSDAudioDSPSettings)">Dialog.Close(OSDAudioDSPSettings)</onload>
+    <onload condition="Window.IsActive(DialogParametricEQ.xml)">Dialog.Close(DialogParametricEQ.xml)</onload>
+    <onload condition="Window.IsActive(DialogSpeakerGain.xml)">Dialog.Close(DialogSpeakerGain.xml)</onload>
+    <onload condition="Window.IsActive(DialogSpeakerDistance.xml)">Dialog.Close(DialogSpeakerDistance.xml)</onload>
+    <onload condition="Window.IsActive(DialogMasterModeFreeSurround.xml)">Dialog.Close(DialogMasterModeFreeSurround.xml)</onload>
+    <onload condition="Window.IsActive(1110)">Dialog.Close(1110)</onload>
+    <onload condition="Window.IsActive(1112)">Dialog.Close(1112)</onload>
+    <onload condition="Window.IsActive(1113)">Dialog.Close(1113)</onload>
+    <onload condition="Window.IsActive(1117)">Dialog.Close(1117)</onload>
+    <onload condition="Window.IsActive(1118)">Dialog.Close(1118)</onload>
+    <onload condition="Window.IsActive(1119)">Dialog.Close(1119)</onload>
+    <onunload condition="Window.IsActive(script-script.extendedinfo-DialogInfo.xml)">PreviousMenu</onunload>
+    <onunload condition="Window.IsActive(script-script.extendedinfo-DialogVideoInfo.xml)">PreviousMenu</onunload>
+    <onunload condition="Window.IsActive(script-script.extendedinfo-VideoList.xml)">PreviousMenu</onunload>
+    <onunload condition="Window.IsActive(script-script.extendedinfo-YoutubeList.xml)">PreviousMenu</onunload>
+    <onunload condition="Window.IsActive(script-globalsearch-infodialog.xml)">PreviousMenu</onunload>
+    <onunload condition="Window.IsActive(script-globalsearch-main.xml)">PreviousMenu</onunload>
+    <onunload condition="Window.IsActive(script-Maps Browser-dialog.xml)">PreviousMenu</onunload>
+    <onunload condition="Window.IsActive(script-Maps Browser-main.xml)">PreviousMenu</onunload>
+    <onunload condition="Window.IsActive(script-cu-lrclyrics-main.xml)">PreviousMenu</onunload>
+    <onunload condition="Window.IsActive(script-upnext-upnext.xml)">PreviousMenu</onunload>
+    <onunload condition="Window.IsActive(script-upnext-stillwatching.xml)">PreviousMenu</onunload>
 	</include>
 
 	<include name="DebugInfo">
@@ -1258,5 +1258,5 @@
 			<label>[COLOR=FF40FFFF]$INFO[Window.Property(xmlfile)][/COLOR]</label>
 			<visible>Skin.HasSetting(ShowDebugInfo)</visible>
 		</control>
-	</include> 
+	</include>
 </includes>

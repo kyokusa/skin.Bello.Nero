@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<includes> 
+<includes>
 
 	<variable name="PVRTimeProgress">
 		<value condition="!Integer.IsGreater(ListItem.Progress,5)">windows/pvr/clock_progress/5.png</value>
@@ -11,16 +11,16 @@
 		<value condition="Integer.IsGreater(ListItem.Progress,30) + !Integer.IsGreater(ListItem.Progress,35)">windows/pvr/clock_progress/35.png</value>
 		<value condition="Integer.IsGreater(ListItem.Progress,35) + !Integer.IsGreater(ListItem.Progress,40)">windows/pvr/clock_progress/40.png</value>
 		<value condition="Integer.IsGreater(ListItem.Progress,40) + !Integer.IsGreater(ListItem.Progress,45)">windows/pvr/clock_progress/45.png</value>
-		<value condition="Integer.IsGreater(ListItem.Progress,45) + !Integer.IsGreater(ListItem.Progress,50)">windows/pvr/clock_progress/50.png</value>		
-		<value condition="Integer.IsGreater(ListItem.Progress,50) + !Integer.IsGreater(ListItem.Progress,55)">windows/pvr/clock_progress/55.png</value>		
-		<value condition="Integer.IsGreater(ListItem.Progress,55) + !Integer.IsGreater(ListItem.Progress,60)">windows/pvr/clock_progress/60.png</value>		
-		<value condition="Integer.IsGreater(ListItem.Progress,60) + !Integer.IsGreater(ListItem.Progress,65)">windows/pvr/clock_progress/65.png</value>		
-		<value condition="Integer.IsGreater(ListItem.Progress,65) + !Integer.IsGreater(ListItem.Progress,70)">windows/pvr/clock_progress/70.png</value>		
-		<value condition="Integer.IsGreater(ListItem.Progress,70) + !Integer.IsGreater(ListItem.Progress,75)">windows/pvr/clock_progress/75.png</value>		
-		<value condition="Integer.IsGreater(ListItem.Progress,75) + !Integer.IsGreater(ListItem.Progress,80)">windows/pvr/clock_progress/80.png</value>		
-		<value condition="Integer.IsGreater(ListItem.Progress,80) + !Integer.IsGreater(ListItem.Progress,85)">windows/pvr/clock_progress/85.png</value>		
-		<value condition="Integer.IsGreater(ListItem.Progress,85) + !Integer.IsGreater(ListItem.Progress,90)">windows/pvr/clock_progress/90.png</value>		
-		<value condition="Integer.IsGreater(ListItem.Progress,90) + !Integer.IsGreater(ListItem.Progress,95)">windows/pvr/clock_progress/95.png</value>		
+		<value condition="Integer.IsGreater(ListItem.Progress,45) + !Integer.IsGreater(ListItem.Progress,50)">windows/pvr/clock_progress/50.png</value>
+		<value condition="Integer.IsGreater(ListItem.Progress,50) + !Integer.IsGreater(ListItem.Progress,55)">windows/pvr/clock_progress/55.png</value>
+		<value condition="Integer.IsGreater(ListItem.Progress,55) + !Integer.IsGreater(ListItem.Progress,60)">windows/pvr/clock_progress/60.png</value>
+		<value condition="Integer.IsGreater(ListItem.Progress,60) + !Integer.IsGreater(ListItem.Progress,65)">windows/pvr/clock_progress/65.png</value>
+		<value condition="Integer.IsGreater(ListItem.Progress,65) + !Integer.IsGreater(ListItem.Progress,70)">windows/pvr/clock_progress/70.png</value>
+		<value condition="Integer.IsGreater(ListItem.Progress,70) + !Integer.IsGreater(ListItem.Progress,75)">windows/pvr/clock_progress/75.png</value>
+		<value condition="Integer.IsGreater(ListItem.Progress,75) + !Integer.IsGreater(ListItem.Progress,80)">windows/pvr/clock_progress/80.png</value>
+		<value condition="Integer.IsGreater(ListItem.Progress,80) + !Integer.IsGreater(ListItem.Progress,85)">windows/pvr/clock_progress/85.png</value>
+		<value condition="Integer.IsGreater(ListItem.Progress,85) + !Integer.IsGreater(ListItem.Progress,90)">windows/pvr/clock_progress/90.png</value>
+		<value condition="Integer.IsGreater(ListItem.Progress,90) + !Integer.IsGreater(ListItem.Progress,95)">windows/pvr/clock_progress/95.png</value>
 		<value condition="Integer.IsGreater(ListItem.Progress,95) + !Integer.IsGreater(ListItem.Progress,100)">windows/pvr/clock_progress/100.png</value>
 		<value condition="Integer.IsGreater(ListItem.Progress,100)">windows/pvr/clock_progress/100.png</value>
 	</variable>
@@ -81,7 +81,7 @@
 		    <description>Group</description>
             <label>$VAR[PVRChannelsGroupLabel]</label>
             <altlabel>$VAR[PVRChannelsGroupAltLabel]</altlabel>
-  			<include>TopLeftMenusButton</include>	
+  			<include>TopLeftMenusButton</include>
 		</control>
 		<control type="togglebutton" id="131">
 			<description>EPG Guide</description>
@@ -121,7 +121,7 @@
 			<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
 		</control>
   		<control type="button" id="2">
-  			<description>View as</description>  		    
+  			<description>View as</description>
   			<include>TopLeftMenusButton</include>
 			<enable>Window.IsActive(TVChannels) | Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)</enable>
   		</control>
@@ -136,7 +136,7 @@
 			<visible>Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)</visible>
 		</control>
   		<control type="button" id="3">
-  			<description>Sort by</description>  			
+  			<description>Sort by</description>
   			<include>TopLeftMenusButton</include>
   	    </control>
   	    <control type="togglebutton" id="4">
@@ -268,7 +268,7 @@
 
   </include>
 
-<!-- 
+<!--
   <include name="LiveTV_InfoLabels">
     <control type="group">
   		<left>45</left>
@@ -295,7 +295,7 @@
   </include>
  -->
 
-    <include name="EPGTimelineInfo">  
+    <include name="EPGTimelineInfo">
 	    <control type="group">
 		<left>55</left>
 		<top>125</top>
@@ -346,5 +346,5 @@
 			</control>
 	    </control>
     </include>
-	
-</includes>    
+
+</includes>

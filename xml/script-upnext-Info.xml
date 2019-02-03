@@ -67,7 +67,7 @@
 				    <align>right</align>
 				    <aligny>center</aligny>
 						<scroll>false</scroll>
-						<label>$INFO[Control.GetLabel(3002),[COLOR=bbffffff]$ADDON[service.nextup.notification 30008]:[/COLOR] ,]$INFO[Control.GetLabel(3000), ,]</label>
+						<label>$INFO[Control.GetLabel(3002),[COLOR=bbffffff]$ADDON[service.upnext 30008]:[/COLOR] ,]$INFO[Control.GetLabel(3000), ,]</label>
 					</control>
 				</control>
 				<control type="label" id="32">

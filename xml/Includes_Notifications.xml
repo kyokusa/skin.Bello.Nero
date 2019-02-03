@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<includes> 
+<includes>
 
   <include name="NextAiredNotifications">
 		<control type="group">
@@ -102,7 +102,6 @@
 		</control>
   </include>
 
-
   <include name="AddonsNotifications">
 		<control type="group">
 		  <left>45</left>
@@ -156,7 +155,7 @@
 							<scroll>false</scroll>
 	            <label>$INFO[ListItem.AddonBroken]</label>
 						</control>
-					</control>				
+					</control>
 			  </control>
 				<control type="image">
   				<left>1142</left>
@@ -222,7 +221,7 @@
 	            <label>$LOCALIZE[24052] $LOCALIZE[416]</label>
 				      <visible>String.IsEmpty(ListItem.AddonDisclaimer)</visible>
 						</control>
-					</control>				
+					</control>
 			  </control>
 				<control type="image">
   				<left>1142</left>
@@ -232,10 +231,9 @@
 					<aspectratio>stretch</aspectratio>
 					<texture>icons/notification_info.png</texture>
 				</control>
-			</control>			
+			</control>
 		</control>
   </include>
-
 
   <include name="WeatherAlertsNotifications">
 		<control type="group">
@@ -290,7 +288,7 @@
 							<scroll>false</scroll>
 	            <label>$INFO[Window.Property(Alerts)]</label>
 						</control>
-					</control>				
+					</control>
 			  </control>
 				<control type="image">
   				<left>1142</left>

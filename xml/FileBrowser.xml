@@ -82,7 +82,7 @@
 				<texture>$INFO[Listitem.Icon]</texture>
 				<bordersize>1</bordersize>
 			</control>
-					
+
 			<!-- List -->
 			<control type="list" id="450">
 				<left>278</left>

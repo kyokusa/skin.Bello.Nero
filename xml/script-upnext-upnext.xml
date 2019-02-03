@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">4012</defaultcontrol>
+	<defaultcontrol always="true">3012</defaultcontrol>
 	<controls>
 		<control type="group">
 	    <animation type="WindowOpen" reversible="false">
@@ -29,8 +29,8 @@
 						<top>0</top>
 						<height>41</height>
 						<width>560</width>
-						<label>$LOCALIZE[31320]</label>
-						<label>$LOCALIZE[31319]</label>
+						<label>$LOCALIZE[31318]</label>
+						<label>$LOCALIZE[31317]</label>
 						<align>right</align>
 						<aligny>center</aligny>
 						<font>NotificationsFont</font>
@@ -53,8 +53,8 @@
 				    <align>right</align>
 				    <aligny>center</aligny>
 						<scroll>false</scroll>
-						<label>$LOCALIZE[31319]</label>
-						<visible>Integer.IsGreater(Player.TimeRemaining,15)</visible>
+						<label>$LOCALIZE[31317]</label>
+				    <visible>Integer.IsGreater(Player.TimeRemaining,15)</visible>
 					</control>
 					<control type="label">
 					  <description>2nd Label</description>
@@ -67,7 +67,7 @@
 				    <align>right</align>
 				    <aligny>center</aligny>
 						<scroll>false</scroll>
-						<label>$INFO[Control.GetLabel(4000),[COLOR=white]$ADDON[service.nextup.notification 30008]:[/COLOR] ,]</label>
+						<label>$INFO[Control.GetLabel(3002),[COLOR=bbffffff]$ADDON[service.upnext 30008]:[/COLOR] ,]$INFO[Control.GetLabel(3000), ,]</label>
 					</control>
 				</control>
 				<control type="label" id="32">
@@ -81,12 +81,12 @@
 					<shadowcolor>77000000</shadowcolor>
 					<visible>Integer.IsGreater(Player.TimeRemaining,0) + !Integer.IsGreater(Player.TimeRemaining,15)</visible>
 				</control>
-				<control type="button" id="4012">
+				<control type="button" id="3012">
 	        <include>OSDControlsButtonBig</include>
 					<texturefocus colordiffuse="$VAR[Text.GlobalColor]">osd/play_fo.png</texturefocus>
 					<texturenofocus>osd/play_nf.png</texturenofocus>
 				</control>
-				<control type="button" id="4013">
+				<control type="button" id="3013">
 	        <include>OSDControlsButtonBig</include>
 					<texturefocus colordiffuse="$VAR[Text.GlobalColor]">osd/stop_fo.png</texturefocus>
 					<texturenofocus>osd/stop_nf.png</texturenofocus>
@@ -96,16 +96,15 @@
 
 		<control type="group">
 			<visible>false</visible>
-			<control type="label" id="4000" description="label" />
-			<control type="image" id="4001" description="poster" />
-			<control type="image" id="4002" description="ep thumb" />
-			<control type="label" id="4003" description="rating" />
-			<control type="label" id="4004" description="first aired" />
-			<control type="image" id="4005" description="landscape" />
-			<control type="textbox" id="4006" description="Plot" />
-			<control type="label" id="4008" description="season number" />
-			<control type="label" id="4009" description="episode number" />
-			<control type="label" id="4010" description="title" />
+			<control type="label" id="3000" description="title" />
+			<control type="textbox" id="3001" description="Plot" />
+			<control type="label"  id="3002" description="season/episode" />
+			<control type="label" id="3003" description="rating" />
+			<control type="label" id="3004" description="first aired" />
+			<control type="image" id="3006" description="clearart" />
+			<control type="image" id="3008" description="ep thumb" />
+			<control type="image" id="3009" description="poster" />
+			<control type="image" id="3010" description="landscape" />
 		</control>
 	</controls>
 </window>

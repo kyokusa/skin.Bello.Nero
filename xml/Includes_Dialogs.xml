@@ -88,7 +88,7 @@
 	    <textcolor>99ffffff</textcolor>
 	    <shadowcolor>99000000</shadowcolor>
   </include>
-  
+
 	<include name="DialogsButton">
 			<description>Default Button</description>
 			<height>47</height>
@@ -1132,7 +1132,7 @@
 		<value condition="String.IsEqual(Window.Property(type),movie)">$LOCALIZE[572]:</value>
 		<value condition="String.IsEqual(Window.Property(type),tvshow)">$LOCALIZE[33054]:</value>
 	</variable>
-	
+
 	<variable name="ExtendedInfoDialogs_Row.4.Label">
 		<value condition="String.IsEqual(Window.Property(type),movie)">$LOCALIZE[2050]:</value>
 		<value condition="String.IsEqual(Window.Property(type),tvshow)">$LOCALIZE[572]:</value>
@@ -1153,7 +1153,7 @@
 		<value condition="String.IsEqual(ListItem.DBType,Movie)">$ADDON[script.skin.helper.widgets 32006]</value>
 		<value condition="String.IsEqual(ListItem.DBType,TVShow) | String.IsEqual(ListItem.DBType,Season)">$ADDON[script.skin.helper.widgets 32014]</value>
 	</variable>
-<!-- 
+<!--
 	<variable name="SimilarItemsHeadLabel">
 		<value condition="String.IsEqual(Window.Property(type),movie) | String.IsEqual(ListItem.DBType,Movie)">$ADDON[script.skin.helper.widgets 32006]</value>
 		<value condition="String.IsEqual(Window.Property(type),tvshow) | String.IsEqual(Window.Property(type),season) | String.IsEqual(ListItem.DBType,TVShow) | String.IsEqual(ListItem.DBType,Season)">$ADDON[script.skin.helper.widgets 32014]</value>
@@ -1462,7 +1462,7 @@
 				<height>34</height>
 			  <itemgap>6</itemgap>
 				<orientation>horizontal</orientation>
-				<animation effect="slide" start="0,0" end="0,-45" time="250" condition="Control.HasFocus($PARAM[container_id]) + ![String.IsEqual(Window.Property(videoinfo),4) | String.IsEqual(Window.Property(castinfo),4)]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-45" time="250" condition="![String.IsEqual(Window.Property(videoinfo),4) | String.IsEqual(Window.Property(castinfo),4)]">Conditional</animation>
 				<control type="image">
 					<height>34</height>
 					<width>34</width>
@@ -1479,7 +1479,7 @@
         	<shadowcolor>99000000</shadowcolor>
 					<scroll>false</scroll>
 				</control>
-				<!-- 
+				<!--
         <control type="image">
           <height>1</height>
           <width max="745">auto</width>
@@ -1498,7 +1498,7 @@
 			  <itemgap>6</itemgap>
 			  <align>right</align>
 				<orientation>horizontal</orientation>
-				<animation effect="slide" start="0,0" end="0,-45" time="250" condition="Control.HasFocus($PARAM[container_id]) + ![String.IsEqual(Window.Property(videoinfo),4) | String.IsEqual(Window.Property(castinfo),4)]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-45" time="250" condition="![String.IsEqual(Window.Property(videoinfo),4) | String.IsEqual(Window.Property(castinfo),4)]">Conditional</animation>
 				<control type="label">
           <width max="300">auto</width>
 					<height>36</height>
@@ -1533,110 +1533,112 @@
 		<include name="VideoInfoListContainer">
 			<control type="fixedlist" id="$PARAM[container_id]">
 				<left>0</left>
-				<top>35</top>
-				<width>870</width>
-				<height>316</height>
-				<!-- 
+				<top>0</top>
+				<width>970</width>
+				<height>320</height>
+<!--
 				<onclick condtion="String.IsEqual(Window.Property(videoinfo),1)">Action(down)</onclick>
 				<onclick condtion="!String.IsEqual(Window.Property(videoinfo),1)">Action(select)</onclick>
-				 -->
+-->
 				<onleft>$PARAM[container_id]</onleft>
 				<onright>$PARAM[container_id]</onright>
 				<onup>$PARAM[onup]</onup>
 				<ondown>$PARAM[ondown]</ondown>
 				<orientation>horizontal</orientation>
 			  <scrolltime tween="sine" easing="out">250</scrolltime>
-				<animation effect="slide" start="0,0" end="0,-45" time="250" condition="Control.HasFocus($PARAM[container_id])">Conditional</animation>
+<!--
+			  <animation effect="slide" start="0,0" end="0,-45" time="250" condition="Control.HasFocus($PARAM[container_id])">Conditional</animation>
+-->
 				<itemlayout width="174" height="240">
-					<control type="image">
-						<left>10</left>
-						<top>0</top>
-						<width>160</width>
-						<height>240</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-					</control>
-					<control type="image">
-						<left>10</left>
-						<top>0</top>
-						<width>160</width>
-						<height>240</height>
-						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-						<texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
-					</control>
-					<control type="image">
-						<left>10</left>
-						<top>0</top>
-						<width>160</width>
-						<height>240</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
-				    <visible>!String.IsEmpty(ListItem.DBID)</visible>
-					</control>
-					<control type="image">
-						<left>10</left>
-						<top>0</top>
-						<width>160</width>
-						<height>240</height>
-						<aspectratio align="center" aligny="center">stretch</aspectratio>
-						<texture background="true" border="1">thumbs/poster_overlay.png</texture>
-					</control>
-				</itemlayout>
-				<focusedlayout width="174" height="240">
-					<control type="group">
-						<animation reversible="false" effect="zoom" start="100" end="120" center="0,0" time="250">Focus</animation>
-						<animation reversible="false" effect="zoom" start="120" end="100" center="0,0" time="250">UnFocus</animation>
-						<control type="image">
-  						<left>10</left>
-  						<top>0</top>
-  						<width>160</width>
-  						<height>240</height>
-						  <aspectratio align="center" aligny="center">stretch</aspectratio>
-						  <texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
-						</control>
-						<control type="image">
-							<left>10</left>
-							<top>0</top>
-  						<width>160</width>
-  						<height>240</height>
-							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-						  <texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
-						</control>
-						<control type="image">
-							<left>10</left>
-							<top>0</top>
-  						<width>160</width>
-  						<height>240</height>
-							<aspectratio align="center" aligny="center">stretch</aspectratio>
-							<texture diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
-					    <visible>!String.IsEmpty(ListItem.DBID)</visible>
-						</control>
-						<control type="image">
-							<left>10</left>
-							<top>0</top>
-  						<width>160</width>
-  						<height>240</height>
-							<aspectratio align="center" aligny="center">stretch</aspectratio>
-							<texture background="true" border="1">thumbs/poster_overlay.png</texture>
-						</control>
-					</control>
-				  <control type="label">
-						<left>210</left>
-						<top>243</top>
-						<width>675</width>
-						<height>40</height>
-						<font>FontSize_22</font>
-				    <textcolor>white</textcolor>
-						<shadowcolor>99000000</shadowcolor>
-		        <selectedcolor>white</selectedcolor>
-						<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ]$INFO[Listitem.Year, (,) ]</label>
-						<visible>Control.HasFocus($PARAM[container_id])</visible>
-						<animation reversible="false" effect="fade" start="0" end="100" time="300">Focus</animation>
-						<animation reversible="false" effect="fade" start="100" end="0" time="0">UnFocus</animation>
-				  </control>
-				</focusedlayout>
-				<content>$PARAM[content]</content>
-			</control>
+			   <control type="image">
+			   	 <left>10</left>
+			     <top>0</top>
+			     <width>160</width>
+			   	 <height>235</height>
+			   	 <aspectratio align="center" aligny="center">stretch</aspectratio>
+			     <texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
+			   </control>
+				 <control type="image">
+					 <left>10</left>
+					 <top>0</top>
+					 <width>160</width>
+					 <height>235</height>
+					 <aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+					 <texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
+				 </control>
+				 <control type="image">
+					 <left>10</left>
+					 <top>0</top>
+					 <width>160</width>
+					 <height>235</height>
+					 <aspectratio align="center" aligny="center">stretch</aspectratio>
+					 <texture diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
+					 <visible>!String.IsEmpty(ListItem.DBID)</visible>
+				 </control>
+				 <control type="image">
+					 <left>10</left>
+					 <top>0</top>
+					 <width>160</width>
+					 <height>235</height>
+					 <aspectratio align="center" aligny="center">stretch</aspectratio>
+					 <texture background="true" border="1">thumbs/poster_overlay.png</texture>
+				 </control>
+			 </itemlayout>
+			 <focusedlayout width="174" height="240">
+				 <control type="group">
+					 <animation reversible="false" effect="zoom" start="100" end="120" center="0,0" time="250">Focus</animation>
+					 <animation reversible="false" effect="zoom" start="120" end="100" center="0,0" time="250">UnFocus</animation>
+					 <control type="image">
+						 <left>10</left>
+						 <top>0</top>
+						 <width>160</width>
+						 <height>235</height>
+						 <aspectratio align="center" aligny="center">stretch</aspectratio>
+						 <texture background="true" diffuse="thumbs/poster_diffuse.png">thumbs/thumb_back.png</texture>
+					 </control>
+					 <control type="image">
+						 <left>10</left>
+						 <top>0</top>
+						 <width>160</width>
+						 <height>235</height>
+						 <aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+						 <texture background="true" fallback="thumbs/fallback_poster.png" diffuse="thumbs/poster_diffuse.png">$INFO[ListItem.Icon]</texture>
+					 </control>
+					 <control type="image">
+						 <left>10</left>
+						 <top>0</top>
+						 <width>160</width>
+						 <height>235</height>
+						 <aspectratio align="center" aligny="center">stretch</aspectratio>
+						 <texture diffuse="thumbs/poster_diffuse.png">overlays/in_library.png</texture>
+						 <visible>!String.IsEmpty(ListItem.DBID)</visible>
+					 </control>
+					 <control type="image">
+						 <left>10</left>
+						 <top>0</top>
+						 <width>160</width>
+						 <height>235</height>
+						 <aspectratio align="center" aligny="center">stretch</aspectratio>
+						 <texture background="true" border="1">thumbs/poster_overlay.png</texture>
+					 </control>
+				 </control>
+				 <control type="label">
+					 <left>210</left>
+					 <top>243</top>
+					 <width>675</width>
+					 <height>40</height>
+					 <font>FontSize_22</font>
+					 <textcolor>white</textcolor>
+					 <shadowcolor>99000000</shadowcolor>
+					 <selectedcolor>white</selectedcolor>
+					 <label>$INFO[ListItem.Label]$INFO[ListItem.Label2, $LOCALIZE[20347] ]</label>
+					 <animation reversible="false" effect="fade" start="0" end="100" time="300">Focus</animation>
+					 <animation reversible="false" effect="fade" start="100" end="0" time="0">UnFocus</animation>
+					 <visible>Control.HasFocus(50)</visible>
+				 </control>
+			 </focusedlayout>
+			 <content>$PARAM[content]</content>
+		  </control>
 		</include>
 
 		<include name="VideoInfoListContainerScripts">
@@ -1651,7 +1653,9 @@
 				<ondown>$PARAM[ondown]</ondown>
 				<orientation>horizontal</orientation>
 			  <scrolltime tween="sine" easing="out">250</scrolltime>
-				<animation effect="slide" start="0,0" end="0,-45" time="250" condition="Control.HasFocus($PARAM[container_id])">Conditional</animation>
+<!--
+			  <animation effect="slide" start="0,0" end="0,-45" time="250" condition="Control.HasFocus($PARAM[container_id])">Conditional</animation>
+-->
 				<itemlayout width="174" height="240">
 					<control type="image">
 						<left>10</left>

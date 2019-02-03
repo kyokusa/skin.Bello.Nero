@@ -7,7 +7,7 @@
 	 <animation type="WindowOpen" condition="Window.IsVisible(contentsettings) | Window.IsVisible(okdialog) | Window.IsVisible(progressdialog) | Window.IsVisible(1112) | Window.IsVisible(SubtitleSearch)" reversible="false">
 		<effect type="fade" start="0" end="100" time="0" delay="300" />
 	 </animation>
-		
+
 	 <control type="group">
 		<visible>!Window.IsActive(virtualkeyboard) + !Window.IsActive(numericinput) + !Window.IsActive(textviewer) + !Window.IsActive(okdialog) + !Window.IsActive(progressdialog) + !Window.IsActive(filebrowser) + !Window.IsActive(sliderdialog) + !Window.IsActive(selectdialog) + !Window.IsActive(DialogSelect.xml)</visible>
 	  <include>CommonDialogsAnimation</include>
@@ -37,7 +37,7 @@
 			<shadowcolor>99000000</shadowcolor>
 			<scroll>false</scroll>
 		</control>
-			
+
 	  <control type="group" id="9000">
 		 <top>170</top>
 	   <control type="group">
@@ -195,7 +195,6 @@
 				</control>
 			</control>
 	  </control>
-
 	 </control>
   </control>
  </controls>

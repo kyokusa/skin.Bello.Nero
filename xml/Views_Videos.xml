@@ -8,12 +8,12 @@
 	<control type="group">
 	    <visible>Control.IsVisible(50)</visible>
         <include>CommonViews_VerticalAnimation</include>
-		
+
 	    <control type="group">
             <visible>!ListItem.IsParentFolder</visible>
-            <visible>[Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(MusicVideos) | Container.Content(Sets) | Window.IsVisible(VideoPlaylist)] + ![String.StartsWith(Container.FolderPath,plugin://plugin.video) + Container.Content(Episodes) + String.IsEmpty(ListItem.Art(tvshow.poster))]</visible>	        
+            <visible>[Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(MusicVideos) | Container.Content(Sets) | Window.IsVisible(VideoPlaylist)] + ![String.StartsWith(Container.FolderPath,plugin://plugin.video) + Container.Content(Episodes) + String.IsEmpty(ListItem.Art(tvshow.poster))]</visible>
 	        <include>ListView_PosterAndFanart</include>
-	    </control>	
+	    </control>
 	    <control type="group">
             <visible>![Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Window.IsVisible(VideoPlaylist)] | [String.StartsWith(Container.FolderPath,plugin://plugin.video) + Container.Content(Episodes) + String.IsEmpty(ListItem.Art(tvshow.poster))]</visible>
             <visible>Container.Content(Addons) + !String.IsEmpty(ListItem.AddonName)</visible>
@@ -24,10 +24,10 @@
             <visible>![Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(MusicVideos) | Container.Content(Sets) | Window.IsVisible(VideoPlaylist)] | [String.StartsWith(Container.FolderPath,plugin://plugin.video) + Container.Content(Episodes) + String.IsEmpty(ListItem.Art(tvshow.poster))]</visible>
             <include>ListView_Thumb</include>
 	    </control>
-        
-	    <control type="group">	
+
+	    <control type="group">
 		<control type="list" id="50">
-            <include>ListView_Vars</include>			
+            <include>ListView_Vars</include>
 			<itemlayout height="45" width="710">
 				<control type="label">
 					<left>12</left>
@@ -142,7 +142,7 @@
                     <visible>!ListItem.IsParentFolder</visible>
 				</control>
 			</itemlayout>
-			<focusedlayout height="45" width="710">	 
+			<focusedlayout height="45" width="710">
 			<control type="group">
 		        <include>ListFocusAnimation</include>
 					<control type="label">
@@ -263,7 +263,7 @@
         <include>ListView_Scrollbar</include>
         <include>ListView_Arrows</include>
 	</control>
-</control>		
+</control>
 </include>
 
 
@@ -282,13 +282,13 @@
 			<visible>Control.IsVisible(66)</visible>
 			<include>OpenCloseSlideAnimationTwo</include>
 			<!-- DiscArt view video -->
-			<control type="image"> 
+			<control type="image">
 			    <left>48</left>
 			    <top>269</top>
 	            <width>137</width>
 	            <height>137</height>
 	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>				
+                <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>
 				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
 			        <effect type="slide" end="0,-85" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />
 					<effect type="fade" start="0" end="100" time="200" delay="200" />
@@ -305,7 +305,6 @@
 				<onright>66</onright>
 	      <onup>9111</onup>
 	      <ondown>601</ondown>
-  			<oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
 				<!-- <movement>7</movement> -->
 			  <preloaditems>4</preloaditems>
 				<orientation>horizontal</orientation>
@@ -361,7 +360,7 @@
 	  </control>
 		<control type="group">
 			<left>45</left>
-		    <top>480</top>		    
+		    <top>480</top>
 			<visible>Control.IsVisible(66)</visible>
 		    <include>HomeMenu_OpenCloseSlideAnimation</include>
 			<control type="label">
@@ -376,7 +375,7 @@
 		    <aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
 			</control>
-		    <!-- Sublabel Info -->			
+		    <!-- Sublabel Info -->
 		        <control type="grouplist">
 			    	<left>0</left>
 			    	<top>37</top>
@@ -421,7 +420,7 @@
 			    	</control>
 			    	<control type="image">
 			    		<left>0</left>
-					    <top>0</top>  				        
+					    <top>0</top>
   				        <width>64</width>
 				        <height>23</height>
 				        <colordiffuse>mediaflags</colordiffuse>
@@ -455,7 +454,7 @@
 			    	</control>
 					<control type="image">
 					    <left>0</left>
-					    <top>0</top>					    
+					    <top>0</top>
 					    <width>40</width>
 				        <height>22</height>
 				        <colordiffuse>mediaflags</colordiffuse>
@@ -477,7 +476,7 @@
                         <label>$VAR[NetFlixSeasonsLabel]</label>
 			    		<visible>Container.Content(TVShows) + !String.IsEmpty(ListItem.Property(TotalSeasons))</visible>
                     <!-- <label>$VAR[NetFlixSeasonsLabel]$INFO[ListItem.Property(UnWatchedEpisodes), (, $LOCALIZE[16101])]</label> -->
-			    	</control>				
+			    	</control>
 			    	<control type="group">
 			    		<visible>String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) + Integer.IsGreater(ListItem.Property(unWatchedEpisodes),0) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
 			    		<control type="image">
@@ -499,8 +498,8 @@
 			    			<align>center</align>
 			    			<aligny>center</aligny>
                             <label>$INFO[ListItem.Property(unWatchedEpisodes)]</label>
-			    		</control>						
-			        </control>					
+			    		</control>
+			        </control>
 			    </control>
 		  <!-- Plot Info -->
 		  <control type="group">
@@ -565,15 +564,15 @@
 				<itemgap>7</itemgap>
 				<orientation>horizontal</orientation>
 				<visible>[Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos)] + !String.StartsWith(ListItem.Path,videodb://movies/sets/)</visible>
-				<control type="image">			        
+				<control type="image">
 			        <include>FlagsLayout</include>
 			        <texture fallback="flags/na.png">$VAR[VideoSourceFlags]</texture>
-		        </control>	        
+		        </control>
 				<control type="image">
 					<include>FlagsOSDLayout</include>
 					<texture fallback="flags/na.png">$INFO[ListItem.VideoResolution,flags/res/,.png]</texture>
 				</control>
-				<control type="image">			        
+				<control type="image">
 			        <include>FlagsLayout</include>
 			        <texture fallback="flags/na.png">$VAR[VideoCodec,flags/video/,.png]</texture>
 		        </control>
@@ -800,7 +799,7 @@
 	<!-- ========================= -->
 	<!-- ==== Slide View "51" ==== -->
 	<!-- ========================= -->
-	<include name="SlideView_Videos">	
+	<include name="SlideView_Videos">
 		<control type="group">
 			<visible>Control.IsVisible(51)</visible>
 	    <include>CommonViews_HorizontalAnimation</include>
@@ -815,11 +814,11 @@
 	            <width>225</width>
 	            <height>225</height>
 	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>				
+                <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>
 				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
 			        <effect type="slide" end="0,110" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />
 					<effect type="fade" start="0" end="100" time="300" delay="300" />
-		        </animation> 
+		        </animation>
 				<include>DiscArtRotateEffect</include>
 			<visible>![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             </control>
@@ -832,7 +831,6 @@
 				<onright>51</onright>
 	      <onup>100</onup>
 	      <ondown>603</ondown>
-  			<oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
 	      <viewtype label="31080">List</viewtype>
         <scrolltime tween="Quadratic" easing="out">300</scrolltime>
 	      <orientation>horizontal</orientation>
@@ -1014,13 +1012,13 @@
 				<texture background="true">views/gallery/top_bottom_shadows.png</texture>
 			</control>
 			<!-- DiscArt view video -->
-			<control type="image"> 
+			<control type="image">
 			    <left>670</left>
 			    <top>116</top>
 	            <width>302</width>
 	            <height>302</height>
 	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>				
+                <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>
 				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
 			        <effect type="slide" end="0,-110" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />
 					<effect type="fade" start="0" end="100" time="300" delay="300" />
@@ -1046,7 +1044,6 @@
 				<onright>52</onright>
 	      <onup>9111</onup>
 	      <ondown>604</ondown>
-  			<oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
 	      <viewtype label="31081">List</viewtype>
         <scrolltime tween="Quadratic" easing="out">300</scrolltime>
 	      <orientation>horizontal</orientation>
@@ -1450,7 +1447,7 @@
 	<include name="ThumbnailsView_Videos_Posters">
 		<control type="group">
 			<visible>Control.IsVisible(561)</visible>
-	    <include>CommonViews_VerticalAnimation</include>		    
+	    <include>CommonViews_VerticalAnimation</include>
 			<control type="panel" id="561">
 				<left>40</left>
 				<top>95</top>
@@ -1461,13 +1458,12 @@
 				<onright>606</onright>
 				<onup>561</onup>
 				<ondown>561</ondown>
-  			<oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
         <orientation>vertical</orientation>
 				<pagecontrol>606</pagecontrol>
 				<preloaditems>4</preloaditems>
 				<viewtype label="31085">icons</viewtype>
         <scrolltime tween="Quadratic" easing="out">300</scrolltime>
-        <visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(MusicVideos)]</visible>			
+        <visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(MusicVideos)]</visible>
 				<itemlayout height="246" width="171">
 					<control type="image">
 						<left>5</left>
@@ -1507,7 +1503,7 @@
 						<texture border="30">views/other/panel2.png</texture>
 					</control>
 					<!-- DiscArt view video -->
-					<include>ThumbnailsVideoDiscArtLayout</include> 
+					<include>ThumbnailsVideoDiscArtLayout</include>
 					<control type="image">
 						<left>5</left>
 						<top>5</top>
@@ -1537,7 +1533,7 @@
 						<texture border="30">views/other/focus_panel.png</texture>
 	          <include>ThumbnailsFocusAnimation</include>
 					</control>
-				</focusedlayout>				
+				</focusedlayout>
 			</control>
 
 			<control type="group">
@@ -1678,7 +1674,7 @@
 					<align>justify</align>
 					<textcolor>98ffffff</textcolor>
 					<shadowcolor>77000000</shadowcolor>
-					<label>$INFO[ListItem.Tagline,[B],[/B][CR]][CR]$INFO[ListItem.Plot]</label> 
+					<label>$INFO[ListItem.Tagline,[B],[/B][CR]][CR]$INFO[ListItem.Plot]</label>
 					<autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>!ListItem.IsParentFolder</visible>
 				</control>
@@ -1733,17 +1729,17 @@
 			<visible>Control.IsVisible(562)</visible>
 	    <include>CommonViews_HorizontalAnimation</include>
 		    <!-- DiscArt view video -->
-		    <control type="image"> 
+		    <control type="image">
 			    <left>90</left>
 			    <top>320</top>
 	            <width>285</width>
 	            <height>285</height>
 	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>				
+                <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>
 				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
 			        <effect type="slide" end="0,110" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />
 					<effect type="fade" start="0" end="100" time="300" delay="300" />
-		        </animation> 
+		        </animation>
 				<include>DiscArtRotateEffect</include>
 			<visible>![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
             </control>
@@ -1764,7 +1760,6 @@
 				<onright>562</onright>
 				<onup>9111</onup>
 				<ondown>607</ondown>
-				<oninfo condition="String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
 				<orientation>horizontal</orientation>
 				<pagecontrol>607</pagecontrol>
 				<preloaditems>4</preloaditems>
@@ -1780,7 +1775,7 @@
 			    </include>
 				</itemlayout>
 				<focusedlayout height="465" width="400">
-<!-- 
+<!--
 					<control type="image">
 						<left>-10</left>
 						<top>0</top>
@@ -1861,14 +1856,14 @@
             <width>302</width>
             <height>302</height>
             <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-            <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>				
+            <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>
             <animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
                 <effect type="slide" start="200,0" end="0,0" center="auto" time="900" delay="100" loop="false" tween="cubic" easing="inout" />
             	<effect type="fade" start="0" end="100" time="200" delay="500" />
             </animation>
 			<animation type="WindowOpen" reversible="false">
 			    <effect type="fade" start="0" end="100" tween="sine" easing="in" time="500" delay="400" />
-                <effect type="slide" start="170,0" end="0,0" tween="back" easing="in" time="900" />                
+                <effect type="slide" start="170,0" end="0,0" tween="back" easing="in" time="900" />
             </animation>
             <animation type="WindowClose" reversible="false">
                 <effect type="slide" start="0,0" end="400,0" tween="back" easing="inout" time="900" />
@@ -1905,7 +1900,6 @@
 				<onright>55</onright>
 	            <onup>9111</onup>
 	            <ondown>608</ondown>
-	            <oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
 	            <viewtype label="31084">list</viewtype>
 			    <scrolltime tween="quadratic" easing="out">300</scrolltime>
 	            <orientation>horizontal</orientation>
@@ -2046,7 +2040,7 @@
 					</control>
 				</focusedlayout>
 			</control>
-	    </control>	    
+	    </control>
 		<control type="image">
 	    <include>FullscreenDimensions</include>
 			<texture background="true">views/posters/light.png</texture>
@@ -2090,7 +2084,7 @@
 			<animation effect="fade" time="300" tween="sine" easing="out">Visible</animation>
 			<animation effect="fade" time="300" tween="sine" easing="in">Hidden</animation>
 			<visible>Control.IsVisible(64)</visible>
-		</control>		
+		</control>
 		<control type="group">
 			<visible>Control.IsVisible(64)</visible>
 			<include>CommonViews_HorizontalAnimation</include>
@@ -2101,7 +2095,7 @@
 	            <width>285</width>
 	            <height>285</height>
 	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>				
+                <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>
 				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
 			        <effect type="slide" end="0,110" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />
 					<effect type="fade" start="0" end="100" time="300" delay="300" />
@@ -2156,7 +2150,6 @@
   			<onright>64</onright>
   			<onup>9111</onup>
   			<ondown>609</ondown>
-	      <oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
   			<pagecontrol>609</pagecontrol>
   			<orientation>horizontal</orientation>
   			<preloaditems>2</preloaditems>
@@ -2221,7 +2214,7 @@
 	            <width>205</width>
 	            <height>205</height>
 	            <aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-                <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>				
+                <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>
 				<animation type="Conditional" reversible="false" condition="!Container.OnNext + !Container.OnPrevious">
 			        <effect type="slide" end="-110,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />
 					<effect type="fade" start="0" end="100" time="300" delay="300" />
@@ -2239,7 +2232,6 @@
 				<onright>610</onright>
 				<onup>57</onup>
 				<ondown>57</ondown>
-	            <oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
 	            <viewtype label="31086">list</viewtype>
 			    <pagecontrol>610</pagecontrol>
                 <focusposition>0</focusposition>
@@ -2385,7 +2377,7 @@
 			                    <animation effect="slide" start="0,0" end="-40,0" time="0" tween="sine" easing="inout" condition="IsEmpty(ListItem.VideoResolution)">Conditional</animation>
 							</control>
 					  </control>
-					</control>					  
+					</control>
 				</focusedlayout>
 				<focusedlayout condition="Container.Content(TVShows) | Container.Content(Seasons)" width="560" height="260">
 					<control type="group">
@@ -2561,7 +2553,7 @@
 			  <animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(610) + !Container.Scrolling">Conditional</animation>
 			</control>
 		</control>
-	</include>		
+	</include>
 
 
 	<!-- =========================== -->
@@ -2609,7 +2601,7 @@
 	      <include>InfoDialogsVisible_ZoomAnimation</include>
 			</control>
 		</control>
-		
+
 		<control type="group">
 		  <visible>Control.IsVisible(53)</visible>
 
@@ -2630,7 +2622,7 @@
   				<texture background="true">views/wall/wall_mask_2.png</texture>
 				</control>
   		</control>
-						
+
 			<control type="group">
 	      <include>InfoDialogsVisible_ZoomAnimation</include>
 				<animation reversible="true" effect="zoom" start="100" end="95" center="auto" time="300" tween="quadratic" easing="in" condition="Control.IsVisible(7013) | Control.IsVisible(7014)">Conditional</animation>
@@ -2706,7 +2698,7 @@
 						<effect type="zoom" start="285,176,248,371" end="328,239,164,242" time="980" delay="0" />
 						<effect type="fade" start="100" end="0" time="500" delay="800" />
 					</animation>
-				</control>	
+				</control>
 				<control type="image">
 					<left>285</left>
 					<top>176</top>
@@ -2829,7 +2821,7 @@
 					<autoscroll delay="4000" time="2000" repeat="8000">!Window.IsActive(Textviewer)</autoscroll>
   				<label>$VAR[GlobalPlotDescription]</label>
 				</control>
-			</control>			
+			</control>
 
 			<control type="image">
         <include>FullscreenDimensions</include>
@@ -2850,7 +2842,6 @@
 			<onright>53</onright>
 		  <onup>9111</onup>
 		  <ondown>9555</ondown>
-	    <oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
 			<viewtype label="31082">Multiple Walls</viewtype>
 			<pagecontrol>60</pagecontrol>
 			<itemgap>0</itemgap>
@@ -2933,7 +2924,7 @@
 				<texture background="true">views/wall/wall_mask.png</texture>
 			</control>
 		 </control>
-						
+
 			<control type="group">
 	      <include>InfoDialogsVisible_ZoomAnimation</include>
 				<animation reversible="true" effect="zoom" start="100" end="95" center="640,340" time="300" tween="quadratic" easing="in" condition="Control.IsVisible(8013) | Control.IsVisible(8014)">Conditional</animation>
@@ -3009,7 +3000,7 @@
 						<effect type="zoom" start="285,176,248,371" end="328,239,164,242" time="980" delay="0"  tween="sine" easing="out" />
 						<effect type="fade" start="100" end="0" time="500" delay="800"  tween="sine" easing="out" />
 					</animation>
-				</control>	
+				</control>
 				<control type="image">
 					<left>285</left>
 					<top>176</top>
@@ -3172,7 +3163,6 @@
 			<onright>54</onright>
 		  <onup>9111</onup>
 		  <ondown>9555</ondown>
-	    <oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
 			<viewtype label="31083">Multiple Walls</viewtype>
 			<pagecontrol>60</pagecontrol>
 			<itemgap>0</itemgap>
@@ -3193,7 +3183,7 @@
 				</control>
 			</focusedlayout>
 		</control>
-			
+
 	</include>
 
 
@@ -3255,7 +3245,7 @@
 				<texture background="true">views/wall/wall_mask.png</texture>
 			</control>
 		 </control>
-						
+
 			<control type="group">
           <include>InfoDialogsVisible_ZoomAnimation</include>
 				<control type="image">
@@ -3330,7 +3320,7 @@
 						<height>186</height>
 						<aspectratio aligny="center" align="center">stretch</aspectratio>
 						<texture background="true">$INFO[ListItem.Art(discart)]</texture>
-						<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>						
+						<animation effect="fade" start="100" end="0" time="350" delay="350">Hidden</animation>
 					    <animation type="WindowOpen">
 							<effect type="fade" start="0" end="100" time="500" delay="800" tween="sine" easing="out" />
 							<effect type="zoom" start="625,260,186,186" end="560,198,346,346" time="980" delay="750" tween="sine" easing="out" />
@@ -3363,7 +3353,7 @@
 						</animation>
 					  <animation type="Conditional" condition="IsEmpty(ListItem.VideoResolution)">
 							<effect type="fade" start="100" end="0" time="200" delay="0" tween="sine" easing="out" />
-						</animation>						
+						</animation>
 				        <visible>![ListItem.IsParentFolder | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
 					</control>
 				</control>
@@ -3541,7 +3531,6 @@
 				<onright>9444</onright>
 				<onup>58</onup>
 				<ondown>58</ondown>
-	      <oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
 				<focusposition>4</focusposition>
 				<preloaditems>2</preloaditems>
 				<movement>4</movement>
@@ -3697,7 +3686,6 @@
 				<onright>580</onright>
 				<onup>9111</onup>
 				<ondown>612</ondown>
-	      <oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>612</pagecontrol>
 				<viewtype label="31087">BigWrap</viewtype>
@@ -3833,7 +3821,6 @@
   			<onright>65</onright>
   		  <onup>9111</onup>
   		  <ondown>613</ondown>
-	      <oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
   			<viewtype label="31089">Fanart</viewtype>
   			<pagecontrol>613</pagecontrol>
   			<itemgap>0</itemgap>
@@ -3927,7 +3914,7 @@
   				<height>45</height>
   				<width>900</width>
   				<textcolor>99ffffff</textcolor>
-          <shadowcolor>77000000</shadowcolor>  				
+          <shadowcolor>77000000</shadowcolor>
   	      <scroll>false</scroll>
   				<align>right</align>
   				<label>$INFO[ListItem.Tagline,[B],[/B][CR]]</label>
@@ -3990,7 +3977,7 @@
 			<visible>Control.IsVisible(59)</visible>
 	    <include>HomeMenu_OpenCloseSlideAnimation</include>
 		<!-- DiscArt view video -->
-		    <control type="image"> 
+		    <control type="image">
 		        <left>47</left>
 		        <top>445</top>
                 <width>138</width>
@@ -4013,8 +4000,7 @@
 				<onleft>59</onleft>
 				<onright>59</onright>
 	      <onup>9111</onup>
-	      <ondown>614</ondown>
-	      <oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
+	      <ondown>614</ondown>	      
 	      <viewtype label="Netflix">List</viewtype>
         <scrolltime tween="Quadratic" easing="out">300</scrolltime>
 	      <orientation>horizontal</orientation>
@@ -4078,7 +4064,7 @@
       		  <texture background="true" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
       		  <bordersize>ThumbsBordersize6pix</bordersize>
       		</control>
-      		
+
       		<control type="image">
     				<left>0</left>
     				<top>202</top>
@@ -4096,7 +4082,7 @@
       		  <texture background="true" flipy="true" diffuse="views/netflix/reflection_diffuse.png" fallback="thumbs/fallback_episode_tp.png">$VAR[NetFlixLandscapeThumb]</texture>
       		  <bordersize>ThumbsBordersize6pix</bordersize>
       		</control>
-      		
+
 					<control type="image">
     				<left>0</left>
     				<top>38</top>
@@ -4107,7 +4093,7 @@
             <visible>String.IsEqual(ListItem.Overlay,OverlayUnWatched.png)</visible>
       		  <bordersize>ThumbsBordersize6pix</bordersize>
 					</control>
-					
+
 					<control type="image">
 						<left>213</left>
 						<top>162</top>
@@ -4195,7 +4181,7 @@
       			<height>165</height>
       			<aspectratio align="center" aligny="center">stretch</aspectratio>
       			<texture border="30" flipy="true" diffuse="views/netflix/reflection_diffuse.png">windows/home/panel_widgets.png</texture>
-      		</control>      		
+      		</control>
       		<control type="image">
     				<left>0</left>
     				<top>202</top>
@@ -4246,7 +4232,7 @@
 				<texture border="30" flipy="true" diffuse="views/netflix/reflection_diffuse.png">windows/home/focus_widgets.png</texture>
 				<visible>[Container.Content(Movies) | Container.Content(Sets) | Container.Content(MusicVideos)] + String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled)</visible>
 			</control>
-			
+
 			<control type="image">
 				<left>45</left>
 				<top>458</top>
@@ -4286,7 +4272,7 @@
 				<animation effect="slide" start="0,0" end="0,38" condition="[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]">Conditional</animation>
 			</control>
 		</control>
- 
+
 		<control type="group">
 		  <left>25</left>
 		  <top>130</top>
@@ -4460,7 +4446,7 @@
 				<scrollspeed>30</scrollspeed>
 				<align>left</align>
 				<label>$INFO[ListItem.Genre]</label>
-				<visible>!Container.Content(Episodes) + ![Skin.HasSetting(ShowLogoAsTtile) + !IsEmpty(ListItem.Art(clearlogo))]</visible>			  
+				<visible>!Container.Content(Episodes) + ![Skin.HasSetting(ShowLogoAsTtile) + !IsEmpty(ListItem.Art(clearlogo))]</visible>
 			</control>
 			<control type="label">
 				<top>-15</top>

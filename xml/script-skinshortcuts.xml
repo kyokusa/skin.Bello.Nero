@@ -3,7 +3,7 @@
 	<defaultcontrol always="true">30000</defaultcontrol>
     <onunload condition="Window.IsVisible(home) + !String.IsEqual(Window.Property(groupname),mainmenu)">ReplaceWindow(Startup)</onunload>
 	<onunload condition="![Window.IsVisible(home) | String.IsEqual(Window.Property(groupname),mainmenu)]">RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;options=clonewidgets&amp;mainmenuID=20&amp;options=noGroups)</onunload>
-	<controls>	 
+	<controls>
     <include>CommonDialogsAnimation</include>
 		<visible>String.IsEmpty(Window.Property(additionalDialog)) + !Window.IsActive(1119) + !Window.IsActive(SelectDialog) + !Window.IsActive(DialogSelect.xml) + !Window.IsActive(FileBrowser) + !Window.IsActive(VirtualKeyboard) + !Window.IsActive(progressdialog) + !Window.IsActive(okdialog) + !Window.IsActive(yesnodialog)</visible>
 	  <control type="image">
@@ -209,8 +209,8 @@
 					<ondown>10000</ondown>
 				</control>
 			</control>
-	
-			<!-- Right Part -->		
+
+			<!-- Right Part -->
 			<control type="grouplist" id="30000">
 				<left>648</left>
 				<top>190</top>
@@ -358,8 +358,7 @@
 					<label2>[COLOR=$VAR[Text.GlobalColor]]$INFO[Skin.String(RSSVideoFeedURL.Label)][/COLOR]</label2>
 					<onfocus condition="!System.hasAddon(plugin.video.youtube) + String.IsEqual(Container(211).ListItem.Property(widget),RSSVideoFeeds)">InstallAddon(plugin.video.youtube)</onfocus>
 					<onclick>SetProperty(SelectRSSFeed,1,Home)</onclick>
-					<onclick>RunScript(script.skin.helper.service,action=setskinsetting,setting=RSSVideoFeedURL,header=$LOCALIZE[31255])</onclick>
-  				<visible>[System.HasAddon(script.extendedinfo) + System.HasAddon(script.skin.helper.service)] + String.IsEqual(Window.Property("groupname"),mainmenu) + String.IsEqual(Container(211).ListItem.Property(widget),RSSVideoFeeds)</visible>
+  				<visible>System.HasAddon(script.extendedinfo) + String.IsEqual(Window.Property("groupname"),mainmenu) + String.IsEqual(Container(211).ListItem.Property(widget),RSSVideoFeeds)</visible>
 				</control>
 				<control type="radiobutton" id="30004">
 					<description>AutoHide Widgets</description>

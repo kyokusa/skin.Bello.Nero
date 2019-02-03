@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<includes> 
+<includes>
     <include file="Views_Videos.xml" />
     <include file="Views_Music.xml" />
     <include file="Views_Pictures.xml" />
@@ -7,7 +7,7 @@
     <include file="Views_Addons.xml" />
 	<include file="Views_PVR.xml" />
 
-    <include name="VideoViews">	
+    <include name="VideoViews">
 	<control type="group">
 	    <include>InfoDialogsVisible_ZoomAnimation</include>
 	    <include>ListView_Videos</include> <!-- id = 50 -->
@@ -22,7 +22,7 @@
 	    <include condition="!Skin.HasSetting(PostersViewVideos2)">PostersView_Videos2</include> <!-- id = 64 -->
 	    <include condition="!Skin.HasSetting(BannersViewVideos)">BannersView_Videos</include> <!-- id = 57 -->
 	    <include condition="!Skin.HasSetting(NetfilxViewVideos)">NetfilxView_Videos</include> <!-- id = 59 -->
-	</control>	
+	</control>
         <include condition="!Skin.HasSetting(3DWallViewVideos)">3DWallView_Videos</include> <!-- id = 53 -->
         <include condition="!Skin.HasSetting(WallViewVideos)">WallView_Videos</include> <!-- id = 54 -->
         <include condition="!Skin.HasSetting(ListWallViewVideos)">ListWallView_Videos</include> <!-- id = 58 -->
@@ -30,7 +30,7 @@
         <include condition="!Skin.HasSetting(ShowtimeViewVideos)">ShowtimeView_Videos</include> <!-- id = 65 -->
         <include condition="!Skin.HasSetting(PostersViewVideos)">PostersView_Videos</include> <!-- id = 55 -->
     </include>
-    
+
     <include name="MusicViews">
 		<control type="group">
 	        <include>InfoDialogsVisible_ZoomAnimation</include>
@@ -41,7 +41,7 @@
 	        <include condition="!Skin.HasSetting(TilesViewMusic)">TilesView_Music</include> <!-- id = 562 -->
 	        <include condition="!Skin.HasSetting(ThumbnailsMusic)">ThumbnailsView</include> <!-- id = 56 -->
 	        <include condition="!Skin.HasSetting(ThumbnailsMusic)">ThumbnailsView_Music</include> <!-- id = 560 -->
-	        <include condition="!Skin.HasSetting(BannersViewMusic)">BannersView_Music</include> <!-- id = 57 -->		
+	        <include condition="!Skin.HasSetting(BannersViewMusic)">BannersView_Music</include> <!-- id = 57 -->
 	        <include condition="!Skin.HasSetting(3DWallViewMusic)">3DWallView_Music</include> <!-- id = 59 -->
 		</control>
     </include>
@@ -67,7 +67,7 @@
 	        <include>ThumbnailsView_Programs</include> <!-- id = 560 -->
 		</control>
     </include>
-    
+
     <include name="AddonsViews">
 		<control type="group">
 	        <include>InfoDialogsVisible_ZoomAnimation</include>
@@ -77,7 +77,7 @@
 	        <include>ThumbnailsView_Addons</include> <!-- id = 560 -->
 		</control>
     </include>
-    
+
     <include name="VideoPlaylistViews">
 		<control type="group">
 	        <include>InfoDialogsVisible_ZoomAnimation</include>
@@ -106,13 +106,13 @@
 		<onup>50</onup>
   		<ondown>50</ondown>
   		<onleft>600</onleft>
-  		<onright>9444</onright>  			
+  		<onright>9444</onright>
   		<oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
-  		<viewtype label="535">List</viewtype>  			
+  		<viewtype label="535">List</viewtype>
   	    <scrolltime tween="cubic" easing="out">300</scrolltime>
 		<pagecontrol>600</pagecontrol>
     </include>
-<!-- 
+<!--
     <include name="ListView_FocusTexture">
 		<control type="image">
 			<left>10</left>
@@ -639,9 +639,9 @@
 				<pagecontrol>605</pagecontrol>
 				<preloaditems>6</preloaditems>
 				<viewtype label="31085">Thumbs</viewtype>
-        <scrolltime tween="Quadratic" easing="out">350</scrolltime>		
+        <scrolltime tween="Quadratic" easing="out">350</scrolltime>
     </include>
-	
+
 	<include name="ThumbnailsVideoDiscArtLayout">
 	    <control type="group">
 		    <top>22</top>
@@ -649,34 +649,34 @@
 			<width>205</width>
 			<height>205</height>
 		<visible>[Container(561).Column(0) + Container(561).Row(0) | Container(561).Column(1) + Container(561).Row(0)
-			     | Container(561).Column(2) + Container(561).Row(0) | Container(561).Column(3) + Container(561).Row(0)				 
+			     | Container(561).Column(2) + Container(561).Row(0) | Container(561).Column(3) + Container(561).Row(0)
 				 | Container(561).Column(0) + Container(561).Row(1) | Container(561).Column(1) + Container(561).Row(1)
-			     | Container(561).Column(2) + Container(561).Row(1) | Container(561).Column(3) + Container(561).Row(1)]				 
+			     | Container(561).Column(2) + Container(561).Row(1) | Container(561).Column(3) + Container(561).Row(1)]
 				 + ![Container(561).Column(4) + Container(561).Row(0) | Container(561).Column(5) + Container(561).Row(0)
-			     | Container(561).Column(6) + Container(561).Row(0)				 
+			     | Container(561).Column(6) + Container(561).Row(0)
 				 | Container(561).Column(4) + Container(561).Row(1) | Container(561).Column(5) + Container(561).Row(1)
-			     | Container(561).Column(6) + Container(561).Row(1)]				 
+			     | Container(561).Column(6) + Container(561).Row(1)]
 				 + ![ListItem.IsParentFolder | Container.Scrolling | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]
 		</visible>
 	    <control type="image">
 		    <top>-40</top>
 			<left>-6</left>
             <width>285</width>
-			<height>285</height>	
+			<height>285</height>
 	        <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
             <texture background="true">views/Thumbnail/rounded_shadow.png</texture>
 			<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
 	    	    <animation type="Focus" reversible="false">
 				    <effect type="fade" start="0" end="100" time="200" delay="500" />
-	    		    <effect type="slide" end="60,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />	    		    
-	    	    </animation> 	    	
+	    		    <effect type="slide" end="60,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />
+	    	    </animation>
             </control>
-	    <control type="image">            
+	    <control type="image">
 	        <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-            <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>				
+            <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>
 	    	    <animation type="Focus" reversible="false">
 				    <effect type="fade" start="0" end="100" time="200" delay="500" />
-	    		    <effect type="slide" end="85,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />	    		    
+	    		    <effect type="slide" end="85,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />
 	    	    </animation>
 				<include>DiscArtRotateEffect</include>
             </control>
@@ -687,11 +687,11 @@
 			<width>205</width>
 			<height>205</height>
 		<visible>![Container(561).Column(0) + Container(561).Row(0) | Container(561).Column(1) + Container(561).Row(0)
-			     | Container(561).Column(2) + Container(561).Row(0) | Container(561).Column(3) + Container(561).Row(0)				 
+			     | Container(561).Column(2) + Container(561).Row(0) | Container(561).Column(3) + Container(561).Row(0)
 				 | Container(561).Column(0) + Container(561).Row(1) | Container(561).Column(1) + Container(561).Row(1)
-			     | Container(561).Column(2) + Container(561).Row(1) | Container(561).Column(3) + Container(561).Row(1)]				 
+			     | Container(561).Column(2) + Container(561).Row(1) | Container(561).Column(3) + Container(561).Row(1)]
 				 + [Container(561).Column(4) + Container(561).Row(0) | Container(561).Column(5) + Container(561).Row(0)
-			     | Container(561).Column(6) + Container(561).Row(0)				 
+			     | Container(561).Column(6) + Container(561).Row(0)
 				 | Container(561).Column(4) + Container(561).Row(1) | Container(561).Column(5) + Container(561).Row(1)
 			     | Container(561).Column(6) + Container(561).Row(1)]
 				 + ![Container.Scrolling | String.IsEqual(Skin.String(OSD.DiscartSelect),Disabled) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]
@@ -700,25 +700,25 @@
 		    <top>-40</top>
 			<left>4</left>
             <width>285</width>
-			<height>285</height>	
+			<height>285</height>
 	        <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
             <texture background="true">views/Thumbnail/rounded_shadow.png</texture>
 			<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
 	    	    <animation type="Focus" reversible="false">
 				    <effect type="fade" start="0" end="100" time="200" delay="500" />
-	    		    <effect type="slide" start="70" end="-85,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"  reversible="false" />	    		    
-	    	    </animation> 	    	
+	    		    <effect type="slide" start="70" end="-85,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout"  reversible="false" />
+	    	    </animation>
             </control>
-	    <control type="image">            
+	    <control type="image">
 	        <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-            <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>				
+            <texture background="true" fallback="osd/cd.png">$INFO[ListItem.Art(discart)]</texture>
 	    	    <animation type="Focus" reversible="false">
 				    <effect type="fade" start="0" end="100" time="200" delay="500" />
-	    		    <effect type="slide" start="70" end="-37,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" reversible="false" />	    		    
-	    	    </animation> 
+	    		    <effect type="slide" start="70" end="-37,0" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" reversible="false" />
+	    	    </animation>
 				<include>DiscArtRotateEffect</include>
             </control>
-		</control>		
+		</control>
 	</include>
 
 	<include name="ThumbnailsBig_MusicDiscArtLayout">
@@ -732,27 +732,27 @@
 		    <top>-45</top>
 			<left>-40</left>
             <width>285</width>
-			<height>285</height>	
+			<height>285</height>
 	        <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 			<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
-            <texture background="true">views/Thumbnail/rounded_shadow.png</texture>				
+            <texture background="true">views/Thumbnail/rounded_shadow.png</texture>
 	    	    <animation type="Focus" reversible="false">
 				    <effect type="fade" start="0" end="100" time="200" delay="500" />
-	    		    <effect type="slide" end="0,60" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />	    		    
-	    	    </animation>				                        
+	    		    <effect type="slide" end="0,60" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />
+	    	    </animation>
             </control>
-	    <control type="image">            
+	    <control type="image">
 	        <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-            <texture background="true" fallback="osd/cd.png">$VAR[MusicView_CdArt]</texture>				
+            <texture background="true" fallback="osd/cd.png">$VAR[MusicView_CdArt]</texture>
 	    	    <animation type="Focus" reversible="false">
 				    <effect type="fade" start="0" end="100" time="200" delay="500" />
-	    		    <effect type="slide" end="0,55" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />	    		    
+	    		    <effect type="slide" end="0,55" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />
 	    	    </animation>
 				<include>cdArtRotateEffect</include>
             </control>
-		</control>				
+		</control>
 	</include>
-	
+
 	<include name="ThumbnailsSamll_MusicDiscArtLayout">
 	    <control type="group">
 		    <top>42</top>
@@ -764,25 +764,25 @@
 		    <top>-40</top>
 			<left>-35</left>
             <width>220</width>
-			<height>220</height>	
+			<height>220</height>
 	        <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
             <texture background="true">views/Thumbnail/rounded_shadow.png</texture>
 			<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
 	    	    <animation type="Focus" reversible="false">
 				    <effect type="fade" start="0" end="100" time="200" delay="500" />
-	    		    <effect type="slide" end="0,60" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />	    		    
-	    	    </animation>				                        
+	    		    <effect type="slide" end="0,60" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />
+	    	    </animation>
             </control>
-	    <control type="image">            
+	    <control type="image">
 	        <aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-            <texture background="true" fallback="osd/cd.png">$VAR[MusicView_CdArt]</texture>				
+            <texture background="true" fallback="osd/cd.png">$VAR[MusicView_CdArt]</texture>
 	    	    <animation type="Focus" reversible="false">
 				    <effect type="fade" start="0" end="100" time="200" delay="500" />
-	    		    <effect type="slide" end="0,55" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />	    		    
+	    		    <effect type="slide" end="0,55" center="auto" time="700" delay="100" loop="false" tween="cubic" easing="inout" />
 	    	    </animation>
 				<include>cdArtRotateEffect</include>
             </control>
-		</control>				
+		</control>
 	</include>
 
     <include name="ThumbnailsLayout">
@@ -793,7 +793,7 @@
 				<height>$PARAM[height]</height>
 				<aspectratio align="center" aligny="center">stretch</aspectratio>
 				<texture border="30">views/other/panel2.png</texture>
-			</control>			
+			</control>
 			<control type="image">
 				<left>5</left>
 				<top>5</top>
@@ -873,7 +873,7 @@
 	      <param name="colordiffuse" value="ffffffff" />
 	    </include>
     </include>
-    
+
     <include name="ThumbnailsSmall_ItemLayout">
 	    <include content="ThumbnailsLayout">
 	      <param name="width" value="163" />
@@ -881,13 +881,13 @@
 	      <param name="colordiffuse" value="ffffffff" />
 	    </include>
     </include>
-    
+
     <include name="ThumbnailsBig_FocusedLayout">
 	    <include content="ThumbnailsLayout">
 	      <param name="width" value="231" />
 	      <param name="height" value="240" />
 	      <param name="colordiffuse" value="$VAR[DiffuseColorThumbnailsViewThumbs]" />
-	    </include>		
+	    </include>
 			<control type="image">
 				<left>5</left>
 				<top>5</top>
@@ -899,7 +899,7 @@
         <include>ThumbnailsFocusAnimation</include>
 			</control>
     </include>
-    
+
     <include name="ThumbnailsSamll_FocusedLayout">
 	    <include content="ThumbnailsLayout">
 	      <param name="width" value="163" />
@@ -1135,7 +1135,7 @@
       <texture background="true">flags/sets/sets.png</texture>
 			<visible>String.StartsWith(ListItem.Path,videodb://movies/sets/)</visible>
     </include>
-    <include name="SmallDownInfo_MPAATVFlags">			
+    <include name="SmallDownInfo_MPAATVFlags">
   		    <width>64</width>
 		    <height>23</height>
 			<colordiffuse>mediaflags</colordiffuse>
@@ -1436,7 +1436,7 @@
   	<variable name="DiffuseColorThumbnailsViewThumbs">
       <value condition="[String.StartsWith(Container.FolderPath,addons://sources) | String.StartsWith(Container.FolderPath,plugin://plugin) | Container.Content(Files) | [Container.HasFolders + !String.IsEmpty(ListItem.FolderName)] | [Container.HasFiles + !String.IsEmpty(ListItem.FolderName)] | Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Actors) | Container.Content(Genres) | Window.IsVisible(addonbrowser)] + !String.IsEmpty(ListItem.Thumb)">FFFFFFFF</value>
   		<value>$VAR[Textures.GlobalColor]</value>
-  	</variable> 	
+  	</variable>
 
   	<variable name="CurrentPlayList">
   		<value condition="Window.IsActive(Videos) + !String.IsEqual(Playlist.Length(video),0)">ActivateWindow(videoplaylist)</value>
@@ -1473,18 +1473,18 @@
       <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
       <value>$INFO[ListItem.Label]</value>
     </variable>
-  
+
   	<variable name="ListItemLabel2">
       <value condition="!String.IsEmpty(ListItem.Label2)">$INFO[ListItem.Label2]</value>
   		<value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
   		<value>$INFO[ListItem.AddonVersion]</value>
-  	</variable>	
+  	</variable>
 
   	<variable name="FirstMusicLabel">
   		<value condition="Container.Content(Songs) + !Integer.IsGreater(ListItem.TrackNumber,9)">$INFO[ListItem.TrackNumber,#0]</value>
   		<value condition="Container.Content(Songs) + Integer.IsGreater(ListItem.TrackNumber,9)">$INFO[ListItem.TrackNumber,#]</value>
   	  <value condition="!Container.Content(Songs) + !String.IsEmpty(ListItem.Year)">$INFO[ListItem.Year]</value>
-  	</variable>	
+  	</variable>
 
   	<variable name="MusicLabel">
   		<value condition="[Container.Content(Songs) + Control.IsVisible(50)] + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]$INFO[ListItem.Artist, - ]</value>
@@ -1501,7 +1501,7 @@
   		<value condition="!String.IsEmpty(ListItem.Label2)">$INFO[ListItem.Label2]</value>
   		<value>$INFO[ListItem.AddonVersion]</value>
   	</variable>
-  
+
   	<variable name="BannersListMusicBottomLabel">
   		<value condition="Container.Content(Artists)">$INFO[ListItem.Property(Artist_YearsActive),$LOCALIZE[21898]  ]</value>
   		<value condition="Container.Content(Albums)">$INFO[ListItem.Year]$INFO[ListItem.Property(Album_label), • ]</value>
@@ -1509,7 +1509,7 @@
   		<value condition="Container.Content(Songs) + Integer.IsGreater(ListItem.TrackNumber,9)">$INFO[ListItem.TrackNumber,$LOCALIZE[554] #,]$INFO[ListItem.Duration,  •  , $LOCALIZE[12391]]</value>
   		<value condition="Container.Content(MusicVideos) + !String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Year]$INFO[ListItem.Rating, • ,]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</value>
   	</variable>
-  
+
   	<variable name="FanartThumbsOptionsLabels">
   		<value condition="Control.IsVisible(50) + [Container.Content(TVShows) | Container.Content(Seasons)] + String.IsEqual(Skin.String(ListViewWideThumbTVShows),1)">$LOCALIZE[20445]</value>
   		<value condition="Control.IsVisible(50) + [Container.Content(TVShows) | Container.Content(Seasons)] + String.IsEqual(Skin.String(ListViewWideThumbTVShows),2)">$LOCALIZE[31218]</value>
@@ -1634,7 +1634,7 @@
       <value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
       <value>$INFO[ListItem.ActualIcon,thumbs/,/folderback_episode_tp.png]</value>
   	</variable>
-  
+
   	<variable name="VarArtThumbSquare">
       <value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
       <value>$INFO[ListItem.ActualIcon,thumbs/,/folderback_square_tp.png]</value>
@@ -1645,7 +1645,7 @@
   		<value condition="!String.IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
       <value>$INFO[ListItem.ActualIcon,thumbs/,/folderback_episode_tp.png]</value>
   	</variable>
-  
+
     <variable name="ThumbnailsIcon">
       <value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
       <value>$INFO[ListItem.Icon]</value>
@@ -1658,7 +1658,7 @@
   		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
       <value>$INFO[ListItem.ActualIcon,thumbs/,/folderback_episode_tp.png]</value>
   	</variable>
-  
+
   	<variable name="LandscapeVars">
   		<value condition="[Container.Content(TVShows) | Container.Content(Movies) | Container.Content(Sets)] + !String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
   		<value condition="Container.Content(Seasons) | Container.Content(Episodes) + !String.IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
@@ -1676,7 +1676,7 @@
 	    <value condition="String.IsEqual(Container.FolderPath,videodb://movies/genres/)">$INFO[ListItem.Label,special://skin/extras/moviesgenres/,.jpg]</value>
 	    <value condition="String.IsEqual(Container.FolderPath,videodb://tvshows/genres/)">$INFO[ListItem.Label,special://skin/extras/tvshowsgenres/,.jpg]</value>
 		</variable>
-  
+
     <variable name="ThumbnailsOnThumbLabel">
       <value condition="Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + !String.IsEmpty(ListItem.Property(UnWatchedEpisodes))">$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
       <value condition="Container.Content(Episodes) + !String.IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode]</value>
@@ -1706,6 +1706,6 @@
 		<value condition="String.Contains(ListItem.FileNameAndPath,hdtv) | String.Contains(ListItem.FileNameAndPath,pdtv) | String.Contains(ListItem.FileNameAndPath,dsr)">flags/def/source/hdtv.png</value>
 	    <value condition="String.Contains(ListItem.FileNameAndPath,bluray) | String.Contains(ListItem.FileNameAndPath,bdrip) | String.Contains(ListItem.FileNameAndPath,blu-ray) | String.Contains(ListItem.FileNameAndPath,bd25) | String.Contains(ListItem.FileNameAndPath,bd50)">flags/def/source/bluray.png</value>
 		<value condition="ListItem.IsStereoscopic">flags/def/source/3d.png</value>
-		<value condition="String.Contains(ListItem.FileNameAndPath,2160p) | String.Contains(ListItem.FileNameAndPath,UHD) | String.Contains(ListItem.FileNameAndPath,UltraHD) | String.Contains(ListItem.FileNameAndPath,Ultra-HD) | String.Contains(ListItem.FileNameAndPath,4K)">flags/def/source/4k.png</value>				
+		<value condition="String.Contains(ListItem.FileNameAndPath,2160p) | String.Contains(ListItem.FileNameAndPath,UHD) | String.Contains(ListItem.FileNameAndPath,UltraHD) | String.Contains(ListItem.FileNameAndPath,Ultra-HD) | String.Contains(ListItem.FileNameAndPath,4K)">flags/def/source/4k.png</value>
 	</variable>
-</includes>    
+</includes>

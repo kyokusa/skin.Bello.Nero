@@ -303,7 +303,7 @@
 	        <include>PlayerSquare</include>
 			    <visible>Player.HasAudio | VideoPlayer.Content(LiveTV)</visible>
   			</control>
-  
+
   	    <!-- Time Label -->
   		  <control type="group">
   				<left>0</left>
@@ -323,7 +323,7 @@
   				</control>
   			</control>
 
-  
+
   	    <!-- Right Sublabel -->
   			<control type="fadelabel">
   				<left>738</left>
@@ -407,7 +407,7 @@
   					<texturenofocus>osd/channelDOWN_nf.png</texturenofocus>
   					<onclick>ChannelUp</onclick>
   					<visible>VideoPlayer.Content(LiveTV)</visible>
-  				</control>		    
+  				</control>
   				<control type="button" id="101">
 	          <include>OSDControlsButton</include>
   					<texturefocus colordiffuse="$VAR[Textures.GlobalColor]">osd/previous_fo.png</texturefocus>
@@ -477,7 +477,7 @@
 			<top>25</top>
   		    <include>ShutdownMenuAnimation</include>
             <include>OptionsTopMenuAnimation</include>
-            <include>OptionsTopMenuHeader</include>            
+            <include>OptionsTopMenuHeader</include>
 			<visible>[Window.IsActive(PlayerControls) + ![Skin.HasSetting(DisableQuickNav) + !Player.HasMedia]] + !Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation)</visible>
 		  <control type="grouplist">
 				<left>0</left>

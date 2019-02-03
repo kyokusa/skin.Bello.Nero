@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.bello.nero" version="7.0.1a" name="Bello Nero" provider-name="Nessus,eQUIV,iCanuck,Kyo">
+<addon id="skin.bello.nero" version="7.0.2a" name="Bello Nero" provider-name="Nessus,eQUIV,iCanuck,Kyo">
   <requires>
 		<import addon="xbmc.gui" version="5.14.0" />
-		<import addon="script.skinshortcuts" version="1.0.17" />
-		<import addon="script.skin.helper.service" version="1.1.3" />
+		<import addon="script.skinshortcuts" version="1.0.17" />		
 		<import addon="script.extendedinfo" version="5.6.0" />
 		<import addon="service.library.data.provider" version="0.3.0" />
 		<import addon="script.skin.helper.widgets" version="1.0.22" />
