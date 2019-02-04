@@ -960,7 +960,7 @@
 					<label>$LOCALIZE[21435]</label>
 					<onclick>SetFocus(9222)</onclick>
 				  <include>TopMenuButton</include>
-				  <visible>Window.IsVisible(Videos)</visible>
+				  <visible>Window.IsVisible(Videos) | String.IsEqual(ListItem.DBType,Movie)</visible>
 				</control>
 				<control type="button" id="84">
 					<description>Plus info</description>
