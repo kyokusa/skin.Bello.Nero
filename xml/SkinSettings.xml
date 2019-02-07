@@ -459,9 +459,12 @@
 			<control type="button" id="5704">
         <include>SettingsButton</include>
 				<label>$LOCALIZE[31129]</label>
-				<onclick>Skin.SetString(Textures.GlobalColor,FF12B2E7)</onclick>
-				<onclick>Skin.SetString(Text.GlobalColor,FF12B2E7)</onclick>
-				<onclick>Skin.SetString(BG.GlobalColor,FFCB2BFF)</onclick>
+				<onclick>Skin.Reset(Textures.GlobalColor)</onclick>
+				<onclick>Skin.Reset(Text.GlobalColor)</onclick>
+				<onclick>Skin.Reset(BG.GlobalColor)</onclick>
+				<onclick>Skin.Reset(pulse_1)</onclick>
+        <onclick>Skin.Reset(pulse_2)</onclick>
+				<onclick>Skin.Reset(pulse_3)</onclick>
 			</control>
 		</control>
 

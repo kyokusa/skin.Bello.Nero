@@ -704,7 +704,7 @@
     	</control>
     	<control type="grouplist">
     	  <left>40</left>
-	    	<top>455</top>
+	    	<top>452</top>
     		<width>490</width>
     		<height>68</height>
     		<align>left</align>

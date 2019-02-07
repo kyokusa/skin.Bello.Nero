@@ -36,11 +36,11 @@
 			<property name="defaultID">movies</property>
 			<property name="background">Home_Movie_Fanart</property>
 			<property name="backgroundName">Movies Fanart</property>
-			<property name="widget">Library</property>
-			<property name="widgetName">Emby - Film Aggiunti Di Recente</property>
-			<property name="widgetType">movies</property>
-			<property name="widgetTarget">music</property>
-			<property name="widgetPath">library://video/embymovies253bc9fc2ae4cb0a47d99e75b7e36923/recent.xml/</property>
+			<property name="widget">RSSVideoFeeds</property>
+			<property name="widgetName">31255</property>
+			<property name="widgetType">mixed_online</property>
+			<property name="widgetTarget" />
+			<property name="widgetPath">$VAR[RSSVideoFeedType]</property>
 			<property name="widgetRatio">Poster</property>
 			<visible>[Library.HasContent(Movies)] + [Library.HasContent(movies)]</visible>
 			<onclick condition="Window.IsActive(PlayerControls.xml)">Close</onclick>
@@ -1289,11 +1289,11 @@
 			<property name="defaultID">movies</property>
 			<property name="background">Home_Movie_Fanart</property>
 			<property name="backgroundName">Movies Fanart</property>
-			<property name="widget">Library</property>
-			<property name="widgetName">Emby - Film Aggiunti Di Recente</property>
-			<property name="widgetType">movies</property>
-			<property name="widgetTarget">music</property>
-			<property name="widgetPath">library://video/embymovies253bc9fc2ae4cb0a47d99e75b7e36923/recent.xml/</property>
+			<property name="widget">RSSVideoFeeds</property>
+			<property name="widgetName">31255</property>
+			<property name="widgetType">mixed_online</property>
+			<property name="widgetTarget" />
+			<property name="widgetPath">$VAR[RSSVideoFeedType]</property>
 			<property name="widgetRatio">Poster</property>
 			<visible>[Library.HasContent(Movies)] + [Library.HasContent(movies)]</visible>
 			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),movies) + [Window.IsActive(PlayerControls.xml)]">Close</onclick>
@@ -3599,7 +3599,7 @@
 		<control id="25" type="fixedlist">
 			<include>HomeWidgetList_Poster</include>
 			<visible>String.IsEqual(Container(20).ListItem.Property(submenuVisibility),movies)</visible>
-			<content target="music">library://video/embymovies253bc9fc2ae4cb0a47d99e75b7e36923/recent.xml/</content>
+			<content target="">$VAR[RSSVideoFeedType]</content>
 		</control>
 		<control id="25" type="fixedlist">
 			<include>HomeWidgetList_Poster</include>

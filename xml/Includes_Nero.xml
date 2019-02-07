@@ -649,7 +649,7 @@
           </animation>
   			  <control type="grouplist">
   			    <left>25</left>
-    			  <top>623</top>
+    			  <top>618</top>
   				  <width>490</width>
 					  <height>100</height>
   				  <align>left</align>
@@ -697,7 +697,7 @@
           </animation>
   			  <control type="grouplist">
   			    <left>22</left>
-    			  <top>623</top>
+    			  <top>618</top>
   				  <width>490</width>
 					  <height>96</height>
   				  <align>left</align>
@@ -745,7 +745,7 @@
           </animation>
   			  <control type="grouplist">
   			  <left>25</left>
-    			<top>623</top>
+    			<top>618</top>
   				<width>490</width>
 					<height>96</height>
   				<align>left</align>
@@ -793,7 +793,7 @@
           </animation>
   			  <control type="grouplist">
   			    <left>25</left>
-    			  <top>628</top>
+    			  <top>621</top>
   				  <width>490</width>
 					  <height>88</height>
   				  <align>left</align>
@@ -841,7 +841,7 @@
           </animation>
   			  <control type="grouplist">
   			    <left>22</left>
-    			  <top>623</top>
+    			  <top>618</top>
   				  <width>490</width>
 					  <height>96</height>
   				  <align>left</align>
@@ -889,7 +889,7 @@
           </animation>
   			  <control type="grouplist">
   			    <left>27</left>
-    			  <top>623</top>
+    			  <top>618</top>
   				  <width>490</width>
 					  <height>96</height>
   				  <align>left</align>
@@ -1034,7 +1034,7 @@
           </animation>
   			  <control type="grouplist">
   			    <left>22</left>
-    			  <top>623</top>
+    			  <top>618</top>
   				  <width>490</width>
 					  <height>96</height>
   				  <align>left</align>
@@ -1074,7 +1074,7 @@
 
     <!-- Profile info -->
 	  <control type="group">
-		  <top>646</top>
+		  <top>639</top>
 	    <include>HomeMenu_OpenCloseSlideAnimation</include>
 	    <include>VisibleHiddenSlideAnimation</include>
       <include>KaiToastSlideAnimations</include>

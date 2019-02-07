@@ -415,7 +415,7 @@ msgid "Background Colours"
 msgstr ""
 
 msgctxt "#31129"
-msgid "Reset All Colours to Default"
+msgid "Reset All Colours to Default Themes"
 msgstr ""
 
 msgctxt "#31130"

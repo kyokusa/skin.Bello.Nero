@@ -365,8 +365,8 @@ msgid "Background Colours"
 msgstr "Colori dello Sfondo"
 
 msgctxt "#31129"
-msgid "Reset All Colours to Default"
-msgstr "Reimposta i Colori Predefiniti "
+msgid "Reset All Colours to Default Themes"
+msgstr "Reimposta i Colori Predefiniti del Tema"
 
 msgctxt "#31130"
 msgid "Disable Fanart in all sections"

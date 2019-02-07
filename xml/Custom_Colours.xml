@@ -152,9 +152,9 @@
       <content>
         <!-- Textures Colours -->
   			<item id="1"> <!-- Default -->
-  				<onclick>Skin.Reset(Textures.GlobalColor)</onclick>
+  				<onclick>Skin.SetString(Textures.GlobalColor,FF2554C7)</onclick>
   				<onclick>Dialog.Close(1113)</onclick>
-  				<thumb>icons/bello.png</thumb>
+  				<thumb>special://skin/extras/colors/default.png</thumb>
   				<visible>String.IsEqual(Window(SkinSettings).Property(CustomColor),textures)</visible>
   			</item>
   			<item id="2"> <!-- blue 1 -->
@@ -575,9 +575,9 @@
 
         <!-- Text's Colours -->
   			<item id="1"> <!-- Default -->
-  				<onclick>Skin.Reset(Text.GlobalColor)</onclick>
+  				<onclick>Skin.SetString(Text.GlobalColor,FF2554C7)</onclick>
   		    <onclick>Dialog.Close(1113)</onclick>
-  				<thumb>icons/bello.png</thumb>
+  				<thumb>special://skin/extras/colors/default.png</thumb>
           <visible>String.IsEqual(Window(SkinSettings).Property(CustomColor),text)</visible>
   			</item>
   			<item id="2"> <!-- blue 1 -->
@@ -997,10 +997,10 @@
 
 
         <!-- BG Colours -->
-  			<item id="1"> <!-- Bello <onclick>Skin.SetString(BG.GlobalColor,FF12B2E7)</onclick> -->
-  				<onclick>Skin.SetString(BG.GlobalColor,FFFFFFFF)</onclick>
-  				<onclick>Dialog.Close(1113)</onclick>
-  				<thumb>special://skin/extras/colors/none.png</thumb>
+  			<item id="1"> <!-- Bello -->
+          <onclick>Skin.SetString(BG.GlobalColor,FF2554C7)</onclick>
+          <onclick>Dialog.Close(1113)</onclick>
+  				<thumb>special://skin/extras/colors/default_BG.png</thumb>
   				<visible>String.IsEqual(Window(SkinSettings).Property(CustomColor),BG)</visible>
   			</item>
   			<item id="2"> <!-- blue 1 -->
@@ -1434,5 +1434,3 @@
 	</control>
  </controls>
 </window>
-
-

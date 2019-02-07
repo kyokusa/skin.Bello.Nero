@@ -509,7 +509,7 @@
             </animation>
     	      <control type="grouplist">
 	  			    <left>25</left>
-	    			  <top>623</top>
+	    			  <top>618</top>
     			  	<width>490</width>
   					  <height>100</height>
     			  	<align>left</align>
@@ -557,7 +557,7 @@
           </animation>
     			<control type="grouplist">
 	  			  <left>22</left>
-	    			<top>623</top>
+	    			<top>618</top>
     				<width>490</width>
   					<height>96</height>
     				<align>left</align>
@@ -605,7 +605,7 @@
           </animation>
     			<control type="grouplist">
 	  			  <left>25</left>
-	    			<top>623</top>
+	    			<top>618</top>
     				<width>490</width>
   					<height>96</height>
     				<align>left</align>
@@ -653,7 +653,7 @@
           </animation>
     			<control type="grouplist">
 	  			  <left>25</left>
-	    			<top>628</top>
+	    			<top>621</top>
     				<width>490</width>
   					<height>88</height>
     				<align>left</align>
@@ -701,7 +701,7 @@
           </animation>
     			<control type="grouplist">
 	  			  <left>22</left>
-	    			<top>623</top>
+	    			<top>618</top>
     				<width>490</width>
   					<height>96</height>
     				<align>left</align>
@@ -749,7 +749,7 @@
           </animation>
     		  <control type="grouplist">
 	  			  <left>27</left>
-	    			<top>623</top>
+	    			<top>618</top>
     				<width>490</width>
   					<height>96</height>
     				<align>left</align>
@@ -894,7 +894,7 @@
           </animation>
     			<control type="grouplist">
 	  			  <left>22</left>
-	    			<top>623</top>
+	    			<top>618</top>
     				<width>490</width>
   					<height>96</height>
     				<align>left</align>
@@ -934,7 +934,7 @@
 
       <!-- Profile info -->
 			<control type="group">
-  			<top>646</top>
+  			<top>639</top>
 		    <include>HomeMenu_OpenCloseSlideAnimation</include>
 		    <include>VisibleHiddenSlideAnimation</include>
 	      <include>KaiToastSlideAnimations</include>
@@ -1001,10 +1001,10 @@
     <include>KaiToastSlideAnimations</include>
     <include>ScanSlideAnimations</include>
 	  <visible>Player.HasMedia + !Window.IsActive(PlayerControls) + !Window.IsActive(script-globalsearch-main.xml) + !String.Contains(Window(Videos).Property(PlayingBackgroundMedia))</visible>
-		<left>495</left>
-		<top>640</top>
-		<height>60</height>
-	  <width>740</width>
+		<left>470</left>
+		<top>366</top>
+		<height>500</height>
+	  <width>790</width>
 		<itemgap>10</itemgap>
 		<align>right</align>
 	  <orientation>horizontal</orientation>
@@ -1019,8 +1019,8 @@
 					<effect type="fade" start="100" end="0" time="500" delay="20000" />
 				</animation>
 				<control type="label">
-					<left>-540</left>
-					<top>4</top>
+					<left>-470</left>
+					<top>274</top>
 					<height>25</height>
 					<label>...$LOCALIZE[31316]</label>
 					<align>right</align>
@@ -1030,8 +1030,8 @@
 					<shadowcolor>77000000</shadowcolor>
 				</control>
 				<control type="label">
-					<left>-540</left>
-					<top>25</top>
+					<left>-470</left>
+					<top>295</top>
 					<height>25</height>
 					<label>$INFO[Player.Title]$INFO[MusicPlayer.Artist, - ] $INFO[MusicPlayer.Album,(,)]</label>
 					<align>right</align>
@@ -1048,8 +1048,8 @@
 					<effect type="fade" start="100" end="0" time="500" delay="20000" />
 				</animation>
 				<control type="label">
-					<left>-540</left>
-					<top>4</top>
+					<left>-470</left>
+					<top>274</top>
 					<height>25</height>
 					<label>...$LOCALIZE[209]</label>
 					<align>right</align>
@@ -1059,8 +1059,8 @@
 					<shadowcolor>77000000</shadowcolor>
 				</control>
 				<control type="label">
-					<left>-540</left>
-					<top>25</top>
+					<left>-470</left>
+					<top>295</top>
 					<height>25</height>
 					<label>$INFO[MusicPlayer.offset(1).Title]$INFO[MusicPlayer.offset(1).Artist, - ]</label>
 					<align>right</align>
@@ -1076,8 +1076,8 @@
 		<control type="group">
 			<visible>Player.HasVideo + VideoPlayer.Content(Movies)</visible>
 			<control type="label">
-				<left>-540</left>
-				<top>4</top>
+				<left>-470</left>
+				<top>274</top>
 				<height>25</height>
 				<label>...$LOCALIZE[31316]</label>
 				<align>right</align>
@@ -1087,8 +1087,8 @@
 				<shadowcolor>77000000</shadowcolor>
 			</control>
 			<control type="label">
-				<left>-540</left>
-				<top>25</top>
+				<left>-470</left>
+				<top>295</top>
 				<height>25</height>
 		    <label>$INFO[Player.Title]$INFO[VideoPlayer.Year, (,)]</label>
 				<align>right</align>
@@ -1103,8 +1103,8 @@
 		<control type="group">
 			<visible>Player.HasVideo + VideoPlayer.Content(Episodes)</visible>
 			<control type="label">
-				<left>-540</left>
-				<top>4</top>
+				<left>-470</left>
+				<top>274</top>
 				<height>25</height>
 				<label>...$LOCALIZE[31316]</label>
 				<align>right</align>
@@ -1114,8 +1114,8 @@
 				<shadowcolor>77000000</shadowcolor>
 			</control>
 			<control type="label">
-				<left>-540</left>
-				<top>25</top>
+				<left>-470</left>
+				<top>295</top>
 				<height>25</height>
 				<label>$INFO[Player.Title] $INFO[VideoPlayer.TVShowTitle, (,] $INFO[VideoPlayer.Season,]$INFO[VideoPlayer.Episode,x,)]</label>
 				<align>right</align>
@@ -1130,8 +1130,8 @@
 		<control type="group">
 			<visible>Player.HasVideo + ![VideoPlayer.Content(Movies) | VideoPlayer.Content(Episodes) | VideoPlayer.Content(LiveTV)]</visible>
 			<control type="label">
-				<left>-540</left>
-				<top>4</top>
+				<left>-470</left>
+				<top>274</top>
 				<height>25</height>
 				<label>...$LOCALIZE[31316]</label>
 				<align>right</align>
@@ -1141,8 +1141,8 @@
 				<shadowcolor>77000000</shadowcolor>
 			</control>
 			<control type="label">
-				<left>-540</left>
-				<top>25</top>
+				<left>-470</left>
+				<top>295</top>
 				<height>25</height>
 		    <label>$INFO[Player.Title]$INFO[VideoPlayer.Genre, (,)]</label>
 				<align>right</align>
@@ -1163,8 +1163,8 @@
 					<effect type="fade" start="100" end="0" time="500" delay="20000" />
 				</animation>
 				<control type="label">
-					<left>-540</left>
-					<top>4</top>
+					<left>-470</left>
+					<top>274</top>
 					<height>25</height>
 					<label>...$LOCALIZE[31316]</label>
 					<align>right</align>
@@ -1174,8 +1174,8 @@
 					<shadowcolor>77000000</shadowcolor>
 				</control>
 				<control type="label">
-					<left>-540</left>
-					<top>25</top>
+					<left>-470</left>
+					<top>295</top>
 					<height>25</height>
 					<label>$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]$INFO[Player.Title,: ]</label>
 					<align>right</align>
@@ -1192,8 +1192,8 @@
 					<effect type="fade" start="100" end="0" time="500" delay="20000" />
 				</animation>
 				<control type="label">
-					<left>-540</left>
-					<top>4</top>
+					<left>-470</left>
+					<top>274</top>
 					<height>25</height>
 					<label>...$LOCALIZE[209]</label>
 					<align>right</align>
@@ -1203,8 +1203,8 @@
 					<shadowcolor>77000000</shadowcolor>
 				</control>
 				<control type="label">
-					<left>-540</left>
-					<top>25</top>
+					<left>-470</left>
+					<top>295</top>
 					<height>25</height>
 				  <label>$INFO[VideoPlayer.NextTitle,, ]$INFO[VideoPlayer.NextStartTime,(,)]</label>
 					<align>right</align>
@@ -1218,8 +1218,8 @@
 
       <!-- Player Time -->
 	    <control type="label">
-	    	<height>53</height>
-	    	<width min="0" max="1190">auto</width>
+	    	<height>595</height>
+	    	<width min="0" max="190">auto</width>
 	    	<label>$INFO[Player.Time]</label>
 	    	<align>left</align>
 	    	<aligny>center</aligny>
@@ -1227,83 +1227,139 @@
 	    	<textcolor>white</textcolor>
 	    	<shadowcolor>77000000</shadowcolor>
 	    </control>
+
+			<!-- Music  Cover-->
+			<control type="group">
+				<top>-45</top>
+				<width>92</width>
+				<visible>Player.HasAudio</visible>
+				<control type="group">
+					<animation type="Conditional" reversible="false" condition="MusicPlayer.HasNext" loop="true">
+						<effect type="fade" start="0" end="100" time="500" delay="0" />
+						<effect type="fade" start="100" end="0" time="500" delay="10000" />
+						<effect type="fade" start="100" end="0" time="500" delay="20000" />
+					</animation>
+					<!-- Player Music Cover -->
+					<control type="image">
+						<aspectratio align="right" aligny="center" scalediffuse="true">keep</aspectratio>
+						<texture background="true" diffuse="thumbs/square_diffuse_small.png" fallback="DefaultAudio.png">$INFO[Player.Art(thumb)]</texture>
+					</control>
+				</control>
+				<control type="group">
+					<visible>MusicPlayer.HasNext</visible>
+					<animation type="Conditional" reversible="false" condition="MusicPlayer.HasNext" loop="true">
+						<effect type="fade" start="0" end="100" time="500" delay="10500" />
+						<effect type="fade" start="100" end="0" time="500" delay="20000" />
+					</animation>
+					<!-- Player Music Next Cover -->
+					<control type="image">
+						<aspectratio align="right" aligny="center" scalediffuse="true">keep</aspectratio>
+						<texture background="true" diffuse="thumbs/square_diffuse_small.png" fallback="DefaultAudio.png">$INFO[MusicPlayer.offset(1).Cover]</texture>
+					</control>
+				</control>
+			</control>
+
+			<!-- Player Videos Cover -->
+			<control type="image">
+				<top>-5</top>
+			  <width>92</width>
+				<aspectratio align="right" aligny="center" scalediffuse="true">keep</aspectratio>
+				<texture background="true" diffuse="thumbs/poster_diffuse.png" fallback="DefaultVideoCover.png">$INFO[Player.Art(poster)]</texture>
+				<visible>Player.HasVideo + !String.IsEmpty(Player.Art(poster))</visible>
+			</control>
+			<!-- Player Videos Thumb -->
+			<control type="image">
+				<top>-95</top>
+			  <width>92</width>
+				<aspectratio align="right" aligny="center" scalediffuse="true">keep</aspectratio>
+				<texture background="true" diffuse="thumbs/square_diffuse_small.png" fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
+				<visible>Player.HasVideo + [String.IsEmpty(Player.Art(thumb)) | String.IsEmpty(Player.Art(poster))]</visible>
+			</control>
+			<!-- Player LiveTV Icon -->
+			<control type="image">
+				<top>-93</top>
+			  <width>92</width>
+				<aspectratio align="right" aligny="center" scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="thumbs/square_diffuse_small.png" fallback="DefaultLiveTV.png">$INFO[Player.Art(thumb)]</texture>
+				<visible>Player.HasVideo + VideoPlayer.Content(LiveTV)</visible>
+			</control>
 	  </control>
   </include>
 
-    <!-- =========== -->
-    <!-- TopHomeMenu -->
-    <!-- =========== -->
-    <include name="TopHomeMenu">
-      <control type="group">
-    	  <left>45</left>
-    	  <top>25</top>
-    	  <include>ShutdownMenuAnimation</include>
-        <include>OpenCloseSlideAnimationTwo</include>
-        <include>VisibleHiddenSlideAnimation</include>
-        <include>InfoDialogs_ContentInfoAnimation</include>
-    	  <visible allowhiddenfocus="true">!ControlGroup(22).HasFocus</visible>
-    	  <control type="grouplist" id="21">
-    	  	<left>0</left>
-    	  	<top>0</top>
-    	  	<height>0</height>
-    	  	<width>1190</width>
-    	  	<onleft>21</onleft>
-    	  	<onright>21</onright>
-    	  	<onup>20</onup>
-    	  	<ondown>20</ondown>
-    	  	<itemgap>15</itemgap>
-          <orientation>horizontal</orientation>
-    	  	<control type="group" id="998">
-    	  		<width>36</width>
-            <include>Logo</include>
-    	  	</control>
-    	  	<control type="label" id="999">
-    	  	  <include>TopBigLabel</include>
-    	  		<label>10000</label>
-    	  	</control>
-    	  	<control type="button" id="210">
-    	  		<description>Favorites</description>
-    	      <include>TopMenuButton</include>
-    	  		<label>$LOCALIZE[1036]</label>
-    	      <onclick>SetFocus(20)</onclick>
-    	      <onclick>ActivateWindow(favourites)</onclick>
-    	  	</control>
-    	  	<control type="button" id="211">
-    	  		<description>Search</description>
-    	      <include>TopMenuButton</include>
-    	  		<label>$LOCALIZE[137]</label>
-    	      <onclick>SetFocus(20)</onclick>
-    	  	</control>
-    	  	<control type="button" id="212">
-    	  		<description>Power</description>
-    	      <include>TopMenuButton</include>
-    	  		<label>$LOCALIZE[33060]</label>
-    	      <onclick>SetFocus(20)</onclick>
-    	      <onclick>ActivateWindow(shutdownmenu)</onclick>
-    	  	</control>
-    	  </control>
-
-    	  <!-- Title Grab Fanart-->
-    	  <control type="label">
-    	    <left>54</left>
-    	    <top>25</top>
-      	  <description>Title Fanart</description>
-      	  <include>TopTitleFanart</include>
-      	  <label>$VAR[Home_Fanart_Title]</label>
-      	  <scroll>false</scroll>
-      	  <visible>!String.IsEqual(Container(20).ListItem.Property(defaultID),weather) + !Skin.HasSetting(HideHomeTitleInfofanart)</visible>
-        </control>
-
-        <!-- Title Artist Playing Fanart -->
-    	  <control type="label">
-    	    <left>54</left>
-    	    <top>25</top>
-      	  <description>Title Artist Playing Fanart</description>
-      	  <include>TopTitleFanart</include>
-      	  <label>$INFO[MusicPlayer.Artist]</label>
-      	  <scroll>false</scroll>
-      	  <visible>!String.IsEqual(Container(20).ListItem.Property(defaultID),weather) + !Skin.HasSetting(HideHomeTitleInfofanart)</visible>
-        </control>
+  <!-- =========== -->
+  <!-- TopHomeMenu -->
+  <!-- =========== -->
+  <include name="TopHomeMenu">
+    <control type="group">
+      <left>45</left>
+      <top>25</top>
+      <include>ShutdownMenuAnimation</include>
+      <include>OpenCloseSlideAnimationTwo</include>
+      <include>VisibleHiddenSlideAnimation</include>
+      <include>InfoDialogs_ContentInfoAnimation</include>
+      <visible allowhiddenfocus="true">!ControlGroup(22).HasFocus</visible>
+      <control type="grouplist" id="21">
+      	<left>0</left>
+      	<top>0</top>
+      	<height>0</height>
+      	<width>1190</width>
+      	<onleft>21</onleft>
+      	<onright>21</onright>
+      	<onup>20</onup>
+      	<ondown>20</ondown>
+      	<itemgap>15</itemgap>
+        <orientation>horizontal</orientation>
+      	<control type="group" id="998">
+      		<width>36</width>
+          <include>Logo</include>
+      	</control>
+      	<control type="label" id="999">
+      	  <include>TopBigLabel</include>
+      		<label>10000</label>
+      	</control>
+      	<control type="button" id="210">
+      		<description>Favorites</description>
+          <include>TopMenuButton</include>
+      		<label>$LOCALIZE[1036]</label>
+          <onclick>SetFocus(20)</onclick>
+          <onclick>ActivateWindow(favourites)</onclick>
+      	</control>
+      	<control type="button" id="211">
+      		<description>Search</description>
+          <include>TopMenuButton</include>
+      		<label>$LOCALIZE[137]</label>
+          <onclick>SetFocus(20)</onclick>
+      	</control>
+      	<control type="button" id="212">
+      		<description>Power</description>
+          <include>TopMenuButton</include>
+      		<label>$LOCALIZE[33060]</label>
+          <onclick>SetFocus(20)</onclick>
+          <onclick>ActivateWindow(shutdownmenu)</onclick>
+      	</control>
       </control>
-    </include>
-  </includes>
+
+      <!-- Title Grab Fanart-->
+      <control type="label">
+        <left>54</left>
+        <top>25</top>
+    	  <description>Title Fanart</description>
+    	  <include>TopTitleFanart</include>
+    	  <label>$VAR[Home_Fanart_Title]</label>
+    	  <scroll>false</scroll>
+    	  <visible>!String.IsEqual(Container(20).ListItem.Property(defaultID),weather) + !Skin.HasSetting(HideHomeTitleInfofanart)</visible>
+      </control>
+
+      <!-- Title Artist Playing Fanart -->
+      <control type="label">
+        <left>54</left>
+        <top>25</top>
+    	  <description>Title Artist Playing Fanart</description>
+    	  <include>TopTitleFanart</include>
+    	  <label>$INFO[MusicPlayer.Artist]</label>
+    	  <scroll>false</scroll>
+    	  <visible>!String.IsEqual(Container(20).ListItem.Property(defaultID),weather) + !Skin.HasSetting(HideHomeTitleInfofanart)</visible>
+      </control>
+    </control>
+	</include>
+</includes>
