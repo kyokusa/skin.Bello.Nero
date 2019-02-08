@@ -109,7 +109,7 @@
 						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label fallback="..">$INFO[ListItem.ChannelNumber]</label>
+						<label fallback="..">$INFO[ListItem.ChannelNumberLabel]</label>
 					</control>
 					<control type="image">
 						<left>83</left>
@@ -189,7 +189,7 @@
 						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label fallback="..">$INFO[ListItem.ChannelNumber]</label>
+						<label fallback="..">$INFO[ListItem.ChannelNumberLabel]</label>
             <visible>!ListItem.HasTimer</visible>
 					</control>
 					<control type="image">

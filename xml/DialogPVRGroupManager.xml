@@ -144,7 +144,7 @@
 					</focusedlayout>
 				</control>
 			</control>
-	
+
 			<control type="group">
 				<description>Hidden TV Channels</description>
 				<left>510</left>
@@ -179,7 +179,7 @@
 							<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.ChannelNumber,,. ]$INFO[ListItem.ChannelName]</label>
+							<label>$INFO[ListItem.ChannelNumberLabel,,. ]$INFO[ListItem.ChannelName]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="44" width="260">
@@ -218,12 +218,12 @@
 							<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.ChannelNumber,,. ]$INFO[ListItem.ChannelName]</label>
+							<label>$INFO[ListItem.ChannelNumberLabel,,. ]$INFO[ListItem.ChannelName]</label>
 						</control>
 					</focusedlayout>
 				</control>
 			</control>
-	
+
 			<control type="group">
 				<description>Visible TV Channels</description>
 				<left>788</left>
@@ -258,7 +258,7 @@
 							<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.ChannelNumber,,. ]$INFO[ListItem.ChannelName]</label>
+							<label>$INFO[ListItem.ChannelNumberLabel,,. ]$INFO[ListItem.ChannelName]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="44" width="260">
@@ -297,12 +297,12 @@
 							<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 							<align>left</align>
 							<aligny>center</aligny>
-							<label>$INFO[ListItem.ChannelNumber,,. ]$INFO[ListItem.ChannelName]</label>
+							<label>$INFO[ListItem.ChannelNumberLabel,,. ]$INFO[ListItem.ChannelName]</label>
 						</control>
 					</focusedlayout>
 				</control>
 			</control>
-		</control>		
+		</control>
 
 
     <!-- Control Buttons -->
@@ -371,8 +371,8 @@
 		<control type="label" id="22">
 	    <description>Fake Visible TVChannels Label</description>
 			<visible>false</visible>
-		</control>		
+		</control>
 	 </control>
-		
+
 	</controls>
 </window>

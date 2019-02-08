@@ -82,7 +82,7 @@
 						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label fallback="..">$INFO[ListItem.ChannelNumber]</label>
+						<label fallback="..">$INFO[ListItem.ChannelNumberLabel]</label>
 					</control>
 					<control type="label">
 						<left>87</left>
@@ -235,7 +235,7 @@
 						<selectedcolor>$VAR[Text.GlobalColor]</selectedcolor>
 						<align>center</align>
 						<aligny>center</aligny>
-						<label fallback="..">$INFO[ListItem.ChannelNumber]</label>
+						<label fallback="..">$INFO[ListItem.ChannelNumberLabel]</label>
 					</control>
 					<control type="label">
 						<left>87</left>

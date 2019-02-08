@@ -701,7 +701,7 @@
 						<textcolor>77ffffff</textcolor>
 					  <shadowcolor>99000000</shadowcolor>
 						<align>center</align>
-						<label>$INFO[ListItem.ChannelNumber]</label>
+						<label>$INFO[ListItem.ChannelNumberLabel]</label>
 						<visible>!ListItem.IsRecording</visible>
 					</control>
 					<control type="label">
@@ -714,7 +714,7 @@
 					  <selectedcolor>red</selectedcolor>
 					  <shadowcolor>99000000</shadowcolor>
 						<align>center</align>
-						<label>$INFO[ListItem.ChannelNumber]</label>
+						<label>$INFO[ListItem.ChannelNumberLabel]</label>
 						<visible>ListItem.IsRecording</visible>
 				    <animation effect="fade" start="100" end="0" time="750" delay="2000" pulse="true" condition="true">Conditional</animation>
 					</control>
@@ -789,7 +789,7 @@
 						<selectedcolor>white</selectedcolor>
 					  <shadowcolor>99000000</shadowcolor>
 						<align>center</align>
-						<label>$INFO[ListItem.ChannelNumber]</label>
+						<label>$INFO[ListItem.ChannelNumberLabel]</label>
 						<visible>!ListItem.IsRecording </visible>
 					</control>
 					<control type="label">
@@ -802,7 +802,7 @@
 					  <selectedcolor>red</selectedcolor>
 					  <shadowcolor>99000000</shadowcolor>
 						<align>center</align>
-						<label>$INFO[ListItem.ChannelNumber]</label>
+						<label>$INFO[ListItem.ChannelNumberLabel]</label>
 						<visible>ListItem.IsRecording</visible>
 				    <animation effect="fade" start="100" end="0" time="750" delay="2000" pulse="true" condition="true">Conditional</animation>
 					</control>
