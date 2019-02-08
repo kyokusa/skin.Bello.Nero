@@ -1274,15 +1274,7 @@
 				<aspectratio align="right" aligny="center" scalediffuse="true">keep</aspectratio>
 				<texture background="true" diffuse="thumbs/square_diffuse_small.png" fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
 				<visible>Player.HasVideo + [String.IsEmpty(Player.Art(thumb)) | String.IsEmpty(Player.Art(poster))]</visible>
-			</control>
-			<!-- Player LiveTV Icon -->
-			<control type="image">
-				<top>-93</top>
-			  <width>92</width>
-				<aspectratio align="right" aligny="center" scalediffuse="false">keep</aspectratio>
-				<texture background="true" diffuse="thumbs/square_diffuse_small.png" fallback="DefaultLiveTV.png">$INFO[Player.Art(thumb)]</texture>
-				<visible>Player.HasVideo + VideoPlayer.Content(LiveTV)</visible>
-			</control>
+			</control>			
 	  </control>
   </include>
 
