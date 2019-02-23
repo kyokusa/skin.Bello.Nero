@@ -530,7 +530,7 @@
 	<variable name="PlayerArtImage">
 	  <value condition="VideoPlayer.Content(Episodes) + String.IsEmpty(Skin.String(OSD.ArtSelect))">$INFO[Player.Art(tvshow.clearlogo)]</value>
     <value condition="VideoPlayer.Content(Episodes) + String.IsEqual(Skin.String(OSD.ArtSelect),ClearArt)">$INFO[Player.Art(tvshow.clearart)]</value>
-		<value condition="VideoPlayer.Content(Movies) + String.IsEmpty(Skin.String(OSD.ArtSelect))">$INFO[Player.Art(clearlogo)]</value>
+		<value condition="String.IsEmpty(Skin.String(OSD.ArtSelect))">$INFO[Player.Art(clearlogo)]</value>
     <value condition="VideoPlayer.Content(Movies) + String.IsEqual(Skin.String(OSD.ArtSelect),ClearArt)">$INFO[Player.Art(clearart)]</value>
 		<value>String.IsEqual(Skin.String(OSD.ArtSelect),Disabled)</value>
   </variable>

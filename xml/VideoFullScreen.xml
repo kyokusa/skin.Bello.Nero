@@ -123,15 +123,23 @@
 	    <visible>VideoPlayer.Content(LiveTV)</visible>
     </control>
 
-		<!-- ClarLogo and ClearArt Video OSD Info -->
     <control type="group" id="1">
 	  	<left>950</left>
       <top>375</top>
       <width>208</width>
       <height>108</height>
+      <!-- ClarLogo and ClearArt Video OSD Info -->
 		  <control type="image" id="1">
         <description>Player Art Image</description>
-		    <aspectratio>keep</aspectratio> <texture>$VAR[PlayerArtImage]</texture>
+		    <aspectratio align="center" aligny="center">keep</aspectratio>
+        <texture>$VAR[PlayerArtImage]</texture>
+		  </control>
+      <!-- ClarLogo Video OSD Info -->
+		  <control type="image" id="1">
+        <description>Player Art Logo Video</description>
+		    <aspectratio align="center" aligny="center">keep</aspectratio>
+        <texture>$INFO[Player.Art(clearlogo)]</texture>
+        <visible>![String.IsEmpty(Player.Art(clearlogo)) | String.IsEqual(Skin.String(OSD.ArtSelect),Disabled)] + String.IsEmpty(Player.Art(clearart))</visible>
 		  </control>
     </control>
 

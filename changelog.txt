@@ -1,4 +1,4 @@
-v7.0.2a - for Kodi Leia 18.1-RC1 Git:2019/05/03 (05/02/2019)
+v7.0.2a - for Kodi Leia 18.1-RC1 Git:20190222 (23/02/2019)
 
 - Modify Skin Settings
 - Update resources folder
@@ -10,6 +10,7 @@ v7.0.2a - for Kodi Leia 18.1-RC1 Git:2019/05/03 (05/02/2019)
 - Correction settings themes
 - Add covers nowplaying home
 - Progressive numbering correction for tv channels
+- Added logo movies in the trailer playback
 _________________________________________________
 
 v7.0.1a - for Kodi Leia 18.xx Beta.4 (04/01/2019)
