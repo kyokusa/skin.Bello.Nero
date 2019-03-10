@@ -34,14 +34,14 @@
 			<thumb />
 			<property name="labelID">movies</property>
 			<property name="defaultID">movies</property>
-			<property name="background">Home_Movie_Fanart</property>
-			<property name="backgroundName">Movies Fanart</property>
 			<property name="widget">Library</property>
 			<property name="widgetName">Film Aggiunti Di Recente</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetTarget">videos</property>
+			<property name="widgetTarget">music</property>
 			<property name="widgetPath">library://video/embymovies253bc9fc2ae4cb0a47d99e75b7e36923/recent.xml/</property>
 			<property name="widgetRatio">Poster</property>
+			<property name="background">Home_Movie_Fanart</property>
+			<property name="backgroundName">Movies Fanart</property>
 			<visible>[Library.HasContent(Movies)] + [Library.HasContent(movies)]</visible>
 			<onclick condition="Window.IsActive(PlayerControls.xml)">Close</onclick>
 			<onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
@@ -105,11 +105,11 @@
 			<thumb />
 			<property name="labelID">musica</property>
 			<property name="defaultID">music</property>
-			<property name="widget">RandomAlbums</property>
-			<property name="widgetName">31249</property>
+			<property name="widget">Library</property>
+			<property name="widgetName">Album riprodotti di recente</property>
 			<property name="widgetType">music</property>
-			<property name="widgetTarget" />
-			<property name="widgetPath">plugin://service.library.data.provider?type=randomalbums&amp;reload=$INFO[Window(Home).Property(randomalbums)]</property>
+			<property name="widgetTarget">music</property>
+			<property name="widgetPath">library://music/recentlyplayedalbums.xml/</property>
 			<property name="background">Home_Music_Fanart</property>
 			<property name="backgroundName">Music Fanart</property>
 			<onclick condition="Window.IsActive(PlayerControls.xml)">Close</onclick>
@@ -1287,14 +1287,14 @@
 			<thumb />
 			<property name="labelID">movies</property>
 			<property name="defaultID">movies</property>
-			<property name="background">Home_Movie_Fanart</property>
-			<property name="backgroundName">Movies Fanart</property>
 			<property name="widget">Library</property>
 			<property name="widgetName">Film Aggiunti Di Recente</property>
 			<property name="widgetType">movies</property>
-			<property name="widgetTarget">videos</property>
+			<property name="widgetTarget">music</property>
 			<property name="widgetPath">library://video/embymovies253bc9fc2ae4cb0a47d99e75b7e36923/recent.xml/</property>
 			<property name="widgetRatio">Poster</property>
+			<property name="background">Home_Movie_Fanart</property>
+			<property name="backgroundName">Movies Fanart</property>
 			<visible>[Library.HasContent(Movies)] + [Library.HasContent(movies)]</visible>
 			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),movies) + [Window.IsActive(PlayerControls.xml)]">Close</onclick>
 			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),movies)">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
@@ -1896,11 +1896,11 @@
 			<thumb />
 			<property name="labelID">musica</property>
 			<property name="defaultID">music</property>
-			<property name="widget">RandomAlbums</property>
-			<property name="widgetName">31249</property>
+			<property name="widget">Library</property>
+			<property name="widgetName">Album riprodotti di recente</property>
 			<property name="widgetType">music</property>
-			<property name="widgetTarget" />
-			<property name="widgetPath">plugin://service.library.data.provider?type=randomalbums&amp;reload=$INFO[Window(Home).Property(randomalbums)]</property>
+			<property name="widgetTarget">music</property>
+			<property name="widgetPath">library://music/recentlyplayedalbums.xml/</property>
 			<property name="background">Home_Music_Fanart</property>
 			<property name="backgroundName">Music Fanart</property>
 			<onclick condition="String.IsEqual(Window(10000).Property(submenuVisibility),musica) + [Window.IsActive(PlayerControls.xml)]">Close</onclick>
@@ -3599,7 +3599,7 @@
 		<control id="25" type="fixedlist">
 			<include>HomeWidgetList_Poster</include>
 			<visible>String.IsEqual(Container(20).ListItem.Property(submenuVisibility),movies)</visible>
-			<content target="videos">library://video/embymovies253bc9fc2ae4cb0a47d99e75b7e36923/recent.xml/</content>
+			<content target="music">library://video/embymovies253bc9fc2ae4cb0a47d99e75b7e36923/recent.xml/</content>
 		</control>
 		<control id="25" type="fixedlist">
 			<include>HomeWidgetList_Poster</include>
@@ -3609,7 +3609,7 @@
 		<control id="25" type="fixedlist">
 			<include>HomeWidgetList_Square</include>
 			<visible>String.IsEqual(Container(20).ListItem.Property(submenuVisibility),musica)</visible>
-			<content target="">plugin://service.library.data.provider?type=randomalbums&amp;reload=$INFO[Window(Home).Property(randomalbums)]</content>
+			<content target="music">library://music/recentlyplayedalbums.xml/</content>
 		</control>
 		<control id="25" type="fixedlist">
 			<include>HomeWidgetList_Poster</include>

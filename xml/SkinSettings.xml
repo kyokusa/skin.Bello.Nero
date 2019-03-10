@@ -965,7 +965,7 @@
 		<left>17</left>
 		<top>9</top>
 	  <include>CloseAnimation</include>
-	  <visible>Container(6000).Hasfocus(9)</visible>
+	  <visible>Container(6000).Hasfocus(10)</visible>
 		<include>LogoBig</include>
 		<control type="label">
 		  <left>68</left>
