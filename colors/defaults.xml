@@ -18,10 +18,10 @@
 	<color name="77white">77FFFFFF</color>
 	<color name="88white">88FFFFFF</color>
 	<color name="99white">99FFFFFF</color>
-	<color name="aawhite">AAFFFFFF</color>	
+	<color name="aawhite">AAFFFFFF</color>
 	<color name="bbwhite">BBFFFFFF</color>
-	<color name="ccwhite">CCFFFFFF</color>	
-	<color name="ddwhite">DDFFFFFF</color>	
+	<color name="ccwhite">CCFFFFFF</color>
+	<color name="ddwhite">DDFFFFFF</color>
 	<color name="eewhite">EEFFFFFF</color>
 	<color name="ccblack">CC000000</color>
 	<color name="aagrey">AADDDDDD</color>
@@ -37,4 +37,12 @@
 	<color name="33grey">33DDDDDD</color>
 	<color name="22grey">22DDDDDD</color>
 	<color name="bgcolor">FF000000</color>
+
+	<!-- Themes Color -->
+	<color name="ßειισ ηεrσ">FF4D4D4D</color>
+  <color name="ßειισ">FFCB2BFF</color>
+  <color name="Green">FF507B00</color>
+  <color name="Orange">FFF88017</color>
+  <color name="Ruby">FF8b0000</color>
+  <color name="Sky">FF3BB9FF</color>
 </colors>

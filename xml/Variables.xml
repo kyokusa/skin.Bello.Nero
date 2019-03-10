@@ -299,7 +299,6 @@
 		<value condition="String.IsEqual(Skin.String(QuickNavWidgetMusicType),4)">$LOCALIZE[31249]</value>
 		<value condition="String.IsEqual(Skin.String(QuickNavWidgetMusicType),5)">$LOCALIZE[31202]</value>
 	</variable>
-
 	<variable name="QuickNav_WidgetListContentMovies">
 		<value condition="String.IsEqual(Skin.String(QuickNavWidgetMoviesType),2)">plugin://service.library.data.provider?type=recentmovies&amp;reload=$INFO[Window(Home).Property(recentmovies)]</value>
 		<value condition="String.IsEqual(Skin.String(QuickNavWidgetMoviesType),3)">plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window(Home).Property(recommendedmovies)]</value>
@@ -338,7 +337,6 @@
 	  <value condition="Control.HasFocus(250) + Integer.IsGreater(Container(250).ListItem.VideoResolution,719)">flags/def/hd.png</value>
 	  <value condition="Control.HasFocus(250) + !String.IsEmpty(Container(250).ListItem.VideoResolution)">flags/def/sd.png</value>
   </variable>
-
 	<variable name="QuickNavWidgetsFanart">
     <value condition="Control.HasFocus(200) + !String.IsEmpty(Container(200).ListItem.Art(fanart))">$INFO[Container(200).ListItem.Art(fanart)]</value>
     <value condition="Control.HasFocus(250) + !String.IsEmpty(Container(250).ListItem.Art(fanart))">$INFO[Container(250).ListItem.Art(fanart)]</value>
@@ -351,10 +349,10 @@
 		<value>white</value>
 	</variable>
 
-    <variable name="AlbumInfoDialog_Albums">
-        <value condition="Integer.IsLess(ListItem.TrackNumber,10)">$INFO[ListItem.TrackNumber,0,. ]$INFO[ListItem.Label]</value>
-        <value>$INFO[ListItem.TrackNumber,,. ]$INFO[ListItem.Label]</value>
-    </variable>
+  <variable name="AlbumInfoDialog_Albums">
+      <value condition="Integer.IsLess(ListItem.TrackNumber,10)">$INFO[ListItem.TrackNumber,0,. ]$INFO[ListItem.Label]</value>
+      <value>$INFO[ListItem.TrackNumber,,. ]$INFO[ListItem.Label]</value>
+  </variable>
 
 	<variable name="DialogSelectListItemLabel2">
 		<value condition="!String.IsEmpty(ListItem.AddonVersion)">$INFO[ListItem.AddonVersion,v]$INFO[ListItem.AddonCreator, $LOCALIZE[31040] ]</value>
@@ -365,8 +363,8 @@
 		<value condition="String.IsEqual(ListItem.DBType,Artist) + !String.IsEmpty(ListItem.Artist)">$INFO[Listitem.Artist]</value>
 		<value condition="String.IsEqual(ListItem.DBType,Album) + !String.IsEmpty(ListItem.Album)">$INFO[Listitem.Album]</value>
 		<value condition="String.IsEqual(ListItem.DBType,Movie) | String.IsEqual(ListItem.DBType,MusicVideo)">$INFO[Listitem.Title]$INFO[Listitem.Year, (,) ]</value>
-        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
-        <value>$INFO[ListItem.Label]</value>
+    <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+    <value>$INFO[ListItem.Label]</value>
 	</variable>
 
 	<variable name="DialogsInfoSubTitle">
@@ -386,12 +384,12 @@
 		<value>$INFO[ListItem.Tagline,[B],[/B][CR]][CR]$INFO[ListItem.Plot]</value> <!-- added Tagline -->
 	</variable>
 
-    <variable name="DialogsInfoPoster">
-        <value condition="!String.IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
-	  	<value condition="!String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
-	  	<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
-	  	<value>$INFO[ListItem.Icon]</value>
-    </variable>
+  <variable name="DialogsInfoPoster">
+    <value condition="!String.IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
+	  <value condition="!String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+	  <value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+	  <value>$INFO[ListItem.Icon]</value>
+  </variable>
 
 	<variable name="MediaInfoContentInfoLabels">
 		<!-- <value condition="String.IsEqual(Window.Property(videoinfo),1) + Control.HasFocus(50)">$LOCALIZE[31164]</value> -->
@@ -586,4 +584,140 @@
     <value condition="String.IsEqual(Skin.String(OSD.cdArtSelect),Disabled)">Skin.SetString(OSD.cdArtSelect,Off)</value>
 		<value condition="String.IsEqual(Skin.String(OSD.cdArtSelect),Off)">Skin.Reset(OSD.cdArtSelect)</value>
   </variable>
+
+	<!-- Themes -->
+	<variable name="Textures.GlobalColor">
+		<value condition="!String.IsEmpty(Skin.String(Textures.GlobalColor))">$INFO[Skin.String(Textures.GlobalColor)]</value>
+    <value condition="Skin.HasSetting(ßειισ ηεrσ_Theme)">ßειισ ηεrσ</value>
+    <value condition="Skin.HasSetting(ßειισ_Theme)">ßειισ</value>
+    <value condition="Skin.HasSetting(Green_Theme)">Green</value>
+	  <value condition="Skin.HasSetting(Orange_Theme)">Orange</value>
+    <value condition="Skin.HasSetting(Ruby_Theme)">Ruby</value>
+    <value condition="Skin.HasSetting(Sky_Theme)">Sky</value>
+		<value condition="Skin.HasSetting(Multicolor_Theme)">$VAR[Multicolor]</value>
+		<value>FF2554C7</value>
+	</variable>
+	<variable name="Text.GlobalColor">
+		<value condition="!String.IsEmpty(Skin.String(Text.GlobalColor))">$INFO[Skin.String(Text.GlobalColor)]</value>
+		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasSetting(ßειισ ηεrσ_Theme)">ßειισ ηεrσ</value>
+		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasSetting(ßειισ_Theme)">ßειισ</value>
+		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasSetting(Green_Theme)">Green</value>
+		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasSetting(Orange_Theme)">Orange</value>
+		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasSetting(Ruby_Theme)">Ruby</value>
+		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasSetting(Sky_Theme)">Sky</value>
+		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasSetting(Multicolor_Theme)">$VAR[Multicolor]</value>
+		<value>FF2554C7</value>
+	</variable>
+	<variable name="BG.GlobalColor">
+		<value condition="!String.IsEmpty(Skin.String(BG.GlobalColor))">$INFO[Skin.String(BG.GlobalColor)]</value>
+		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasSetting(ßειισ ηεrσ_Theme)">ßειισ ηεrσ</value>
+		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasSetting(ßειισ_Theme)">ßειισ</value>
+		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasSetting(Green_Theme)">Green</value>
+		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasSetting(Orange_Theme)">Orange</value>
+		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasSetting(Ruby_Theme)">Ruby</value>
+		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasSetting(Sky_Theme)">Sky</value>
+		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasSetting(Multicolor_Theme)">$VAR[Multicolor]</value>
+		<value>FF2554C7</value>
+	</variable>
+
+  <!-- Pulse Themes -->
+	<variable name="pulse_1">
+	  <value condition="Skin.HasSetting(ßειισ ηεrσ_Theme)">special://skin/extras/neropulse/nero_p_1.png</value>
+		<value condition="Skin.HasSetting(ßειισ_Theme)">special://skin/extras/neropulse/bello_p_1.png</value>
+		<value condition="Skin.HasSetting(Green_Theme)">special://skin/extras/neropulse/green_p_1.png</value>
+		<value condition="Skin.HasSetting(Orange_Theme)">special://skin/extras/neropulse/orange_p_1.png</value>
+		<value condition="Skin.HasSetting(Ruby_Theme)">special://skin/extras/neropulse/ruby_p_1.png</value>
+		<value condition="Skin.HasSetting(Sky_Theme)">special://skin/extras/neropulse/sky_p_1.png</value>
+		<value condition="Skin.HasSetting(Multicolor_Theme)">special://skin/extras/neropulse/nero_multi_p_1.png</value>
+		<value>special://skin/extras/neropulse/pulse_1.png</value>
+	</variable>
+	<variable name="pulse_2">
+		<value condition="Skin.HasSetting(ßειισ ηεrσ_Theme)">special://skin/extras/neropulse/nero_p_2.png</value>
+		<value condition="Skin.HasSetting(ßειισ_Theme)">special://skin/extras/neropulse/bello_p_2.png</value>
+		<value condition="Skin.HasSetting(Green_Theme)">special://skin/extras/neropulse/green_p_2.png</value>
+		<value condition="Skin.HasSetting(Orange_Theme)">special://skin/extras/neropulse/orange_p_2.png</value>
+		<value condition="Skin.HasSetting(Ruby_Theme)">special://skin/extras/neropulse/ruby_p_2.png</value>
+		<value condition="Skin.HasSetting(Sky_Theme)">special://skin/extras/neropulse/sky_p_2.png</value>
+		<value condition="Skin.HasSetting(Multicolor_Theme)">special://skin/extras/neropulse/nero_multi_p_2.png</value>
+		<value>special://skin/extras/neropulse/pulse_2.png</value>
+	</variable>
+	<variable name="pulse_3">
+		<value condition="Skin.HasSetting(ßειισ ηεrσ_Theme)">special://skin/extras/neropulse/nero_p_3.png</value>
+		<value condition="Skin.HasSetting(ßειισ_Theme)">special://skin/extras/neropulse/bello_p_3.png</value>
+		<value condition="Skin.HasSetting(Green_Theme)">special://skin/extras/neropulse/green_p_3.png</value>
+		<value condition="Skin.HasSetting(Orange_Theme)">special://skin/extras/neropulse/orange_p_3.png</value>
+		<value condition="Skin.HasSetting(Ruby_Theme)">special://skin/extras/neropulse/ruby_p_3.png</value>
+		<value condition="Skin.HasSetting(Sky_Theme)">special://skin/extras/neropulse/sky_p_3.png</value>
+		<value condition="Skin.HasSetting(Multicolor_Theme)">special://skin/extras/neropulse/nero_multi_p_3.png</value>
+		<value>special://skin/extras/neropulse/pulse_3.png</value>
+	</variable>
+	<variable name="pulsediffuse">
+		<value condition="Skin.HasSetting(ßειισ_Theme) | Skin.HasSetting(Green_Theme) | Skin.HasSetting(Sky_Theme) | Skin.HasSetting(Multicolor_Theme)">47FFFFFF</value>
+		<value>99000000</value>
+	</variable>
+
+  <!-- Cicle Multicolor -->
+	<variable name="Multicolor">
+		    <value condition="String.IsEqual(System.Time(ss),00)">FFE50073</value>
+        <value condition="String.IsEqual(System.Time(ss),01)">FFE5008A</value>
+        <value condition="String.IsEqual(System.Time(ss),02)">FFE500A1</value>
+        <value condition="String.IsEqual(System.Time(ss),03)">FFE500B8</value>
+        <value condition="String.IsEqual(System.Time(ss),04)">FFE500D0</value>
+        <value condition="String.IsEqual(System.Time(ss),05)">FFE200E5</value>
+        <value condition="String.IsEqual(System.Time(ss),06)">FFCB00E5</value>
+        <value condition="String.IsEqual(System.Time(ss),07)">FFB400E5</value>
+        <value condition="String.IsEqual(System.Time(ss),08)">FF9C00E5</value>
+        <value condition="String.IsEqual(System.Time(ss),09)">FF8500E5</value>
+        <value condition="String.IsEqual(System.Time(ss),10)">FF6E00E5</value>
+        <value condition="String.IsEqual(System.Time(ss),11)">FF5700E5</value>
+        <value condition="String.IsEqual(System.Time(ss),12)">FF3F00E5</value>
+        <value condition="String.IsEqual(System.Time(ss),13)">FF2800E5</value>
+        <value condition="String.IsEqual(System.Time(ss),14)">FF1100E5</value>
+        <value condition="String.IsEqual(System.Time(ss),15)">FF0006E5</value>
+        <value condition="String.IsEqual(System.Time(ss),16)">FF001DE5</value>
+        <value condition="String.IsEqual(System.Time(ss),17)">FF0034E5</value>
+        <value condition="String.IsEqual(System.Time(ss),18)">FF004BE5</value>
+        <value condition="String.IsEqual(System.Time(ss),19)">FF0063E5</value>
+        <value condition="String.IsEqual(System.Time(ss),20)">FF007AE5</value>
+        <value condition="String.IsEqual(System.Time(ss),21)">FF0091E5</value>
+        <value condition="String.IsEqual(System.Time(ss),22)">FF00A8E5</value>
+        <value condition="String.IsEqual(System.Time(ss),23)">FF00C0E5</value>
+        <value condition="String.IsEqual(System.Time(ss),24)">FF00D7E5</value>
+        <value condition="String.IsEqual(System.Time(ss),25)">FF00E5DB</value>
+        <value condition="String.IsEqual(System.Time(ss),26)">FF00E5C3</value>
+        <value condition="String.IsEqual(System.Time(ss),27)">FF00E5AC</value>
+        <value condition="String.IsEqual(System.Time(ss),28)">FF00E595</value>
+        <value condition="String.IsEqual(System.Time(ss),29)">FF00E57E</value>
+        <value condition="String.IsEqual(System.Time(ss),30)">FF00E566</value>
+        <value condition="String.IsEqual(System.Time(ss),31)">FF00E54F</value>
+        <value condition="String.IsEqual(System.Time(ss),32)">FF00E538</value>
+        <value condition="String.IsEqual(System.Time(ss),33)">FF00E521</value>
+        <value condition="String.IsEqual(System.Time(ss),34)">FF00E509</value>
+        <value condition="String.IsEqual(System.Time(ss),35)">FF0DE500</value>
+        <value condition="String.IsEqual(System.Time(ss),36)">FF24E500</value>
+        <value condition="String.IsEqual(System.Time(ss),37)">FF3CE500</value>
+        <value condition="String.IsEqual(System.Time(ss),38)">FF53E500</value>
+        <value condition="String.IsEqual(System.Time(ss),39)">FF6AE500</value>
+        <value condition="String.IsEqual(System.Time(ss),40)">FF81E500</value>
+        <value condition="String.IsEqual(System.Time(ss),41)">FF99E500</value>
+        <value condition="String.IsEqual(System.Time(ss),42)">FFB0E500</value>
+        <value condition="String.IsEqual(System.Time(ss),43)">FFC7E500</value>
+        <value condition="String.IsEqual(System.Time(ss),44)">FFDEE500</value>
+        <value condition="String.IsEqual(System.Time(ss),45)">FFE5D300</value>
+        <value condition="String.IsEqual(System.Time(ss),46)">FFE5BC00</value>
+        <value condition="String.IsEqual(System.Time(ss),47)">FFE5A500</value>
+        <value condition="String.IsEqual(System.Time(ss),48)">FFE58D00</value>
+        <value condition="String.IsEqual(System.Time(ss),49)">FFE57600</value>
+        <value condition="String.IsEqual(System.Time(ss),50)">FFE55F00</value>
+        <value condition="String.IsEqual(System.Time(ss),51)">FFE54800</value>
+        <value condition="String.IsEqual(System.Time(ss),52)">FFE53000</value>
+        <value condition="String.IsEqual(System.Time(ss),53)">FFE51900</value>
+        <value condition="String.IsEqual(System.Time(ss),54)">FFE50200</value>
+        <value condition="String.IsEqual(System.Time(ss),55)">FFE50014</value>
+        <value condition="String.IsEqual(System.Time(ss),56)">FFE5002C</value>
+        <value condition="String.IsEqual(System.Time(ss),57)">FFE50043</value>
+        <value condition="String.IsEqual(System.Time(ss),58)">FFE5005A</value>
+        <value condition="String.IsEqual(System.Time(ss),59)">FFE50072</value>
+  </variable>
+
 </includes>

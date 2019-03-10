@@ -1,83 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
-  <!-- ============== -->
-  <!-- NERO VARIABLES -->
-  <!-- ============== -->
-
-	<variable name="Textures.GlobalColor">
-		<value condition="!String.IsEmpty(Skin.String(Textures.GlobalColor))">$INFO[Skin.String(Textures.GlobalColor)]</value>
-		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(ßειισ ηεrσ)">FF4D4D4D</value>
-		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(ßειισ)">FFCB2BFF</value>
-		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Green)">FF507B00</value>
-		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Orange)">FFF88017</value>
-		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Red)">FFd70000</value>
-		<value condition="String.IsEmpty(Skin.String(Textures.GlobalColor)) + Skin.HasTheme(Sky)">FF3BB9FF</value>
-		<value>FF2554C7</value>
-	</variable>
-
-	<variable name="Text.GlobalColor">
-		<value condition="!String.IsEmpty(Skin.String(Text.GlobalColor))">$INFO[Skin.String(Text.GlobalColor)]</value>
-		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(ßειισ ηεrσ)">FF4D4D4D</value>
-		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(ßειισ)">FFCB2BFF</value>
-		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Green)">FF507B00</value>
-		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Orange)">FFF88017</value>
-		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Red)">FFd70000</value>
-		<value condition="String.IsEmpty(Skin.String(Text.GlobalColor)) + Skin.HasTheme(Sky)">FF3BB9FF</value>
-		<value>FF2554C7</value>
-	</variable>
-
-	<variable name="BG.GlobalColor">
-		<value condition="!String.IsEmpty(Skin.String(BG.GlobalColor))">$INFO[Skin.String(BG.GlobalColor)]</value>
-		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(ßειισ ηεrσ)">FF3E3E3E</value>
-		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(ßειισ)">FFCB2BFF</value>
-		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Green)">FF507B00</value>
-		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Orange)">FFF88017</value>
-		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Red)">FFd70000</value>
-		<value condition="String.IsEmpty(Skin.String(BG.GlobalColor)) + Skin.HasTheme(Sky)">FF3BB9FF</value>
-		<value>FF2554C7</value>
-	</variable>
-
-	<variable name="pulse_1">
-	  <value condition="Skin.HasTheme(ßειισ ηεrσ)">special://skin/extras/neropulse/nero_p_1.png</value>
-		<value condition="Skin.HasTheme(ßειισ)">special://skin/extras/neropulse/bello_p_1.png</value>
-		<value condition="Skin.HasTheme(Green)">special://skin/extras/neropulse/green_p_1.png</value>
-		<value condition="Skin.HasTheme(Orange)">special://skin/extras/neropulse/orange_p_1.png</value>
-		<value condition="Skin.HasTheme(Red)">special://skin/extras/neropulse/red_p_1.png</value>
-		<value condition="Skin.HasTheme(Sky)">special://skin/extras/neropulse/sky_p_1.png</value>
-		<value>special://skin/extras/neropulse/pulse_1.png</value>
-	</variable>
-
-	<variable name="pulse_2">
-	  <value condition="Skin.HasTheme(ßειισ ηεrσ)">special://skin/extras/neropulse/nero_p_2.png</value>
-		<value condition="Skin.HasTheme(ßειισ)">special://skin/extras/neropulse/bello_p_2.png</value>
-		<value condition="Skin.HasTheme(Green)">special://skin/extras/neropulse/green_p_2.png</value>
-		<value condition="Skin.HasTheme(Orange)">special://skin/extras/neropulse/orange_p_2.png</value>
-		<value condition="Skin.HasTheme(Red)">special://skin/extras/neropulse/red_p_2.png</value>
-		<value condition="Skin.HasTheme(Sky)">special://skin/extras/neropulse/sky_p_2.png</value>
-		<value>special://skin/extras/neropulse/pulse_2.png</value>
-	</variable>
-
-	<variable name="pulse_3">
-	  <value condition="Skin.HasTheme(ßειισ ηεrσ)">special://skin/extras/neropulse/nero_p_3.png</value>
-		<value condition="Skin.HasTheme(ßειισ)">special://skin/extras/neropulse/bello_p_3.png</value>
-		<value condition="Skin.HasTheme(Green)">special://skin/extras/neropulse/green_p_3.png</value>
-		<value condition="Skin.HasTheme(Orange)">special://skin/extras/neropulse/orange_p_3.png</value>
-		<value condition="Skin.HasTheme(Red)">special://skin/extras/neropulse/red_p_3.png</value>
-		<value condition="Skin.HasTheme(Sky)">special://skin/extras/neropulse/sky_p_3.png</value>
-		<value>special://skin/extras/neropulse/pulse_3.png</value>
-	</variable>
-
-	<variable name="pulsediffuse">
-		<value condition="Skin.HasTheme(ßειισ) | Skin.HasTheme(Green) | Skin.HasTheme(Sky)">47FFFFFF</value>
-<!--
-    <value condition="Skin.HasTheme(Orange)"></value>
-		<value condition="Skin.HasTheme(ßειισ ηεrσ)"></value>
-		<value condition="Skin.HasTheme(Red)"></value>
--->
-		<value>99000000</value>
-	</variable>
-
   <!-- ============= -->
   <!-- NERO INCLUDES -->
   <!-- ============= -->
@@ -1258,26 +1181,56 @@
 		  <texture>special://skin/extras/neropulse/shadow_pulse.png</texture>
 		  <colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
 		</control>
-		<control type="image">
-		  <top>290</top>
-			<left>-600</left>
-			<height>190</height>
-			<width>2910</width>
-			<texture>$VAR[pulse_1]</texture>
+		<control type="group">
+			<visible>!Skin.HasSetting(Multicolor_Theme)</visible>
+		  <control type="image">
+		    <top>290</top>
+		  	<left>-600</left>
+		  	<height>190</height>
+		  	<width>2910</width>
+		  	<texture>$VAR[pulse_1]</texture>
+		  </control>
+		  <control type="image">
+		    <top>285</top>
+		  	<left>340</left>
+		  	<height>220</height>
+		  	<width>3710</width>
+		  	<texture>$VAR[pulse_2]</texture>
+		  </control>
+      <control type="image">
+		    <top>251</top>
+		  	<left>-410</left>
+		  	<height>290</height>
+		  	<width>2710</width>
+		  	<texture>$VAR[pulse_3]</texture>
+		  </control>
 		</control>
-		<control type="image">
-		  <top>285</top>
-			<left>340</left>
-			<height>220</height>
-			<width>3710</width>
-			<texture>$VAR[pulse_2]</texture>
-		</control>
-    <control type="image">
-		  <top>251</top>
-			<left>-410</left>
-			<height>290</height>
-			<width>2710</width>
-			<texture>$VAR[pulse_3]</texture>
+		<control type="group">
+			<visible>Skin.HasSetting(Multicolor_Theme)</visible>
+		  <control type="image">
+		    <top>290</top>
+		  	<left>-600</left>
+		  	<height>190</height>
+		  	<width>2910</width>
+		  	<texture>$VAR[pulse_1]</texture>
+				<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+		  </control>
+		  <control type="image">
+		    <top>285</top>
+		  	<left>340</left>
+		  	<height>220</height>
+		  	<width>3710</width>
+		  	<texture>$VAR[pulse_2]</texture>
+				<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+		  </control>
+      <control type="image">
+		    <top>251</top>
+		  	<left>-410</left>
+		  	<height>290</height>
+		  	<width>2710</width>
+		  	<texture>$VAR[pulse_3]</texture>
+				<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+		  </control>
 		</control>
 		<control type="image">
 		  <top>159</top>
@@ -1307,38 +1260,80 @@
   		<texture>special://skin/extras/neropulse/shadow_pulse.png</texture>
   		<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
   	</control>
-		<control type="image">
-		  <top>290</top>
-			<left>-1400</left>
-			<height>190</height>
-			<width>2910</width>
-			<texture>$VAR[pulse_1]</texture>
-			<animation type="Conditional" condition="true" loop="true" reversible="false">
-				<effect type="slide" start="-2000,0" end="2000,0" time="38000" delay="100" />
-				<effect type="slide" start="2000,0" end="-2000,0" time="56000" delay="70" />
-			</animation>
-		</control>
-		<control type="image">
-		  <top>285</top>
-			<left>40</left>
-			<height>220</height>
-			<width>3710</width>
-			<texture>$VAR[pulse_2]</texture>
-			<animation type="Conditional" condition="true" loop="true" reversible="false">
-				<effect type="slide" start="-2200,0" end="2200,0" time="30000" delay="50" />
-				<effect type="slide" start="2200,0" end="-2200,0" time="15000" delay="610" />
-			</animation>
-		</control>
+		<control type="group">
+			<visible>!Skin.HasSetting(Multicolor_Theme)</visible>
+		  <control type="image">
+		    <top>290</top>
+		  	<left>-1400</left>
+		  	<height>190</height>
+		  	<width>2910</width>
+		  	<texture>$VAR[pulse_1]</texture>
+		  	<animation type="Conditional" condition="true" loop="true" reversible="false">
+		  		<effect type="slide" start="-2000,0" end="2000,0" time="38000" delay="100" />
+		  		<effect type="slide" start="2000,0" end="-2000,0" time="56000" delay="70" />
+		  	</animation>
+		  </control>
+		  <control type="image">
+		    <top>285</top>
+		  	<left>40</left>
+		  	<height>220</height>
+		  	<width>3710</width>
+		  	<texture>$VAR[pulse_2]</texture>
+		  	<animation type="Conditional" condition="true" loop="true" reversible="false">
+		  		<effect type="slide" start="-2200,0" end="2200,0" time="30000" delay="50" />
+		  		<effect type="slide" start="2200,0" end="-2200,0" time="15000" delay="610" />
+		  	</animation>
+		  </control>
       <control type="image">
-		  <top>251</top>
-			<left>-1210</left>
-			<height>290</height>
-			<width>2710</width>
-			<texture>$VAR[pulse_3]</texture>
-			<animation type="Conditional" condition="true" loop="true" reversible="false">
-				<effect type="slide" start="-2000,0" end="2000,0" time="39000" delay="100" />
-				<effect type="slide" start="2000,0" end="-2000,0" time="56000" delay="70" />
-			</animation>
+		    <top>251</top>
+		  	<left>-1210</left>
+		  	<height>290</height>
+		  	<width>2710</width>
+		  	<texture>$VAR[pulse_3]</texture>
+		  	<animation type="Conditional" condition="true" loop="true" reversible="false">
+		  		<effect type="slide" start="-2000,0" end="2000,0" time="39000" delay="100" />
+		  		<effect type="slide" start="2000,0" end="-2000,0" time="56000" delay="70" />
+		  	</animation>
+		  </control>
+		</control>
+		<control type="group">
+			<visible>Skin.HasSetting(Multicolor_Theme)</visible>
+		  <control type="image">
+		    <top>290</top>
+		  	<left>-1400</left>
+		  	<height>190</height>
+		  	<width>2910</width>
+		  	<texture>$VAR[pulse_1]</texture>
+				<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+		  	<animation type="Conditional" condition="true" loop="true" reversible="false">
+		  		<effect type="slide" start="-2000,0" end="2000,0" time="38000" delay="100" />
+		  		<effect type="slide" start="2000,0" end="-2000,0" time="56000" delay="70" />
+		  	</animation>
+		  </control>
+		  <control type="image">
+		    <top>285</top>
+		  	<left>40</left>
+		  	<height>220</height>
+		  	<width>3710</width>
+		  	<texture>$VAR[pulse_2]</texture>
+				<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+		  	<animation type="Conditional" condition="true" loop="true" reversible="false">
+		  		<effect type="slide" start="-2200,0" end="2200,0" time="30000" delay="50" />
+		  		<effect type="slide" start="2200,0" end="-2200,0" time="15000" delay="610" />
+		  	</animation>
+		  </control>
+      <control type="image">
+		    <top>251</top>
+		  	<left>-1210</left>
+		  	<height>290</height>
+		  	<width>2710</width>
+		  	<texture>$VAR[pulse_3]</texture>
+				<colordiffuse>$VAR[Textures.GlobalColor]</colordiffuse>
+		  	<animation type="Conditional" condition="true" loop="true" reversible="false">
+		  		<effect type="slide" start="-2000,0" end="2000,0" time="39000" delay="100" />
+		  		<effect type="slide" start="2000,0" end="-2000,0" time="56000" delay="70" />
+		  	</animation>
+		  </control>
 		</control>
 		<control type="image">
 		  <top>159</top>

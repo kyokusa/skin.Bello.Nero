@@ -29,6 +29,6 @@ I thank Nessus mainly for creating and making available Bello 6, a beautiful, ve
 In any case, every recognition will be greatly appreciated.
 <br>
 <br>
-<br>[![paypal](http://i66.tinypic.com/2r3ecer.png)](https://paypal.me/KKusanagi?locale.x=it_IT)
+<br>[![paypal](http://i63.tinypic.com/24nfj39.png)](https://www.paypal.me/bellonero)
 
 

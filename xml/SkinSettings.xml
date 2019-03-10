@@ -107,28 +107,33 @@
 						<label>$LOCALIZE[33069]</label>
 						<onclick>noop</onclick>
 					</item>
-					<!-- Colours -->
+					<!-- Themes -->
 					<item id="5">
+						<label>$LOCALIZE[21895]</label>
+						<onclick>noop</onclick>
+					</item>
+					<!-- Colours -->
+					<item id="6">
 						<label>$LOCALIZE[14078]</label>
 						<onclick>noop</onclick>
 					</item>
 				  <!-- Views -->
-					<item id="6">
+					<item id="7">
 						<label>$LOCALIZE[31158]</label>
 						<onclick>noop</onclick>
 					</item>
 				  <!-- Addons Options-->
-					<item id="7">
+					<item id="8">
 						<label>$LOCALIZE[31055]</label>
 						<onclick>noop</onclick>
 					</item>
 				  <!-- Addons Supported -->
-					<item id="8">
+					<item id="9">
 						<label>$LOCALIZE[31091]</label>
 						<onclick>noop</onclick>
 					</item>
 					<!-- Bello Nero -->
-					<item id="9">
+					<item id="10">
 						<label>$LOCALIZE[31015]</label>
 						<onclick>noop</onclick>
 					</item>
@@ -418,12 +423,121 @@
 			</control>
 		</control>
 
+		<!-- ============ -->
+		<!-- == Themes == -->
+		<!-- ============ -->
+		<control type="grouplist" id="6100">
+			<include>CloseAnimation</include>
+			<visible>Container(6000).Hasfocus(5)</visible>
+			<left>0</left>
+			<top>0</top>
+			<width>784</width>
+			<height>400</height>
+			<itemgap>0</itemgap>
+			<pagecontrol>60</pagecontrol>
+			<onleft>6000</onleft>
+			<onright>6000</onright>
+			<onup>6100</onup>
+			<ondown>6100</ondown>
+			<control type="radiobutton" id="6101">
+				<description>ßειισ ηεrσ Theme</description>
+        <include>SettingsRadioButton</include>
+        <label>ßειισ ηεrσ</label>
+        <onclick>Skin.ToggleSetting(ßειισ ηεrσ_Theme)</onclick>
+        <onclick>Skin.Reset(ßειισ_Theme)</onclick>
+				<onclick>Skin.Reset(Green_Theme)</onclick>
+				<onclick>Skin.Reset(Orange_Theme)</onclick>
+				<onclick>Skin.Reset(Ruby_Theme)</onclick>
+				<onclick>Skin.Reset(Sky_Theme)</onclick>
+        <onclick>Skin.Reset(Multicolor_Theme)</onclick>
+        <selected>Skin.HasSetting(ßειισ ηεrσ_Theme)</selected>
+      </control>
+			<control type="radiobutton" id="6102">
+				<description>ßειισ Theme</description>
+        <include>SettingsRadioButton</include>
+        <label>ßειισ</label>
+				<onclick>Skin.Reset(ßειισ ηεrσ_Theme)</onclick>
+        <onclick>Skin.ToggleSetting(ßειισ_Theme)</onclick>
+				<onclick>Skin.Reset(Green_Theme)</onclick>
+				<onclick>Skin.Reset(Orange_Theme)</onclick>
+				<onclick>Skin.Reset(Ruby_Theme)</onclick>
+				<onclick>Skin.Reset(Sky_Theme)</onclick>
+        <onclick>Skin.Reset(Multicolor_Theme)</onclick>
+        <selected>Skin.HasSetting(ßειισ_Theme)</selected>
+      </control>
+			<control type="radiobutton" id="6103">
+				<description>Green Theme</description>
+        <include>SettingsRadioButton</include>
+        <label>Green</label>
+				<onclick>Skin.Reset(ßειισ ηεrσ_Theme)</onclick>
+        <onclick>Skin.Reset(ßειισ_Theme)</onclick>
+				<onclick>Skin.ToggleSetting(Green_Theme)</onclick>
+				<onclick>Skin.Reset(Orange_Theme)</onclick>
+				<onclick>Skin.Reset(Ruby_Theme)</onclick>
+				<onclick>Skin.Reset(Sky_Theme)</onclick>
+        <onclick>Skin.Reset(Multicolor_Theme)</onclick>
+        <selected>Skin.HasSetting(Green_Theme)</selected>
+      </control>
+			<control type="radiobutton" id="6104">
+				<description>Orange Theme</description>
+        <include>SettingsRadioButton</include>
+        <label>Orange</label>
+				<onclick>Skin.Reset(ßειισ ηεrσ_Theme)</onclick>
+        <onclick>Skin.Reset(ßειισ_Theme)</onclick>
+				<onclick>Skin.Reset(Green_Theme)</onclick>
+				<onclick>Skin.ToggleSetting(Orange_Theme)</onclick>
+				<onclick>Skin.Reset(Ruby_Theme)</onclick>
+				<onclick>Skin.Reset(Sky_Theme)</onclick>
+        <onclick>Skin.Reset(Multicolor_Theme)</onclick>
+        <selected>Skin.HasSetting(Orange_Theme)</selected>
+      </control>
+			<control type="radiobutton" id="6105">
+				<description>Ruby Theme</description>
+        <include>SettingsRadioButton</include>
+        <label>Ruby</label>
+				<onclick>Skin.Reset(ßειισ ηεrσ_Theme)</onclick>
+        <onclick>Skin.Reset(ßειισ_Theme)</onclick>
+				<onclick>Skin.Reset(Green_Theme)</onclick>
+				<onclick>Skin.Reset(Orange_Theme)</onclick>
+				<onclick>Skin.ToggleSetting(Ruby_Theme)</onclick>
+				<onclick>Skin.Reset(Sky_Theme)</onclick>
+        <onclick>Skin.Reset(Multicolor_Theme)</onclick>
+        <selected>Skin.HasSetting(Ruby_Theme)</selected>
+      </control>
+			<control type="radiobutton" id="6106">
+				<description>Sky Theme</description>
+        <include>SettingsRadioButton</include>
+        <label>Sky</label>
+				<onclick>Skin.Reset(ßειισ ηεrσ_Theme)</onclick>
+        <onclick>Skin.Reset(ßειισ_Theme)</onclick>
+				<onclick>Skin.Reset(Green_Theme)</onclick>
+				<onclick>Skin.Reset(Orange_Theme)</onclick>
+				<onclick>Skin.Reset(Ruby_Theme)</onclick>
+				<onclick>Skin.ToggleSetting(Sky_Theme)</onclick>
+        <onclick>Skin.Reset(Multicolor_Theme)</onclick>
+        <selected>Skin.HasSetting(Sky_Theme)</selected>
+      </control>
+			<control type="radiobutton" id="6107">
+				<description>Multicolor Theme</description>
+        <include>SettingsRadioButton</include>
+        <label>Multicolor</label>
+				<onclick>Skin.Reset(ßειισ ηεrσ_Theme)</onclick>
+        <onclick>Skin.Reset(ßειισ_Theme)</onclick>
+				<onclick>Skin.Reset(Green_Theme)</onclick>
+				<onclick>Skin.Reset(Orange_Theme)</onclick>
+				<onclick>Skin.Reset(Ruby_Theme)</onclick>
+				<onclick>Skin.Reset(Sky_Theme)</onclick>
+        <onclick>Skin.ToggleSetting(Multicolor_Theme)</onclick>
+        <selected>Skin.HasSetting(Multicolor_Theme)</selected>
+      </control>
+		</control>
+
 		<!-- ============= -->
 		<!-- == Colours == -->
 		<!-- ============= -->
 		<control type="grouplist" id="5700">
 		<include>CloseAnimation</include>
-			<visible>Container(6000).Hasfocus(5)</visible>
+			<visible>Container(6000).Hasfocus(6)</visible>
 			<left>0</left>
 			<top>0</top>
 			<width>784</width>
@@ -473,7 +587,7 @@
 		<!-- =========== -->
 		<control type="grouplist" id="5400">
 		  <include>CloseAnimation</include>
-			<visible>Container(6000).Hasfocus(6)</visible>
+			<visible>Container(6000).Hasfocus(7)</visible>
 			<left>0</left>
 			<top>0</top>
 			<width>784</width>
@@ -507,7 +621,7 @@
 		<!-- ============ -->
 		<control type="grouplist" id="5500">
 		  <include>CloseAnimation</include>
-			<visible>Container(6000).Hasfocus(7)</visible>
+			<visible>Container(6000).Hasfocus(8)</visible>
 			<left>0</left>
 			<top>0</top>
 			<width>784</width>
@@ -579,7 +693,7 @@
 		<!-- ====================== -->
 		<control type="grouplist" id="5800">
 			<include>CloseAnimation</include>
-			<visible>Container(6000).Hasfocus(8)</visible>
+			<visible>Container(6000).Hasfocus(9)</visible>
 			<left>0</left>
 			<top>0</top>
 			<width>784</width>
@@ -789,7 +903,7 @@
 		<control type="grouplist" id="5900">
 		  <description>Bello Nero control area</description>
 		  <include>CloseAnimation</include>
-		  <visible>Container(6000).Hasfocus(9)</visible>
+		  <visible>Container(6000).Hasfocus(10)</visible>
 		  <left>7</left>
 		  <top>98</top>
 		  <width>770</width>
