@@ -234,11 +234,11 @@
 			<visible>[Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(MusicOSD)]</visible>
 		  <visible>!String.IsEqual(Skin.String(FullScreenMusicStyle),2) + !Window.IsActive(script-cu-lrclyrics-main.xml) + !Window.IsActive(AddonSettings) + !Window.IsActive(BusyDialog) + !Window.IsActive(SelectDialog) + !Window.IsActive(VisualisationPresetList) + !Window.IsActive(1112) + !Window.IsActive(ShutdownMenu) + !Window.IsActive(favourites)</visible>
   	  <control type="image">
-			<top>120</top>
-			<left>-45</left>
-      <include>FullscreenDimensions</include>
-  		<texture background="true">windows/home/menu_overlay.png</texture>
-  	</control>
+			  <top>120</top>
+			  <left>-45</left>
+        <include>FullscreenDimensions</include>
+  	  	<texture background="true">windows/home/menu_overlay.png</texture>
+  	  </control>
 
 	  <!-- Info -->
 		<control type="group">

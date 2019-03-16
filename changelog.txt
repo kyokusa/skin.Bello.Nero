@@ -2,6 +2,7 @@ v7.0.3a - for Kodi Leia 18.2-RC1 Git:20190310 (10/03/2019)
 
 - Change Themes Settings
 - Add Global Multicolor
+- Repositioning color and default lyrics
 _________________________________________________
 
 v7.0.2a - for Kodi Leia 18.1-RC1 Git:20190222 (23/02/2019)
