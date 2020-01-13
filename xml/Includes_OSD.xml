@@ -1244,7 +1244,7 @@
 
 	<variable name="Vis-Background">
 		<value condition="Skin.HasSetting(Vis-Fanart) + !String.IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
-		<value condition="Skin.HasSetting(Vis-ArtistSlideshow) + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshowRefresh))">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</value>
+		<value condition="Skin.HasSetting(Vis-ArtistSlideshow) + String.IsEmpty(Window(Visualisation).Property(ArtistSlideshowRefresh))">$INFO[Window(Visualisation).Property(ArtistSlideshow.Image)]</value>
 		<value condition="Skin.HasSetting(Vis-MusicSlideshow)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
 		<value>empty_icon.png</value>
 	</variable>
