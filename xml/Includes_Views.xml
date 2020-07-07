@@ -5,9 +5,9 @@
     <include file="Views_Pictures.xml" />
     <include file="Views_Programs.xml" />
     <include file="Views_Addons.xml" />
-	<include file="Views_PVR.xml" />
-
+	  <include file="Views_PVR.xml" />
     <include name="VideoViews">
+
 	<control type="group">
 	    <include>InfoDialogsVisible_ZoomAnimation</include>
 	    <include>ListView_Videos</include> <!-- id = 50 -->
@@ -103,23 +103,23 @@
   		<top>150</top>
   		<width>1190</width>
   		<height>450</height>
-		<onup>50</onup>
+		  <onup>50</onup>
   		<ondown>50</ondown>
   		<onleft>600</onleft>
   		<onright>9444</onright>
   		<oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
   		<viewtype label="535">List</viewtype>
-  	    <scrolltime tween="cubic" easing="out">300</scrolltime>
-		<pagecontrol>600</pagecontrol>
+  	  <scrolltime tween="cubic" easing="out">300</scrolltime>
+		  <pagecontrol>600</pagecontrol>
     </include>
 <!--
     <include name="ListView_FocusTexture">
-		<control type="image">
+		  <control type="image">
 			<left>10</left>
 			<top>0</top>
-            <width>580</width>
+      <width>580</width>
 			<height>45</height>
-            <texture background="true" border="3">views/list/focus.png</texture>
+      <texture background="true" border="3">views/list/focus.png</texture>
 		</control>
     </include>
  -->

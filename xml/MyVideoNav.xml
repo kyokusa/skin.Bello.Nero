@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window  id="25">
-	<defaultcontrol always="true">50</defaultcontrol>  
+	<defaultcontrol always="true">50</defaultcontrol>
 	<views>50,66,661,51,52,56,560,562,561,55,64,57,53,54,58,580,65,59</views>
 	<onload condition="System.HasAddon(script.tv.show.next.aired) + Library.HasContent(TVShows)">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<onload condition="String.IsEmpty(Skin.String(ListViewWideThumbMovies))">Skin.SetString(ListViewWideThumbMovies,1)</onload>
@@ -29,7 +29,7 @@
 			<control type="grouplist" id="9111">
                 <include>OptionsTopMenuVars</include>
 				<control type="button" id="2">
-					<description>View as</description>				  
+					<description>View as</description>
 				  <include>TopLeftMenusButton</include>
 				</control>
 				<control type="button" id="290">
@@ -193,14 +193,14 @@
 				  <include>TopLeftMenusButton</include>
 				  <visible>Control.IsVisible(661) + [Container.Content(Files) | Container.Content(Videos)] + ![[Container.HasFolders + Container.HasFiles] | Container.HasFiles]</visible>
 				</control>
-				<!-- Top Left Menu DiscArt Select Buttons -->				
-				<control type="button" id="300">  
+				<!-- Top Left Menu DiscArt Select Buttons -->
+				<control type="button" id="300">
 				   	<description>Show DiscArt</description>
-  			        <include>TopLeftMenusButton</include>							
+  			        <include>TopLeftMenusButton</include>
 					<label>$LOCALIZE[31434]: [COLOR=$VAR[Text.GlobalColor]]$VAR[LabelDiscartSelect][/COLOR]</label>
-					<onclick>$VAR[DiscartSelect]</onclick>			        
+					<onclick>$VAR[DiscartSelect]</onclick>
 					<visible>Container.Content(movies) + ![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Control.IsVisible(65) | Control.IsVisible(580)]</visible>
-				</control>	
+				</control>
   			    <control type="button" id="3">
   				    <description>Sort by</description>
   			        <include>TopLeftMenusButton</include>

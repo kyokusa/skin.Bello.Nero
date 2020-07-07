@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<views>50</views>
+	<controls>
+		  <include>BackgroundItems</include>
+			<include>CommonItems</include>
+			<control type="group">
+			    <visible>Control.IsVisible(50)</visible>
+		      <include>CommonViews_VerticalAnimation</include>
+			    <control type="group">
+		          <visible>!ListItem.IsParentFolder</visible>
+		          <visible>[Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(MusicVideos) | Container.Content(Sets) | Window.IsVisible(VideoPlaylist)] + ![String.StartsWith(Container.FolderPath,plugin://plugin.video) + Container.Content(Episodes) + String.IsEmpty(ListItem.Art(tvshow.poster))]</visible>
+			        <include>ListView_PosterAndFanart</include>
+			    </control>
+			    <control type="group">
+		          <visible>![Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Sets) | Window.IsVisible(VideoPlaylist)] | [String.StartsWith(Container.FolderPath,plugin://plugin.video) + Container.Content(Episodes) + String.IsEmpty(ListItem.Art(tvshow.poster))]</visible>
+		          <visible>Container.Content(Addons) + !String.IsEmpty(ListItem.AddonName)</visible>
+		          <include>ListView_ThumbAndFanart</include>
+			    </control>
+			    <control type="group">
+		          <visible>String.IsEmpty(ListItem.AddonName)</visible>
+		          <visible>![Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(MusicVideos) | Container.Content(Sets) | Window.IsVisible(VideoPlaylist)] | [String.StartsWith(Container.FolderPath,plugin://plugin.video) + Container.Content(Episodes) + String.IsEmpty(ListItem.Art(tvshow.poster))]</visible>
+		          <include>ListView_Thumb</include>
+			    </control>
+			  <control type="group">
+				<control type="list" id="50">
+					<left>34</left>
+		  		<top>150</top>
+		  		<width>1190</width>
+		  		<height>450</height>
+				  <onup>50</onup>
+		  		<ondown>50</ondown>
+		  		<onleft>600</onleft>
+		  		<onright>901</onright>
+		  		<oninfo condition="Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets/)">RunScript(script.skin.helper.service,action=textviewer,header=$INFO[ListItem.Label],message='"$VAR[GlobalPlotDescription]"')</oninfo>
+		  		<viewtype label="535">List</viewtype>
+		  	  <scrolltime tween="cubic" easing="out">300</scrolltime>
+				  <pagecontrol>600</pagecontrol>
+					<itemlayout height="45" width="710">
+						<control type="label">
+							<left>12</left>
+							<top>10</top>
+							<width>55</width>
+							<height>26</height>
+							<font>FontSize_22</font>
+							<textcolor>9fffffff</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label fallback="․  ․  ․">$INFO[ListItem.Year]</label>
+		          <visible>!ListItem.IsParentFolder</visible>
+						</control>
+						<control type="image">
+							<left>73</left>
+							<top>15</top>
+							<width>16</width>
+							<height>16</height>
+			        <aspectratio align="left" aligny="center">stretch</aspectratio>
+		          <texture background="true" colordiffuse="$VAR[Text.GlobalColor]">overlays/unwatched/list/UnWatched.png</texture>
+		          <visible>String.IsEqual(ListItem.Overlay,OverlayUnWatched.png)</visible>
+		  			  <visible>![String.IsEmpty(ListItem.DBType) + ![Container.Content(Files) | Container.Content(Videos)]] + ListItem.IsPlaying</visible>
+						</control>
+						<control type="image">
+							<left>73</left>
+							<top>15</top>
+							<width>16</width>
+							<height>16</height>
+			        <aspectratio align="left" aligny="center">stretch</aspectratio>
+		          <texture background="true" colordiffuse="9fffffff">overlays/unwatched/list/UnWatched.png</texture>
+		          <visible>String.IsEqual(ListItem.Overlay,OverlayUnWatched.png)</visible>
+		  			  <visible>![String.IsEmpty(ListItem.DBType) + ![Container.Content(Files) | Container.Content(Videos)]] + !ListItem.IsPlaying</visible>
+						</control>
+						<control type="label">
+							<left>95</left>
+							<top>10</top>
+							<width>435</width>
+							<height>25</height>
+							<font>FontSize_22</font>
+							<textcolor>9fffffff</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$VAR[ListItemLabel]</label>
+						</control>
+						<control type="image">
+							<left>525</left>
+							<top>11</top>
+		  				<width>64</width>
+						  <height>23</height>
+						  <colordiffuse>mediaflags</colordiffuse>
+						  <aspectratio align="center">keep</aspectratio>
+							<texture background="true" fallback="flags/mpaa/tv/tv-na.png">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
+							<visible>[Container.Content(TVShows) | Container.Content(Seasons)] + ![Integer.IsGreater(ListItem.Property(unWatchedEpisodes),0) | String.IsEmpty(ListItem.mpaa)]</visible>
+						</control>
+						<control type="image">
+							<left>530</left>
+							<top>10</top>
+							<width>58</width>
+					    <height>24</height>
+					    <colordiffuse>9fffffff</colordiffuse>
+					    <aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture>flags/empty.png</texture>
+							<visible>String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) + Integer.IsGreater(ListItem.Property(unWatchedEpisodes),0) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+						</control>
+						<control type="label">
+							<left>532</left>
+							<top>0</top>
+							<width>50</width>
+							<height>45</height>
+							<font>FontSize_16B</font>
+							<textcolor>9fffffff</textcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+		          <label>$INFO[ListItem.Property(unWatchedEpisodes)]</label>
+							<visible>String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) + Integer.IsGreater(ListItem.Property(unWatchedEpisodes),0) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+						</control>
+						<control type="image">
+							<left>545</left>
+							<top>8</top>
+							<width>40</width>
+						  <height>22</height>
+						  <colordiffuse>mediaflags</colordiffuse>
+						  <aspectratio align="center">keep</aspectratio>
+							<texture>$VAR[ViewsDef3DFlags]</texture>
+							<visible>Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist)</visible>
+						  <animation effect="slide" start="0,0" end="45,0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist)] | [String.StartsWith(Container.FolderPath,plugin://plugin.video) + Container.Content(Episodes)]">Conditional</animation>
+						</control>
+						<control type="image">
+							<left>548</left>
+							<top>10</top>
+							<width>36</width>
+							<height>24</height>
+					    <colordiffuse>9fffffff</colordiffuse>
+					    <aspectratio align="center" aligny="center">stretch</aspectratio>
+							<texture background="true">flags/sets/sets.png</texture>
+		          <visible>String.Contains(ListItem.Path,videodb://movies/sets/)</visible>
+						</control>
+						<control type="label">
+							<left>285</left>
+							<top>0</top>
+							<width>300</width>
+							<height>45</height>
+							<font>FontSize_22</font>
+							<textcolor>9fffffff</textcolor>
+							<shadowcolor>77000000</shadowcolor>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label fallback="․  ․  ․">$VAR[ListItemLabel2]</label>
+		          <visible>![Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | [Container.Content(Episodes) + !String.StartsWith(Container.FolderPath,plugin://plugin.video)] | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.Contains(ListItem.Path,videodb://movies/sets/)]</visible>
+		          <visible>!ListItem.IsParentFolder</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout height="45" width="710">
+					<control type="group">
+				    <include>ListFocusAnimation</include>
+							<control type="label">
+								<left>7</left>
+								<top>10</top>
+								<width>65</width>
+								<height>26</height>
+								<font>FontSize_22</font>
+								<textcolor>white</textcolor>
+								<shadowcolor>77000000</shadowcolor>
+								<align>center</align>
+								<aligny>center</aligny>
+					 			<label fallback="◎  ◎  ◎">$INFO[ListItem.Year]</label>
+		            <visible>!ListItem.IsParentFolder</visible>
+							</control>
+							<control type="image">
+								<left>73</left>
+								<top>15</top>
+				        <width>16</width>
+								<height>16</height>
+				        <aspectratio align="left" aligny="center">stretch</aspectratio>
+		            <texture background="true" colordiffuse="$VAR[Text.GlobalColor]">overlays/unwatched/list/UnWatched.png</texture>
+		            <visible>String.IsEqual(ListItem.Overlay,OverlayUnWatched.png)</visible>
+		    			  <visible>![String.IsEmpty(ListItem.DBType) + ![Container.Content(Files) | Container.Content(Videos)]] + ListItem.IsPlaying</visible>
+							</control>
+							<control type="image">
+								<left>73</left>
+								<top>15</top>
+				        <width>16</width>
+								<height>16</height>
+				        <aspectratio align="left" aligny="center">stretch</aspectratio>
+		            <texture background="true">overlays/unwatched/list/UnWatched.png</texture>
+		            <visible>String.IsEqual(ListItem.Overlay,OverlayUnWatched.png)</visible>
+		    			  <visible>![String.IsEmpty(ListItem.DBType) + ![Container.Content(Files) | Container.Content(Videos)]] + !ListItem.IsPlaying</visible>
+							</control>
+							<control type="label">
+								<left>95</left>
+								<top>10</top>
+								<width>435</width>
+								<height>25</height>
+								<font>FontSize_22</font>
+								<textcolor>white</textcolor>
+								<shadowcolor>77000000</shadowcolor>
+								<align>left</align>
+								<aligny>center</aligny>
+							  <scroll>true</scroll>
+								<label>$VAR[ListItemLabel]</label>
+							</control>
+							<control type="image">
+								<left>525</left>
+							  <top>11</top>
+		  				  <width>64</width>
+						    <height>23</height>
+						    <colordiffuse>mediaflags</colordiffuse>
+						    <aspectratio align="center">keep</aspectratio>
+								<texture background="true" fallback="flags/mpaa/tv/tv-na.png">$INFO[ListItem.mpaa,flags/mpaa/tv/,.png]</texture>
+							  <visible>[Container.Content(TVShows) | Container.Content(Seasons)] + ![Integer.IsGreater(ListItem.Property(unWatchedEpisodes),0) | String.IsEmpty(ListItem.mpaa)]</visible>
+							</control>
+							<control type="image">
+								<left>530</left>
+								<top>10</top>
+								<width>58</width>
+					      <height>24</height>
+						    <aspectratio align="center" aligny="center">keep</aspectratio>
+								<texture>flags/empty.png</texture>
+								<visible>String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) + Integer.IsGreater(ListItem.Property(unWatchedEpisodes),0) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+							</control>
+							<control type="label">
+								<left>532</left>
+								<top>10</top>
+								<width>50</width>
+								<height>25</height>
+								<font>FontSize_16B</font>
+								<textcolor>white</textcolor>
+								<shadowcolor>77000000</shadowcolor>
+								<align>center</align>
+								<aligny>center</aligny>
+		            <label>$INFO[ListItem.Property(unWatchedEpisodes)]</label>
+								<visible>String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) + Integer.IsGreater(ListItem.Property(unWatchedEpisodes),0) + [Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+							</control>
+							<control type="image">
+								<left>545</left>
+								<top>8</top>
+							  <width>40</width>
+						    <height>22</height>
+						    <colordiffuse>mediaflags</colordiffuse>
+						    <aspectratio align="center">keep</aspectratio>
+						    <texture>$VAR[ViewsDef3DFlags]</texture>
+								<visible>Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist)</visible>
+						    <animation effect="slide" start="0,0" end="45,0" condition="![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist)] | [String.StartsWith(Container.FolderPath,plugin://plugin.video) + Container.Content(Episodes)]">Conditional</animation>
+							</control>
+							<control type="image">
+								<left>548</left>
+								<top>10</top>
+								<width>36</width>
+								<height>24</height>
+						    <aspectratio align="center" aligny="center">stretch</aspectratio>
+							  <texture background="true">flags/sets/sets.png</texture>
+		            <visible>String.Contains(ListItem.Path,videodb://movies/sets/)</visible>
+							</control>
+							<control type="label">
+								<left>285</left>
+								<top>10</top>
+								<width>300</width>
+								<height>25</height>
+								<font>FontSize_22</font>
+								<textcolor>white</textcolor>
+								<shadowcolor>77000000</shadowcolor>
+								<align>right</align>
+								<aligny>center</aligny>
+						  	<label fallback="․  ․  ․">$VAR[ListItemLabel2]</label>
+		            <visible>![Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | [Container.Content(Episodes) + !String.StartsWith(Container.FolderPath,plugin://plugin.video)] | Container.Content(MusicVideos) | Window.IsVisible(VideoPlaylist) | String.Contains(ListItem.Path,videodb://movies/sets/)]</visible>
+		            <visible>!ListItem.IsParentFolder</visible>
+							</control>
+		       </control>
+				</focusedlayout>
+		  </control>
+			<control type="scrollbar" id="600">
+				<left>32</left>
+				<top>165</top>
+				<width>6</width>
+				<height>425</height>
+				<texturesliderbackground/>
+				<texturesliderbar border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbar>
+				<texturesliderbarfocus border="0,14,0,14">views/scrollbar/scrollbar.png</texturesliderbarfocus>
+				<textureslidernib/>
+				<textureslidernibfocus/>
+				<onleft>990</onleft>
+				<onright>50</onright>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(600) + !Container.Scrolling">Conditional</animation>
+				<visible>Control.IsVisible(50)</visible>
+			</control>
+		      <include>ListView_Arrows</include>
+		</control>
+	</control>
+	  <control type="group">
+			<top>12</top>
+	  	<left>45</left>
+			<include>CommonViews_VerticalAnimation</include>
+	    <control type="label" id="990">
+	    	<width>180</width>
+	    	<height>44</height>
+	    	<font>FontSize_24</font>
+	    	<label>$ADDON[script.globalsearch 32299]</label>
+	    	<textcolor>99ffffff</textcolor>
+	    	<shadowcolor>99000000</shadowcolor>
+	    	<onclick>ClearProperty(RefreshList,Home)</onclick>
+	    	<visible>!Control.HasFocus(990)</visible>
+	    </control>
+	    <control type="label" id="990">
+	    	<width>180</width>
+	    	<height>44</height>
+	    	<font>FontSize_24</font>
+	    	<label>$ADDON[script.globalsearch 32299]</label>
+	    	<textcolor>ffff0000</textcolor>
+	    	<shadowcolor>99000000</shadowcolor>
+	    	<visible>Control.HasFocus(990)</visible>
+	    </control>
+  	</control>
+	  <control type="grouplist" id="900">
+      <top>13</top>
+			<left>355</left>
+	  	<onleft>901</onleft>
+	  	<onright>901</onright>
+	  	<include>CommonViews_VerticalAnimation</include>
+			    <control type="button" id="990">
+	  				<include>HiddenButton</include>
+			    </control>
+	  			<control type="label" id="991">
+	  				<font>FontSize_24</font>
+	  				<textcolor>99ffffff</textcolor>
+	  				<shadowcolor>99000000</shadowcolor>
+	  			</control>
+	  			<control type="label" id="999">
+	  				<font>FontSize_24</font>
+	  				<textcolor>99ffffff</textcolor>
+	  				<shadowcolor>99000000</shadowcolor>
+	  			</control>
+	  		</control>
+        <control type="grouplist" id="901">
+	        <top>20</top>
+	        <left>220</left>
+	        <onleft>9000</onleft>
+  	      <onright>9000</onright>
+					<include>CommonViews_VerticalAnimation</include>
+		    	<control type="group">
+		    		<width>110</width>
+		    		<height>44</height>
+						<control type="image">
+							<left>110</left>
+							<top>3</top>
+							<width>20</width>
+							<height>24</height>
+							<texture colordiffuse="9fffffff">views/scrollbar/arrow-right.png</texture>
+					  </control>
+		    		<control type="list" id="9000">
+		    			<onleft condition="Control.IsVisible(990)">SetFocus(990)</onleft>
+		    			<onright condition="Control.IsVisible(990)">SetFocus(990)</onright>
+		    			<onup>50</onup>
+		    			<ondown>50</ondown>
+		    			<scrolltime>200</scrolltime>
+		    			<orientation>horizontal</orientation>
+		    			<itemlayout height="44" width="110">
+		    				<control type="label">
+		    					<align>left</align>
+		    					<font>FontSize_26</font>
+		    					<label>$INFO[ListItem.Label]</label>
+                  <textcolor>99ffffff</textcolor>
+		    					<shadowcolor>99000000</shadowcolor>
+		    				</control>
+		    			</itemlayout>
+		    			<focusedlayout height="44" width="110">
+		    				<control type="label">
+		    					<align>left</align>
+		    					<font>FontSize_26</font>
+		    					<label>$INFO[ListItem.Label]</label>
+                  <textcolor>$VAR[Text.GlobalColor]</textcolor>
+		    					<shadowcolor>99000000</shadowcolor>
+		    				</control>
+		    			</focusedlayout>
+		    	  </control>
+		    	</control>
+	    	</control>
+	</controls>
+</window>

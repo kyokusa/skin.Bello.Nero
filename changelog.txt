@@ -1,3 +1,8 @@
+v7.0.5a - for Kodi Leia 18.7 Git:20200603 (07/07/2020)
+
+- Restore globalsearch button on Home
+_________________________________________________
+
 v7.0.4a - for Kodi Leia 18.5 Git:20191117 (13/01/2020)
 
 - Restore artist slideshow music visualization

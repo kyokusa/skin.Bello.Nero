@@ -1274,7 +1274,7 @@
 				<aspectratio align="right" aligny="center" scalediffuse="true">keep</aspectratio>
 				<texture background="true" diffuse="thumbs/square_diffuse_small.png" fallback="DefaultVideoCover.png">$INFO[Player.Art(thumb)]</texture>
 				<visible>Player.HasVideo + [String.IsEmpty(Player.Art(thumb)) | String.IsEmpty(Player.Art(poster))]</visible>
-			</control>			
+			</control>
 	  </control>
   </include>
 
@@ -1321,6 +1321,7 @@
           <include>TopMenuButton</include>
       		<label>$LOCALIZE[137]</label>
           <onclick>SetFocus(20)</onclick>
+					<onclick>RunScript(script.globalsearch)</onclick>
       	</control>
       	<control type="button" id="212">
       		<description>Power</description>

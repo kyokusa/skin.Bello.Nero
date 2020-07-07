@@ -883,7 +883,7 @@
 			<align>right</align>
 			<orientation>horizontal</orientation>
 
-		<!---- Weather ---- for support Icon Weather Animated -->
+		<!-- Weather for support Icon Weather Animated -->
 	    <control type="group"  id="1">
 				<left>-45</left>
 				<top>0</top>
@@ -1258,5 +1258,14 @@
 			<label>[COLOR=FF40FFFF]$INFO[Window.Property(xmlfile)][/COLOR]</label>
 			<visible>Skin.HasSetting(ShowDebugInfo)</visible>
 		</control>
+	</include>
+
+	<include name="HiddenButton">		
+		<width>1</width>
+		<height>1</height>
+		<texturefocus />
+		<texturenofocus />
+		<label />
+		<font />
 	</include>
 </includes>
